@@ -1,0 +1,141 @@
+html {
+	height: 100%;
+	/* overflow-x: hidden; */
+}
+body {
+	margin: 0;
+	color: $baseFClr;
+	font: 400 16px/20px $baseFF;
+	min-height: 100%;
+	position: relative;
+	//overflow-x: hidden;
+	background-color: #090923;
+	//overflow-x: hidden;
+	//overflow-y: auto;
+
+	*::selection {
+		background: $black; /* Safari */
+		color: $white;
+	}
+	*::-moz-selection {
+		// background: $red; /* Firefox */
+		// color: $white;
+	}
+}
+
+.ui-helper-hidden-accessible {
+	display: none;
+}
+
+input {
+	border-radius: 0;
+	-webkit-appearance: none;
+
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+input[type="search"] {
+	-webkit-appearance: none;
+}
+
+img {
+	max-width: 100%;
+}
+
+.slick-slider *,
+input,
+button,
+a:focus,
+a:hover {
+	outline: none !important;
+}
+* {
+	-webkit-locale: auto;
+	box-sizing: border-box;
+	webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-tap-highlight-color: transparent;
+}
+*:after,
+*:before,
+* {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+}
+.clearfix {
+	&:after {
+		content: "";
+		display: table;
+		width: 100%;
+		clear: both;
+	}
+}
+.container {
+	padding-left: $containerP;
+	padding-right: $containerP;
+	max-width: $containerW;
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+
+	@media screen and (max-width: $md) {
+		padding-left: 10px;
+		padding-right: 10px;
+	}
+	// @include media($sm) {
+	// 	max-width: 730px;
+	// }
+
+	// &.container-fluid {
+	// 	max-width: 100%;
+	// }
+}
+
+p {
+	margin-bottom: 25px;
+
+	&:last-child {
+		margin-bottom: 0;
+	}
+}
+
+ul {
+	padding: 0;
+	margin: 0;
+}
+a {
+	text-decoration: none;
+	color: $baseFClr;
+}
+
+.hidden {
+	display: none;
+}
+
+@media screen and (max-width: $md) {
+	.hidden-md {
+		display: none;
+	}
+	.visible-md {
+		display: block;
+	}
+}
+@media screen and (max-width: $sm) {
+	.hidden-sm {
+		display: none;
+	}
+	.visible-sm {
+		display: block;
+	}
+}
+@media screen and (max-width: $xs) {
+	.hidden-xs {
+		display: none;
+	}
+	.visible-xs {
+		display: block;
+	}
+}

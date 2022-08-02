@@ -1,0 +1,70 @@
+// Ref: https://github.com/nuxt-community/vuetify-module#customvariables
+//
+// The variables you want to modify
+// $font-size-root: 20px;
+
+$body-font-family: "Epilogue", sans-serif;
+$border-radius-root: 10px;
+$font-size-root: 16px;
+
+$btn-border-radius: 10px;
+$btn-letter-spacing: 0;
+$btn-outline-border-width: 2px;
+$btn-font-weight: 500;
+$btn-font-sizes: (
+	"x-small": 12px,
+	"small": 12px,
+	"default": 12px,
+	"large": 12px,
+	"x-large": 12px,
+);
+$btn-sizes: (
+	"default": 42,
+	"large": 54,
+);
+
+$grid-breakpoints: (
+	"xs": 0,
+	"sm": 600px,
+	"md": 960px,
+	"lg": 1280px - 16px,
+	"xl": 1920px - 16px,
+);
+
+// Контрольные точки;
+$xlg: 1600px;
+$lg: 1450px;
+$md: 1200px;
+$sm: 992px;
+$xs: 750px;
+$xxs: 480px;
+
+$white: #fff;
+$black: #000;
+$text-color: $white; //
+
+// Grids
+//$grid-columns: 12;
+//$grid-gutter-width: 32px;
+$baseFontF: "Epilogue", sans-serif;
+$headlineFontF: "Orbitron", sans-serif;
+$advent: "Advent Pro", sans-serif;
+
+$titleFF: $headlineFontF;
+
+$baseFS: 18px !default;
+$baseLH: (25px / $baseFS);
+$baseFW: 400;
+$baseFSt: normal;
+$baseFF: $baseFontF;
+$inter: "Inter", sans-serif;
+$baseFClr: $text-color;
+$baseBg: $white;
+
+//$family: $baseFF;
+
+$containerW: 1420px;
+$containerP: 16px;
+
+$baseLinkColor: inherit;
+$baseLinkColorHover: inherit;
