@@ -52,11 +52,12 @@ export default {
 	},
 	methods: {
 		setParams() {
+			//console.log(Math.floor(Math.random() * 5));
 			this.items.forEach((item) => {
 				item.top = Math.ceil(Math.random() * 100) + '%';
 				item.left = Math.ceil(Math.random() * 100) + '%';
 				item.width = Math.ceil(Math.random() * this.maxWidth) + 'px';
-				item.blur = Math.ceil(Math.random() * 5);
+				item.blur = Math.floor(Math.random() * 5);
 			});
 		}
 	}

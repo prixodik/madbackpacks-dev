@@ -4,7 +4,7 @@
 			<form class="join-section__form" action="#">
 
 				<div class="join-section__title">
-					<span>Join our</span> newsletter <br>to stay in the loop!
+					<span v-html="title"></span>
 					<div class="join-section__title-shadow" v-html="title"></div>
 				</div>
 
@@ -12,15 +12,15 @@
 					<input type="text" class="form-control" placeholder="Telregram @username">
 				</div>
 				<div class="join-section__buttons">
-					<button class="btn" type="submit">Let's go</button>
+					<button class="btn" type="submit">{{ btnText }}</button>
 				</div>
 			</form>
 
 			<kinesis-container class="join-section__img">
 				<Dotteds :count="12" :maxWidth="12"></Dotteds>
 
-				<kinesis-element :strength="45" class="join-section__img-1">
-					<img src="images/join-section-img-1.png" alt="">
+				<kinesis-element :strength="15" type="depth" class="join-section__img-1">
+					<img :src="img" alt="">
 				</kinesis-element>
 
 				<kinesis-element :strength="25" class="join-section__img-2">
@@ -43,10 +43,11 @@ import Dotteds from '../blocks/Dotteds.vue';
 
 export default {
 	name: "JoinSection",
+	props: ['title', 'desc', 'btnText', 'img'],
 	data() {
 		return {
-			title: 'Join our newsletter <br>to stay in the loop!',
-			desc: '',
+			/* title: 'Join our newsletter <br>to stay in the loop!',
+			desc: '', */
 
 		};
 	},
@@ -89,7 +90,7 @@ export default {
 		max-width: 733px;
 		letter-spacing: 0.05em;
 
-		span {
+		span>span {
 			background: linear-gradient(90deg, #32B0DA 23.14%, #D1FECE 46.22%, #69F5DA 69.31%);
 			-webkit-background-clip: text;
 			-webkit-text-fill-color: transparent;
@@ -164,6 +165,7 @@ export default {
 				position: absolute;
 				top: 7%;
 				left: 0;
+				z-index: -1;
 				animation: 3s joinCircleScale2 linear infinite;
 				transform-origin: 50% 50%;
 			}
@@ -181,9 +183,24 @@ export default {
 				position: absolute;
 				top: -10px;
 				left: -6px;
+				z-index: -1;
 				max-width: none;
 				animation: 3s joinCircleScale linear infinite;
 				transform-origin: 50% 50%;
+			}
+		}
+	}
+
+	&--2 & {
+		&__img {
+			&-2 {
+				top: -22%;
+				left: 65%;
+			}
+
+			&-3 {
+				top: 41%;
+				left: -12%;
 			}
 		}
 	}

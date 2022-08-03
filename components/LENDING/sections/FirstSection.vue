@@ -19,12 +19,12 @@
 
 			<kinesis-container class="first-section__img">
 
-				<kinesis-element :strength="145" class="first-section__img-1">
+				<kinesis-element :strength="65" class="first-section__img-1">
 					<img src="images/first-section-img-1.png" alt="">
 					<img class="first-section__img-1-shadow" src="images/first-section-img-1.png" alt="">
 				</kinesis-element>
 
-				<kinesis-element :strength="105" class="first-section__img-2">
+				<kinesis-element :strength="45" class="first-section__img-2">
 					<img src="images/first-section-img-2.png" alt="">
 					<img class="first-section__img-2-shadow" src="images/first-section-img-2.png" alt=""></img>
 				</kinesis-element>
@@ -189,6 +189,7 @@ export default {
 				position: absolute;
 				top: 50%;
 				left: 50%;
+				z-index: -1;
 				transform: translate(-50%, -50%);
 				/* width: 100%;
 				height: 100%; */
@@ -207,6 +208,7 @@ export default {
 				position: absolute;
 				top: 50%;
 				left: 50%;
+				z-index: -1;
 				transform: translate(-50%, -50%);
 				/* width: 100%;
 				height: 100%; */
