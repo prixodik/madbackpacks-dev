@@ -149,6 +149,17 @@ export default {
 		left: 0;
 	}
 
+	&:after {
+		content: "";
+		display: block;
+		width: 100%;
+		height: 4px;
+		background: url('/images/backpacks-section-line-bottom.svg') 0% 0 no-repeat;
+		position: absolute;
+		bottom: 14px;
+		left: 0;
+	}
+
 	&__container {
 		position: relative;
 

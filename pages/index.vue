@@ -7,7 +7,7 @@
 		</JoinSection>
 		<DinoSection></DinoSection>
 		<BackpacksSection ref="BackpacksSection"></BackpacksSection>
-		<TokenomicsSection></TokenomicsSection>
+		<TokenomicsSection ref="TokenomicsSection"></TokenomicsSection>
 		<TokensUsageSection></TokensUsageSection>
 		<JoinSection class="join-section--2" :title="joinSectionParams2.title" :btnText="joinSectionParams2.btnText"
 			:img="joinSectionParams2.img"></JoinSection>
@@ -46,6 +46,7 @@ export default {
 			},
 			wh: 0,
 			BackpacksSectionPosition: false,
+			TokenomicsSectionPosition: false,
 		};
 	},
 	components: { TokensUsageSection, Header, AboutSection, FirstSection, JoinSection, DinoSection, BackpacksSection, TokenomicsSection, PartnersSection, TeamsSection, Footer },
@@ -53,14 +54,20 @@ export default {
 		this.wh = window.innerHeight;
 
 		let bs = document.querySelector('.backpacks-section');
-		//console.log(bs.offsetTop);
 		this.BackpacksSectionPosition = bs.offsetTop;
+
+		let ts = document.querySelector('.tokenomics-section');
+		this.TokenomicsSectionPosition = ts.offsetTop;
 	},
 	methods: {
 		handleScroll() {
 			// Your scroll handling here
 			if (window.scrollY >= this.BackpacksSectionPosition) {
 				this.$refs.BackpacksSection.playVideo();
+			}
+
+			if (window.scrollY >= this.TokenomicsSectionPosition) {
+				this.$refs.TokenomicsSection.playLines();
 			}
 		}
 	},

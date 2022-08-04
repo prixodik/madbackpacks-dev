@@ -6,61 +6,28 @@
 			</AnimIcon>
 		</div>
 		<div class="token-block__title">{{ title }}</div>
-		<div class="token-block__desc">{{ desc }}</div>
+		<div class="token-block__params">
+			<div class="token-block__params-item" v-for="(param, index) in params" :key="index">
+				<TokenParam :class="`token-param--item-${index} token-param--group-${iconId}`" :icon="param.icon"
+					:color="param.color" :title="param.title" :list="param.list">
+				</TokenParam>
+			</div>
+		</div>
 	</div>
 </template>
 <script>
 import AnimIcon from "../blocks/AnimIcon.vue";
+import TokenParam from "./TokenParam.vue";
 
 export default {
 	name: "TokenBlock",
-	props: ['title', 'desc', 'iconId', 'icon', 'dottedColor', 'floorColor', 'lightColor'],
+	props: ['title', 'desc', 'iconId', 'icon', 'dottedColor', 'floorColor', 'lightColor', 'params'],
 	data() {
 		return {
 
-			/* iconId: 1,
-			iconId2: 2,
-			iconId3: 3,
-
-			animIcon1: 'images/icon-anim-1.png',
-			animIcon2: 'images/icon-anim-2.png',
-			animIcon3: 'images/icon-anim-3.png',
-
-			dottedColor: '#94ffec',
-			dottedColor2: '#FE37F1',
-			dottedColor3: '#FFEE98',
-
-			floorColor: {
-				start: 'rgba(209,254,206,0)',
-				end: 'rgba(105,245,218,0.46)'
-			},
-			floorColor2: {
-				start: 'rgba(209,254,206,0)',
-				end: 'rgba(254,55,241,0.46)'
-			},
-			floorColor3: {
-				start: 'rgba(209, 254, 206, 0)',
-				end: 'rgba(255, 238, 152, 0.46)'
-			},
-
-			lightColor: {
-				start: 'rgba(18,243,216,0.17)',
-				center: 'rgba(148,255,236,0.69)',
-				end: 'rgba(148,255,236,0)'
-			},
-			lightColor2: {
-				start: 'rgba(254,55,241,0.17)',
-				center: 'rgba(254,55,241,0.69)',
-				end: 'rgba(254,55,241,0)'
-			},
-			lightColor3: {
-				start: 'gba(254, 55, 241, 0.17)',
-				center: 'rgba(255, 238, 152, 0.69)',
-				end: 'rgba(255, 238, 152, 0)'
-			} */
 		};
 	},
-	components: { AnimIcon }
+	components: { AnimIcon, TokenParam }
 }
 </script>
 
@@ -81,10 +48,10 @@ export default {
 		background-clip: text;
 		text-fill-color: transparent;
 		position: relative;
-		padding-bottom: 45px;
-		margin-bottom: 33px;
+		margin-bottom: 27px;
+		text-align: center;
 
-		&:after {
+		/* &:after {
 			content: "";
 			display: block;
 			width: 100%;
@@ -94,19 +61,21 @@ export default {
 			bottom: 0;
 			left: 0;
 
+		} */
+	}
+
+	&__params {
+		display: flex;
+		justify-content: center;
+		margin: 0 -16px;
+
+		&-item {
+			flex: 0 0 117px;
+			max-width: 117px;
+			padding: 0 16px;
 		}
 	}
 
-	&__desc {
-		font-weight: 900;
-		font-size: 20px;
-		line-height: 42px;
-		font-family: $titleFF;
-		max-width: 310px;
 
-		letter-spacing: 0.05em;
-		text-transform: uppercase;
-		color: $white;
-	}
 }
 </style>
