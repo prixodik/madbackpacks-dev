@@ -3,8 +3,8 @@
 		<div class="about-block__img">
 			<img :src="icon" :alt="title">
 		</div>
-		<div class="about-block__title" v-html="title">{{ title }}</div>
-		<div class="about-block__desc" v-html="desc">{{ desc }}</div>
+		<div class="about-block__title" v-html="title"></div>
+		<div class="about-block__desc" v-html="desc"></div>
 
 		<div class="about-block__bottom">
 			<svg class="about-block__bg" width="33" height="180" viewBox="0 0 33 180" fill="none"

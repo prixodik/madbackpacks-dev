@@ -69,7 +69,17 @@ a.btn,
 			width: 21px;
 			height: 21px;
 			stroke: $white;
+			fill: $white;
 			display: block;
+		}
+
+		&.btn--pink {
+			background: url("/images/btn-bg-soc-pink.svg") 50% 50% / contain no-repeat;
+
+			svg {
+				width: 30px;
+				height: 30px;
+			}
 		}
 	}
 }

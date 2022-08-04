@@ -11,6 +11,9 @@
 		<TokensUsageSection></TokensUsageSection>
 		<JoinSection class="join-section--2" :title="joinSectionParams2.title" :btnText="joinSectionParams2.btnText"
 			:img="joinSectionParams2.img"></JoinSection>
+		<PartnersSection></PartnersSection>
+		<TeamsSection></TeamsSection>
+		<Footer></Footer>
 	</div>
 </template>
 
@@ -23,6 +26,9 @@ import JoinSection from '../components/LENDING/sections/JoinSection.vue';
 import DinoSection from '../components/LENDING/sections/DinoSection.vue';
 import BackpacksSection from '../components/LENDING/sections/BackpacksSection.vue';
 import TokenomicsSection from '../components/LENDING/sections/TokenomicsSection.vue';
+import PartnersSection from '../components/LENDING/sections/PartnersSection.vue';
+import TeamsSection from '../components/LENDING/sections/TeamsSection.vue';
+import Footer from '../components/LENDING/sections/Footer.vue';
 
 export default {
 	name: "IndexPage",
@@ -42,7 +48,7 @@ export default {
 			BackpacksSectionPosition: false,
 		};
 	},
-	components: { TokensUsageSection, Header, AboutSection, FirstSection, JoinSection, DinoSection, BackpacksSection, TokenomicsSection },
+	components: { TokensUsageSection, Header, AboutSection, FirstSection, JoinSection, DinoSection, BackpacksSection, TokenomicsSection, PartnersSection, TeamsSection, Footer },
 	mounted() {
 		this.wh = window.innerHeight;
 
