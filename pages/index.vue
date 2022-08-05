@@ -9,6 +9,7 @@
 		<BackpacksSection ref="BackpacksSection"></BackpacksSection>
 		<TokenomicsSection ref="TokenomicsSection"></TokenomicsSection>
 		<TokensUsageSection></TokensUsageSection>
+		<RoadmapSection></RoadmapSection>
 		<JoinSection class="join-section--2" :title="joinSectionParams2.title" :btnText="joinSectionParams2.btnText"
 			:img="joinSectionParams2.img"></JoinSection>
 		<PartnersSection></PartnersSection>
@@ -29,6 +30,7 @@ import TokenomicsSection from '../components/LENDING/sections/TokenomicsSection.
 import PartnersSection from '../components/LENDING/sections/PartnersSection.vue';
 import TeamsSection from '../components/LENDING/sections/TeamsSection.vue';
 import Footer from '../components/LENDING/sections/Footer.vue';
+import RoadmapSection from '../components/LENDING/sections/RoadmapSection.vue';
 
 export default {
 	name: "IndexPage",
@@ -49,7 +51,7 @@ export default {
 			TokenomicsSectionPosition: false,
 		};
 	},
-	components: { TokensUsageSection, Header, AboutSection, FirstSection, JoinSection, DinoSection, BackpacksSection, TokenomicsSection, PartnersSection, TeamsSection, Footer },
+	components: { TokensUsageSection, Header, AboutSection, FirstSection, JoinSection, DinoSection, BackpacksSection, TokenomicsSection, PartnersSection, TeamsSection, Footer, RoadmapSection },
 	mounted() {
 		this.wh = window.innerHeight;
 
