@@ -156,6 +156,14 @@ export default {
 		position: relative;
 		margin-bottom: 77px;
 
+		span {
+			background: linear-gradient(90deg, #32B0DA 23.14%, #D1FECE 46.22%, #69F5DA 69.31%);
+			-webkit-background-clip: text;
+			-webkit-text-fill-color: transparent;
+			background-clip: text;
+			text-fill-color: transparent;
+		}
+
 		&:after {
 			content: attr(title);
 			text-align: center;
@@ -177,6 +185,12 @@ export default {
 		&:last-child {
 			margin-bottom: 0;
 		}
+	}
+
+	&__error {
+		color: #FF2977;
+		font: 12px/32px $baseFF;
+		margin-top: 5px;
 	}
 
 	&__buttons {
@@ -204,6 +218,25 @@ export default {
 		&__wrapper {
 			transform: translateY(0) scale(1, 1) rotateX(0);
 			opacity: 1;
+		}
+	}
+
+	&--telegram & {
+		&__title {
+			margin-bottom: 37px;
+		}
+
+		&__wrapper {
+			max-width: 592px;
+		}
+
+		&__form {
+			max-width: 464px;
+			margin: 0 auto;
+		}
+
+		&__buttons {
+			margin-top: 46px;
 		}
 	}
 

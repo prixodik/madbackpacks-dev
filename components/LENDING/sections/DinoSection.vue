@@ -1,5 +1,5 @@
 <template>
-	<section class="dino-section">
+	<section class="dino-section" id="dino-section">
 
 		<Dotteds class="dino-section__dotteds" :count="15"></Dotteds>
 

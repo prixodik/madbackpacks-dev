@@ -9,7 +9,7 @@
 				<div class="first-section__desc" v-html="desc"></div>
 				<div class="first-section__buttons">
 					<a href="#" @click.prevent="openPopup('popup-join')" class="btn"><span>Join IDO</span></a>
-					<a href="#" class="btn btn--soc">
+					<a href="#" @click.prevent="openPopup('popup-telegram')" class="btn btn--soc">
 						<svg>
 							<use xlink:href="/images/sprite-svg.svg#telegram"></use>
 						</svg>

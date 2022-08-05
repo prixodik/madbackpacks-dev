@@ -8,7 +8,7 @@
 		<DinoSection></DinoSection>
 		<BackpacksSection ref="BackpacksSection"></BackpacksSection>
 		<TokenomicsSection ref="TokenomicsSection"></TokenomicsSection>
-		<TokensUsageSection></TokensUsageSection>
+		<TokensUsageSection @openPopup="popupShow"></TokensUsageSection>
 		<RoadmapSection></RoadmapSection>
 		<JoinSection class="join-section--2" :title="joinSectionParams2.title" :btnText="joinSectionParams2.btnText"
 			:img="joinSectionParams2.img"></JoinSection>
@@ -19,21 +19,42 @@
 		<Popup class="popup--join" id="popup-join" v-bind:isActive="popupActive" v-bind:showId="popupActiveId"
 			v-on:closePopup="popupHide()">
 			<div class="popup__title" title="_Join IDO">_Join IDO</div>
-			<form action="#" @submit.prevent="sendForm()">
+			<form class="popup__form" action="#" @submit.prevent="checkForm" method="post" novalidate="true">
 				<div class="popup__input">
-					<input type="text" name="name" id="name" v-model="orderName" class="form-control" placeholder="Name"
-						required>
+					<input type="text" name="name" id="name" v-model="orderName" class="form-control"
+						:class="{ 'is-error': errors.name }" placeholder="Name" required>
+					<div class="popup__error" v-if="errors.name">{{ errors.name }}</div>
 				</div>
 				<div class="popup__input">
 					<input type="email" name="email" id="email" v-model="orderEmail" class="form-control"
-						placeholder="Email" required>
+						:class="{ 'is-error': errors.email }" placeholder="Email" required>
+					<div class="popup__error" v-if="errors.email">{{ errors.email }}</div>
 				</div>
 				<div class="popup__input">
 					<input type="text" name="telegram" id="telegram" v-model="orderTelegram" class="form-control"
-						placeholder="Telegram @username" required>
+						:class="{ 'is-error': errors.telegram }" placeholder="Telegram @username" required>
+					<div class="popup__error" v-if="errors.telegram">{{ errors.telegram }}</div>
 				</div>
 				<div class="popup__buttons">
 					<button class="btn" type="submit">JOIN</button>
+				</div>
+			</form>
+		</Popup>
+
+		<Popup class="popup--telegram" id="popup-telegram" v-bind:isActive="popupActive" v-bind:showId="popupActiveId"
+			v-on:closePopup="popupHide()">
+			<div class="popup__title" title="Join our newsletter to stay in the loop!"><span>Join our</span> newsletter
+				<br>to stay
+				in the loop!
+			</div>
+			<form class="popup__form" action="#" @submit.prevent="checkFormTelegram" method="post" novalidate="true">
+				<div class="popup__input">
+					<input type="text" name="telegram" id="telegram" v-model="orderTelegram" class="form-control"
+						:class="{ 'is-error': errors.telegram }" placeholder="Telegram @username" required>
+					<div class="popup__error" v-if="errors.telegram">{{ errors.telegram }}</div>
+				</div>
+				<div class="popup__buttons">
+					<button class="btn" type="submit">Let's go</button>
 				</div>
 			</form>
 		</Popup>
@@ -85,9 +106,15 @@ export default {
 		return {
 			popupActive: false,
 			popupActiveId: false,
-			orderName: '',
-			orderEmail: '',
-			orderTelegram: '',
+
+			errors: {
+				name: null,
+				email: null,
+				telegram: null
+			},
+			orderName: null,
+			orderEmail: null,
+			orderTelegram: null,
 
 			joinSectionParams: {
 				title: '<span>Join our</span> newsletter <br>to stay in the loop!',
@@ -128,6 +155,54 @@ export default {
 		sendForm() {
 			//this.popupShow('popup-succesfull');
 			this.popupShow('popup-ooops');
+		},
+		checkForm: function (e) {
+			this.errors = [];
+
+			if (!this.orderName) {
+				this.errors.name = 'Enter a name';
+			}
+			if (!this.orderEmail) {
+				this.errors.email = 'Enter E-mail';
+			} else if (!this.validEmail(this.orderEmail)) {
+				this.errors.email = 'Please enter a valid email address';
+			}
+			if (!this.orderTelegram) {
+				this.errors.telegram = 'Enter Telegram';
+			} else if (!this.validTelegram(this.orderTelegram)) {
+				this.errors.telegram = 'Not correct username';
+			}
+
+			if (!this.errors.name && !this.errors.email && !this.errors.telegram) {
+				this.sendForm();
+				return true;
+			}
+
+			e.preventDefault();
+		},
+		checkFormTelegram: function (e) {
+			this.errors = [];
+
+			if (!this.orderTelegram) {
+				this.errors.telegram = 'Enter Telegram';
+			} else if (!this.validTelegram(this.orderTelegram)) {
+				this.errors.telegram = 'Not correct username';
+			}
+
+			if (!this.errors.name && !this.errors.email && !this.errors.telegram) {
+				this.sendForm();
+				return true;
+			}
+
+			e.preventDefault();
+		},
+		validEmail: function (email) {
+			var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			return re.test(email);
+		},
+		validTelegram: function (telegram) {
+			var re = /^@([a-zA-Z0-9_.]{1,30}$)/;
+			return re.test(telegram);
 		},
 		handleScroll() {
 			// Your scroll handling here

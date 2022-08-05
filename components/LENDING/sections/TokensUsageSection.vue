@@ -1,5 +1,5 @@
 <template>
-	<section class="tokensusage-section">
+	<section class="tokensusage-section" id="tokensusage-section">
 		<div class="tokensusage-section__container container">
 
 			<div class="tokensusage-section__title" :title="title">{{ title }}</div>
@@ -18,7 +18,7 @@
 					<img src="images/star.svg" alt="">
 					<span>Burn Triggers</span>
 				</div>
-				<a href="#" class="btn">GET WWMB</a>
+				<a href="#" @click.prevent="openPopup('popup-join')" class="btn">GET WWMB</a>
 			</div>
 		</div>
 	</section>
@@ -187,7 +187,12 @@ export default {
 			}]
 		};
 	},
-	components: { TokenBlock }
+	components: { TokenBlock },
+	methods: {
+		openPopup(id) {
+			this.$emit('openPopup', id);
+		}
+	}
 }
 </script>
 

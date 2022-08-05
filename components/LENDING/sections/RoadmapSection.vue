@@ -1,5 +1,5 @@
 <template>
-	<section class="roadmap-section">
+	<section class="roadmap-section" id="roadmap-section">
 
 		<div class="roadmap-section__container container">
 			<div class="roadmap-section__head">

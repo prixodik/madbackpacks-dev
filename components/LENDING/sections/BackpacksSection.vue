@@ -1,5 +1,5 @@
 <template>
-	<section class="backpacks-section">
+	<section class="backpacks-section" id="backpacks-section">
 
 		<Dotteds class="backpacks-section__dotteds" :count="15"></Dotteds>
 

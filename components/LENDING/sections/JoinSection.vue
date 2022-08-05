@@ -1,7 +1,7 @@
 <template>
-	<section class="join-section">
+	<section class="join-section" id="join-section">
 		<div class="join-section__container container">
-			<form class="join-section__form" action="#">
+			<form action="#" @submit.prevent="checkFormTelegram" method="post" novalidate="true">
 
 				<div class="join-section__title">
 					<span v-html="title"></span>
@@ -9,7 +9,9 @@
 				</div>
 
 				<div class="join-section__input">
-					<input type="text" class="form-control" placeholder="Telregram @username">
+					<input type="text" name="telegram" id="telegram" v-model="orderTelegram" class="form-control"
+						:class="{ 'is-error': errors.telegram }" placeholder="Telegram @username" required>
+					<div class="join-section__error" v-if="errors.telegram">{{ errors.telegram }}</div>
 				</div>
 				<div class="join-section__buttons">
 					<button class="btn" type="submit">{{ btnText }}</button>
@@ -46,12 +48,39 @@ export default {
 	props: ['title', 'desc', 'btnText', 'img'],
 	data() {
 		return {
-			/* title: 'Join our newsletter <br>to stay in the loop!',
-			desc: '', */
+			errors: {
+				telegram: null
+			},
+			orderTelegram: null,
 
 		};
 	},
-	components: { KinesisContainer, KinesisElement, Dotteds }
+	components: { KinesisContainer, KinesisElement, Dotteds },
+	methods: {
+		sendForm() {
+			this.popupShow('popup-succesfull');
+		},
+		checkFormTelegram: function (e) {
+			this.errors = [];
+
+			if (!this.orderTelegram) {
+				this.errors.telegram = 'Enter Telegram';
+			} else if (!this.validTelegram(this.orderTelegram)) {
+				this.errors.telegram = 'Not correct username';
+			}
+
+			if (!this.errors.name && !this.errors.email && !this.errors.telegram) {
+				this.sendForm();
+				return true;
+			}
+
+			e.preventDefault();
+		},
+		validTelegram: function (telegram) {
+			var re = /^@([a-zA-Z0-9_.]{1,30}$)/;
+			return re.test(telegram);
+		}
+	},
 }
 </script>
 
@@ -119,6 +148,12 @@ export default {
 	&__input {
 		max-width: 464px;
 		margin-bottom: 46px;
+	}
+
+	&__error {
+		color: #FF2977;
+		font: 12px/32px $baseFF;
+		margin-top: 5px;
 	}
 
 	&__buttons {

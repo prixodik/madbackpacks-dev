@@ -1,5 +1,5 @@
 <template>
-	<section class="teams-section">
+	<section class="teams-section" id="teams-section">
 		<div class="teams-section__container container">
 			<div class="teams-section__title" :title="title">{{ title }}</div>
 

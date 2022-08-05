@@ -9,12 +9,12 @@
 				<img src="/images/logo.png" alt="MadBackpacks">
 			</div>
 			<div class="footer__menu">
-				<a href="#" class="footer__menu-item">about</a>
-				<a href="#" class="footer__menu-item">token</a>
-				<a href="#" class="footer__menu-item">roadmap</a>
-				<a href="#" class="footer__menu-item">team & partners</a>
-				<a href="#" class="footer__menu-item">how to play</a>
-				<a href="#" class="footer__menu-item">Tokenomics</a>
+				<a href="#" v-scroll-to="'#about-section'" class="footer__menu-item">about</a>
+				<a href="#" v-scroll-to="'#tokensusage-section'" class="footer__menu-item">token</a>
+				<a href="#" v-scroll-to="'#roadmap-section'" class="footer__menu-item">roadmap</a>
+				<a href="#" v-scroll-to="'#partners-section'" class="footer__menu-item">team & partners</a>
+				<a href="#" v-scroll-to="'#join-section'" class="footer__menu-item">how to play</a>
+				<a href="#" v-scroll-to="'#tokenomics-section'" class="footer__menu-item">Tokenomics</a>
 			</div>
 
 			<SocList class="footer__soc"></SocList>

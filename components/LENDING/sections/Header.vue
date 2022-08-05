@@ -9,12 +9,12 @@
 				<img src="/images/logo.png" alt="MadBackpacks">
 			</div>
 			<div class="header__menu">
-				<a href="#" class="header__menu-item">about</a>
-				<a href="#" class="header__menu-item">token</a>
-				<a href="#" class="header__menu-item">roadmap</a>
-				<a href="#" class="header__menu-item">team & partners</a>
-				<a href="#" class="header__menu-item">how to play</a>
-				<a href="#" class="header__menu-item">Tokenomics</a>
+				<a href="#" v-scroll-to="'#about-section'" class="header__menu-item">about</a>
+				<a href="#" v-scroll-to="'#tokensusage-section'" class="header__menu-item">token</a>
+				<a href="#" v-scroll-to="'#roadmap-section'" class="header__menu-item">roadmap</a>
+				<a href="#" v-scroll-to="'#partners-section'" class="header__menu-item">team & partners</a>
+				<a href="#" v-scroll-to="'#join-section'" class="header__menu-item">how to play</a>
+				<a href="#" v-scroll-to="'#tokenomics-section'" class="header__menu-item">Tokenomics</a>
 			</div>
 
 		</div>

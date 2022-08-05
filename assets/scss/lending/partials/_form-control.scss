@@ -9,10 +9,6 @@
 	width: 100%;
 	border-radius: 12px;
 
-	&.is-error {
-		border-color: red !important;
-	}
-
 	&::-webkit-input-placeholder,
 	&::-moz-placeholder {
 		opacity: 1;
@@ -21,5 +17,10 @@
 
 	&:focus {
 		outline: none;
+	}
+
+	&.is-error {
+		border-color: #ff2977;
+		color: #ff2977;
 	}
 }

@@ -15,7 +15,8 @@
 							<div class="tokenomics-section__procent-value">{{ procent.value }}%</div>
 							<div class="tokenomics-section__procent-label">{{ procent.label }}</div>
 						</div>
-						<img :class="`tokenomics-section__procent-line tokenomics-section__procent-line--${index + 1}`"
+						<img v-if="index !== 7"
+							:class="`tokenomics-section__procent-line tokenomics-section__procent-line--${index + 1}`"
 							:src="`images/tokenomics-procent-line-${index + 1}.svg`" alt="">
 					</div>
 				</div>
