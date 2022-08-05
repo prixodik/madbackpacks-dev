@@ -1,6 +1,6 @@
 <template>
 	<div class="roadmap-block">
-		<div class="roadmap-block__circle">
+		<div class="roadmap-block__circle" @click.prevent="acitveCurrent()">
 			<div class="roadmap-block__circle-decor" :style="`transform: rotate(${rotate}deg)`"></div>
 			<div class="roadmap-block__circle-wrap">
 				<div class="roadmap-block__num">{{ num }}</div>
@@ -10,14 +10,18 @@
 		<div class="roadmap-block__list">
 			<svg class="roadmap-block__decore" width="33" height="109" viewBox="0 0 33 109" fill="none"
 				xmlns="http://www.w3.org/2000/svg">
-				<rect x="2.5" y="2.5" width="28" height="28" stroke="#32B0DA" />
+				<g class="roadmap-block__decore-cube">
+					<rect x="2.5" y="2.5" width="28" height="28" stroke="#32B0DA" />
+					<rect x="28" width="5" height="5" fill="#32B0DA" />
+					<rect width="5" height="5" fill="#32B0DA" />
+					<rect y="28" width="5" height="5" fill="#32B0DA" />
+					<rect x="28" y="28" width="5" height="5" fill="#32B0DA" />
+				</g>
 				<rect x="12.5" y="100.5" width="8" height="8" stroke="#32B0DA" />
 				<line x1="16.5" y1="16" x2="16.5" y2="89" stroke="#32B0DA" />
-				<line x1="16.5" y1="42" x2="16.5" y2="72" stroke="url(#paint0_linear_244_9537)" stroke-width="3" />
-				<rect x="28" width="5" height="5" fill="#32B0DA" />
-				<rect width="5" height="5" fill="#32B0DA" />
-				<rect y="28" width="5" height="5" fill="#32B0DA" />
-				<rect x="28" y="28" width="5" height="5" fill="#32B0DA" />
+				<line class="roadmap-block__decore-line" x1="16.5" y1="42" x2="16.5" y2="72"
+					stroke="url(#paint0_linear_244_9537)" stroke-width="3" />
+
 				<defs>
 					<linearGradient id="paint0_linear_244_9537" x1="16.9996" y1="48.9444" x2="16.9838" y2="62.7955"
 						gradientUnits="userSpaceOnUse">
@@ -39,18 +43,38 @@ export default {
 	props: ['num', 'mounth', 'list', 'rotate'],
 	data() {
 		return {
-
+			//rotateCur
 		};
+	},
+	created() {
+		//this.rotateCur = this.rotate;
 	},
 	components: {},
 	methods: {
-
+		acitveCurrent() {
+			this.$emit('activeBlock');
+		}
 	}
 }
 </script>
 
 <style lang="scss" scroped>
 .roadmap-block {
+	cursor: pointer;
+
+	&__decore {
+		&-line {
+			animation: 4s animRoadMapLine linear infinite;
+			transform-origin: 50% 0;
+			animation-delay: 2s;
+		}
+
+		&-cube {
+			animation: 4s animAboutCube linear infinite;
+			transform-origin: 50% 0;
+		}
+	}
+
 	&__circle {
 		position: relative;
 		margin-bottom: 88px;
@@ -75,6 +99,7 @@ export default {
 			top: 0;
 			left: 0;
 			z-index: 1;
+			transition: all .5s;
 
 			&:before {
 				content: "";
@@ -160,6 +185,20 @@ export default {
 		position: absolute;
 		top: -14px;
 		left: 0;
+	}
+}
+
+@keyframes animRoadMapLine {
+	0% {
+		transform: translateY(0px);
+	}
+
+	50% {
+		transform: translateY(18px);
+	}
+
+	100% {
+		transform: translateY(0px);
 	}
 }
 </style>

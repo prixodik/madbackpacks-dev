@@ -61,9 +61,46 @@ a.btn,
 		pointer-events: none;
 	}
 
+	&--arrow {
+		min-width: 62px;
+		background: url("/images/btn-bg-arrow.svg") 50% 50% / contain no-repeat;
+
+		&:after {
+			display: none;
+		}
+
+		svg {
+			fill: none;
+			stroke: #cefece;
+			transition: all 0.4s;
+			width: 19px;
+			height: 20px;
+		}
+
+		&:hover,
+		&:focus {
+			background: url("/images/btn-bg-arrow-hover.svg") 50% 50% / contain no-repeat;
+
+			svg {
+				fill: #cefece;
+				stroke: none;
+			}
+		}
+	}
+
+	&--next {
+		svg {
+			transform: rotate(180deg);
+		}
+	}
+
 	&--soc {
 		min-width: 62px;
 		background: url("/images/btn-bg-soc.svg") 50% 50% / contain no-repeat;
+
+		&:after {
+			display: none;
+		}
 
 		svg {
 			width: 21px;

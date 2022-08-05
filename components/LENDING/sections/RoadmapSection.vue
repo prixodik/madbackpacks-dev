@@ -1,58 +1,65 @@
 <template>
 	<section class="roadmap-section">
 
-		<Dotteds class="roadmap-section__dotteds" :count="12"></Dotteds>
-
 		<div class="roadmap-section__container container">
 			<div class="roadmap-section__head">
 				<div class="roadmap-section__title" :title="title">{{ title }}</div>
+				<div class="roadmap-section__head-line">
+					<img src="images/roadmap-section-head-bg.svg" alt="">
+				</div>
 				<div class="roadmap-section__arrows">
-					<div class="roadmap-section__arrow swiper-button-prev" slot="button-prev">
+					<div class="roadmap-section__arrow btn btn--arrow" @click.prevent="sliderPrev()">
 						<svg>
 							<use xlink:href="images/sprite-svg.svg#arrow-left"></use>
 						</svg>
 					</div>
-					<div class="roadmap-section__arrow swiper-button-next" slot="button-next">
+					<div class="roadmap-section__arrow btn btn--arrow btn--next" @click.prevent="sliderNext()">
 						<svg>
-							<use xlink:href="images/sprite-svg.svg#arrow-right"></use>
+							<use xlink:href="images/sprite-svg.svg#arrow-left"></use>
 						</svg>
 					</div>
 				</div>
 			</div>
 
 
-			<!-- <Swiper ref="slider" :options="swiperOptions" class="roadmap-section__slider">
-				<SwiperSlide class="roadmap-section__slider-item" v-for="(slide, index) in slides"
-					:key="`slide-${index}`">
-					<RoadmapBlock :num="slide.num" :mounth="slide.mounth" :list="slide.list" :rotate="slide.rotate">
+			<Swiper ref="roadmapSlider" :options="swiperOptions" class="roadmap-section__slider">
+				<SwiperSlide class="roadmap-section__slider-item" :class="{ 'is-active-slide': activeSlide === index }"
+					v-for="(slide, index) in slides" :key="`slide-${index}`">
+					<RoadmapBlock :num="slide.num" :mounth="slide.mounth" :list="slide.list" :rotate="slide.rotate"
+						@activeBlock="goToSlide(index)">
 					</RoadmapBlock>
 				</SwiperSlide>
-			</Swiper> -->
+			</Swiper>
 
 		</div>
 	</section>
 </template>
 <script>
-/* import SwiperClass, { Pagination } from 'swiper';
-import { Swiper, SwiperSlide } from 'vue-awesome-swiper'; */
-//import { Swiper, SwiperSlide } from 'vue-awesome-swiper/dist/exporter'
-/* import VueAwesomeSwiper from 'vue-awesome-swiper/dist/exporter';
-const { Swiper, SwiperSlide } = VueAwesomeSwiper; */
-
 import Dotteds from '../blocks/Dotteds.vue';
 import RoadmapBlock from '../blocks/RoadmapBlock.vue';
 
-import 'swiper/swiper.scss';
+//import 'swiper/swiper.scss';
 
 export default {
 	name: "RoadmapSection",
 	data() {
 		return {
 			title: '_Roadmap',
+			activeSlide: 0,
 			swiperOptions: {
-				spaceBetween: 25,
-				slidesPerView: 1,
-				breakpoints: {
+				spaceBetween: 124,
+				slidesPerView: 3,
+				allowTouchMove: false,
+
+				centerInsufficientSlides: false,
+				centeredSlides: false,
+				centeredSlidesBounds: false,
+
+				slideToClickedSlide: true,
+				passiveListeners: false,
+				focusableElements: '.roadmap-block, input, select, option, textarea, button, video, label',
+
+				/* breakpoints: {
 					320: {
 						slidesPerView: 1,
 						spaceBetween: 10,
@@ -68,11 +75,11 @@ export default {
 						spaceBetween: 25,
 						enabled: true,
 					},
-				},
-				navigation: {
+				}, */
+				/* navigation: {
 					nextEl: '.swiper-button-next',
 					prevEl: '.swiper-button-prev',
-				},
+				}, */
 			},
 
 			slides: [{
@@ -123,11 +130,44 @@ export default {
 			//modules: [Pagination]
 		}
 	},
+	computed: {
+		swiper() {
+			return this.$refs.roadmapSlider.$swiper
+		}
+	},
 	components: {
-		/* VueAwesomeSwiper, */ Dotteds, RoadmapBlock
+		RoadmapBlock
 	},
 	methods: {
+		goToSlide(index) {
+			//console.log(this.swiper);
+			this.swiper.slideTo(index);
+			this.activeSlide = index;
 
+			this.slides.forEach((element) => {
+				element.rotate += 25;
+			});
+		},
+		sliderPrev() {
+			this.swiper.slidePrev();
+			if (this.activeSlide > 0) {
+				this.activeSlide -= 1;
+
+				this.slides.forEach((element) => {
+					element.rotate -= 25;
+				});
+			}
+		},
+		sliderNext() {
+			this.swiper.slideNext();
+			if (this.activeSlide < (this.slides.length - 1)) {
+				this.activeSlide += 1;
+
+				this.slides.forEach((element) => {
+					element.rotate += 25;
+				});
+			}
+		}
 	}
 }
 </script>
@@ -136,27 +176,48 @@ export default {
 .roadmap-section {
 	padding: 75px 0 84px;
 	position: relative;
-	//background: url('/images/tokensusage-section-bg.png') 50% 50% no-repeat #090923;
+	overflow: hidden;
+	background: url('/images/tokensusage-section-bg.png') 50% 50% no-repeat #090923;
 
-	/* &:after {
-		content: "";
-		display: block;
-		width: 100%;
-		height: 4px;
-		background: url('/images/tokensusage-section-line-bottom.svg') 0% 0 no-repeat;
-		position: absolute;
-		bottom: 8px;
-		left: 0;
-	} */
+
 
 	&__container {
 		position: relative;
+		z-index: 1;
+
+		&:after {
+			content: "";
+			position: absolute;
+			width: 417px;
+			height: 410px;
+			left: 130px;
+			top: 270px;
+			z-index: -1;
+
+			background: linear-gradient(119.99deg, #FE37F1 21.9%, #12F3D8 125.17%);
+			opacity: 0.45;
+			filter: blur(104px);
+			opacity: .3;
+			transform: rotate(177.74deg);
+			border-radius: 50%;
+		}
 	}
 
 	&__head {
 		display: flex;
 		margin-bottom: 112px;
 		justify-content: space-between;
+		align-items: center;
+
+		&-line {
+			flex: 1 1 auto;
+
+			img {
+				width: 100%;
+				object-fit: cover;
+				height: 4px;
+			}
+		}
 	}
 
 	&__title {
@@ -165,6 +226,7 @@ export default {
 		font: 700 48px/60px $titleFF;
 		position: relative;
 		margin-bottom: 0;
+		margin-right: 52px;
 
 		&:after {
 			content: attr(title);
@@ -180,31 +242,50 @@ export default {
 		}
 	}
 
+	&__arrows {
+		display: flex;
+		flex-wrap: nowrap;
+	}
+
+	&__arrow {
+		margin-left: 14px;
+	}
+
 	&__slider {
 		display: flex;
 		flex-wrap: nowrap;
 		position: relative;
+		overflow: visible !important;
+		max-width: 1205px;
+		margin: 0 !important;
 
 		&:before {
 			content: "";
 			display: block;
 			right: 0;
-			margin: 0 calc(-50vw + 50%);
+			margin: 0 calc(-50vw + 40%);
 			height: 5px;
 			background: url('/images/roadmap-section-slider-bg.svg') 0 0 repeat-x;
 			position: absolute;
-			top: 409px;
+			top: 407px;
 			left: 0;
 		}
 
 		&-item {
-			flex: 0 0 322px;
-			max-width: 322px;
-			margin-right: 124px;
+			&.swiper-slide {
+				.roadmap-block {
+					opacity: 0.3;
+				}
 
-			&:last-child {
-				margin-right: 0;
+				//&.swiper-slide-active {
+				&.is-active-slide {
+					.roadmap-block {
+						opacity: 1;
+					}
+				}
 			}
+
+
 		}
 	}
 
