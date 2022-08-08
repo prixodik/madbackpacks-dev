@@ -1,0 +1,154 @@
+$title-h1: 700 48px/60px $titleFF;
+$title-h2: 700 48px/60px $titleFF;
+$title-h3: 900 24px/30px $titleFF;
+$title-h4: 17px/1.7 $baseFF; // ?
+$title-h5: 500 16px/1.4 $titleFF; // ?
+$title-h6: 500 14px/1.4 $baseFF; // ?
+
+$title-h1-md: 700 42px/54px $titleFF;
+$title-h2-md: 700 42px/54px $titleFF;
+$title-h3-lg: bold 24px/1.4 $baseFF; // ?
+$title-h4-lg: 600 18px/1.4 $baseFF; // ?
+$title-h5-lg: 600 16px/1.4 $titleFF; // ?
+
+$title-h1-sm: 700 32px/40px $titleFF;
+$title-h2-sm: 700 32px/40px $titleFF;
+$title-h3-sm: 500 16px/1.1 $baseFF; // ?
+$title-h4-sm: 600 18px/1.4 $baseFF; // ?
+$title-h5-sm: 600 16px/1.4 $titleFF; // ?
+
+$title-h1-xs: 700 28px/36px $titleFF;
+$title-h2-xs: 700 28px/36px $titleFF;
+$title-h3-xs: bold 18px/1.4 $baseFF; // ?
+$title-h4-xs: 600 16px/1.4 $baseFF; // ?
+$title-h5-xs: 600 14px/1.4 $titleFF; // ?
+
+$title-color: inherit;
+
+h1,
+.title-h1 {
+	font: $title-h1;
+	//color: $title-color;
+	margin: 0 0 24px 0;
+	letter-spacing: 0.05em;
+	position: relative;
+
+	&:after {
+		content: attr(title);
+		letter-spacing: 0.05em;
+		color: rgba($white, 0.1);
+		filter: blur(4px);
+		font: $title-h1;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		transform: translate(22px, -27px);
+	}
+
+	@media screen and (max-width: $md) {
+		font: $title-h1-md;
+
+		&:after {
+			font: $title-h1-md;
+			transform: translate(15px, -17px);
+		}
+	}
+	@media screen and (max-width: $sm) {
+		font: $title-h1-sm;
+
+		&:after {
+			font: $title-h1-sm;
+
+			transform: translate(10px, -11px);
+		}
+	}
+	@media screen and (max-width: $xs) {
+		font: $title-h1-xs;
+
+		&:after {
+			font: $title-h1-xs;
+
+			//transform: translate(10px, -11px);
+		}
+	}
+}
+h2,
+.title-h2 {
+	font: $title-h2;
+	//color: $title-color;
+	margin: 0 0 24px 0;
+	letter-spacing: 0.05em;
+
+	@media screen and (max-width: $md) {
+		font: $title-h2-md;
+
+		&:after {
+			font: $title-h1-md;
+
+			transform: translate(15px, -17px);
+		}
+	}
+	@media screen and (max-width: $sm) {
+		font: $title-h2-sm;
+
+		&:after {
+			font: $title-h1-sm;
+			transform: translate(10px, -11px);
+		}
+	}
+	@media screen and (max-width: $xs) {
+		font: $title-h2-xs;
+
+		&:after {
+			font: $title-h1-xs;
+			//transform: translate(10px, -11px);
+		}
+	}
+}
+h3,
+.title-h3 {
+	font: $title-h3;
+	//color: $title-color;
+	margin: 0 0 24px 0;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+
+	@media screen and (max-width: $sm) {
+	}
+	@media screen and (max-width: $xs) {
+	}
+}
+h4,
+.title-h4 {
+	font: $title-h4;
+	//color: $title-color;
+	margin: 0 0 16px 0;
+
+	@media screen and (max-width: $sm) {
+	}
+	@media screen and (max-width: $xs) {
+	}
+}
+h5,
+.title-h5 {
+	font: $title-h5;
+	//color: $title-color;
+	margin: 0 0 16px 0;
+
+	@media screen and (max-width: $sm) {
+	}
+	@media screen and (max-width: $xs) {
+	}
+}
+
+.title-h6 {
+	font: $title-h6;
+	//color: $title-color;
+	margin: 0 0 16px 0;
+
+	@media screen and (max-width: $sm) {
+	}
+	@media screen and (max-width: $xs) {
+	}
+}

@@ -8,12 +8,20 @@
 				<div class="first-section__title" v-html="title"></div>
 				<div class="first-section__desc" v-html="desc"></div>
 				<div class="first-section__buttons">
-					<a href="#" @click.prevent="openPopup('popup-join')" class="btn"><span>Join IDO</span></a>
-					<a href="#" @click.prevent="openPopup('popup-telegram')" class="btn btn--soc">
+					<Btn :tag="'a'" :href="'#'" :text="'Join IDO'" @click.prevent.native="openPopup('popup-join')">
+					</Btn>
+
+					<Btn :tag="'a'" :href="'#'" class="btn--soc" @click.prevent.native="openPopup('popup-telegram')">
 						<svg>
 							<use xlink:href="/images/sprite-svg.svg#telegram"></use>
 						</svg>
-					</a>
+					</Btn>
+
+					<!-- <a href="#" @click.prevent="openPopup('popup-telegram')" class="btn btn--soc">
+						<svg>
+							<use xlink:href="/images/sprite-svg.svg#telegram"></use>
+						</svg>
+					</a> -->
 				</div>
 			</div>
 
@@ -54,6 +62,7 @@
 <script>
 import { KinesisContainer, KinesisElement } from 'vue-kinesis';
 import Dotteds from '../blocks/Dotteds.vue';
+import Btn from '../blocks/Btn.vue';
 
 export default {
 	name: "FirstSection",
@@ -63,9 +72,10 @@ export default {
 			desc: 'Explore a whole new world of treasure hunting',
 		};
 	},
-	components: { KinesisContainer, KinesisElement, Dotteds },
+	components: { KinesisContainer, KinesisElement, Dotteds, Btn },
 	methods: {
 		openPopup(id) {
+			console.log(1);
 			this.$emit('openPopup', id);
 		}
 	}
@@ -76,8 +86,21 @@ export default {
 .first-section {
 	min-height: 100vh;
 	position: relative;
+	overflow: hidden;
 	z-index: 1;
 	background: url('/images/first-section-bg.jpg') 50% 100%/cover no-repeat;
+
+	@media screen and (max-width: $md) {
+		min-height: 810px;
+	}
+
+	@media screen and (max-width: $sm) {
+		min-height: 610px;
+	}
+
+	@media screen and (max-width: $xs) {
+		background-size: auto 585px;
+	}
 
 	&__title {
 		padding-top: 47px;
@@ -86,6 +109,29 @@ export default {
 		font: bold 42px/53px $titleFF;
 		letter-spacing: 0.05em;
 		margin-bottom: 38px;
+
+		@media screen and (max-width: $md) {
+			font-size: 34px;
+			line-height: 1.4;
+		}
+
+		@media screen and (max-width: $sm) {
+			font-size: 24px;
+			margin-bottom: 32px;
+		}
+
+		@media screen and (max-width: $xs) {
+			font-size: 22px;
+			margin-bottom: 16px;
+			padding-top: 33px;
+			letter-spacing: 0.05em;
+			line-height: 1.2;
+		}
+
+		@media screen and (max-width: $xxs) {
+			font-size: 20px;
+			letter-spacing: 1px;
+		}
 
 		&:before {
 			content: "";
@@ -107,6 +153,25 @@ export default {
 			text-transform: uppercase;
 			font-size: 48px;
 			line-height: 60px;
+
+			@media screen and (max-width: $md) {
+				font-size: 42px;
+				line-height: 1.4;
+			}
+
+			@media screen and (max-width: $sm) {
+				font-size: 32px;
+			}
+
+			@media screen and (max-width: $xs) {
+				font-size: 28px;
+				letter-spacing: 0.05em;
+			}
+
+			@media screen and (max-width: $xxs) {
+				font-size: 26px;
+				letter-spacing: 1px;
+			}
 		}
 
 		&--red {
@@ -120,8 +185,22 @@ export default {
 
 	&__desc {
 		color: $white;
-		font: 24px $baseFF;
+		font: 24px/1.35 $baseFF;
 		letter-spacing: 0.05em;
+
+		@media screen and (max-width: $md) {
+			font-size: 20px;
+		}
+
+		@media screen and (max-width: $sm) {
+			font-size: 16px;
+			max-width: 240px;
+		}
+
+		@media screen and (max-width: $xs) {
+			font-size: 14px;
+			max-width: 100%;
+		}
 	}
 
 	&__buttons {
@@ -135,6 +214,36 @@ export default {
 				margin-right: 0;
 			}
 		}
+
+		@media screen and (max-width: $sm) {
+			margin-top: 31px;
+
+			.btn {
+				margin-right: 16px;
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+
+		@media screen and (max-width: $xs) {
+			margin-top: 27px;
+
+			.btn {
+				margin-right: 12px;
+				flex: 1 1 auto;
+				min-width: 0;
+
+				&.btn--soc {
+					flex: 0 0 48px;
+				}
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
 	}
 
 	&__container {
@@ -144,6 +253,22 @@ export default {
 		justify-content: center;
 		align-items: stretch;
 		align-content: stretch;
+
+		@media screen and (max-width: $md) {
+			min-height: 810px;
+		}
+
+		@media screen and (max-width: $sm) {
+			min-height: 610px;
+			padding-bottom: 28px;
+		}
+
+		@media screen and (max-width: $xs) {
+			flex-wrap: wrap;
+			flex-direction: row;
+			padding-top: 88px;
+			padding-bottom: 90px;
+		}
 	}
 
 	&__img {
@@ -152,12 +277,53 @@ export default {
 		right: -73px;
 		bottom: 0;
 		width: 60%;
+		//width: 114.1rem;
+
+		@media screen and (max-width: $xlg) {
+			right: -140px;
+		}
+
+		@media screen and (max-width: $lg) {
+			right: -200px;
+			width: 70%;
+		}
+
+		@media screen and (max-width: $md) {
+			right: -150px;
+			width: 75%;
+		}
+
+		@media screen and (max-width: $sm) {
+			right: -90px;
+			width: 75%;
+		}
+
+		@media screen and (max-width: $xs) {
+			position: relative;
+			right: 0;
+			width: 100%;
+			flex: 0 0 100%;
+			height: 380px;
+		}
 
 		&-1 {
 			position: absolute;
 			bottom: 16%;
 			left: 5%;
 			z-index: 6;
+			width: 38.4rem;
+
+			@media screen and (max-width: $sm) {
+				width: 29.5rem;
+				bottom: 27.5%;
+				left: 9%;
+			}
+
+			@media screen and (max-width: $xs) {
+				width: 19rem;
+				bottom: 15.5%;
+				left: -15%;
+			}
 
 			&-shadow {
 				filter: blur(200px);
@@ -174,6 +340,23 @@ export default {
 			left: 45%;
 			z-index: 5;
 			margin: -220px 0 0 -220px;
+			width: 59.5rem;
+
+			@media screen and (max-width: $xlg) {
+				left: 55%;
+			}
+
+			@media screen and (max-width: $sm) {
+				width: 35.5rem;
+				left: 76%;
+				top: 42.5%;
+			}
+
+			@media screen and (max-width: $xs) {
+				width: 26rem;
+				left: 88%;
+				top: 57.5%;
+			}
 
 			&-shadow {
 				filter: blur(200px);
@@ -189,6 +372,19 @@ export default {
 			top: 16%;
 			left: 11%;
 			z-index: 4;
+			width: 20.6rem;
+
+			@media screen and (max-width: $sm) {
+				width: 11rem;
+				top: 4%;
+				left: 19%;
+			}
+
+			@media screen and (max-width: $xs) {
+				width: 9rem;
+				top: -10%;
+				left: -5%;
+			}
 
 			&-circle {
 				position: absolute;
@@ -208,6 +404,19 @@ export default {
 			bottom: 12%;
 			right: 29%;
 			z-index: 3;
+			width: 36.6rem;
+
+			@media screen and (max-width: $sm) {
+				width: 20rem;
+				bottom: 36.5%;
+				right: 19%;
+			}
+
+			@media screen and (max-width: $xs) {
+				width: 13rem;
+				bottom: 25.5%;
+				right: 18%;
+			}
 
 			&-circle {
 				position: absolute;
@@ -227,6 +436,18 @@ export default {
 			top: 26%;
 			left: 31%;
 			z-index: 2;
+
+			@media screen and (max-width: $sm) {
+				width: 10rem;
+				top: 17.5%;
+				left: 41%;
+			}
+
+			@media screen and (max-width: $xs) {
+				width: 7rem;
+				top: 12.5%;
+				left: 31%;
+			}
 		}
 
 		&-6 {
@@ -234,6 +455,14 @@ export default {
 			top: 16%;
 			left: -16%;
 			z-index: 1;
+
+			@media screen and (max-width: $sm) {
+				left: 5%;
+			}
+
+			@media screen and (max-width: $xs) {
+				display: none;
+			}
 		}
 	}
 }

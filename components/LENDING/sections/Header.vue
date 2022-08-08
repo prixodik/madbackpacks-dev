@@ -17,18 +17,32 @@
 				<a href="#" v-scroll-to="'#tokenomics-section'" class="header__menu-item">Tokenomics</a>
 			</div>
 
+			<SocDropdown class="header__soc"></SocDropdown>
+			<a href="#" class="header__burger btn btn--burger" :class="{ 'is-active': mobileMenuShow }"
+				@click.prevent="mobileMenuToggle()">
+				<span></span>
+				<span></span>
+			</a>
+
 		</div>
 	</header>
 </template>
 <script>
+import SocDropdown from '../blocks/SocDropdown.vue';
 
 export default {
 	name: "Header",
 	data() {
 		return {
-
+			mobileMenuShow: false
 		};
 	},
+	components: { SocDropdown },
+	methods: {
+		mobileMenuToggle() {
+			this.mobileMenuShow = !this.mobileMenuShow;
+		}
+	}
 }
 </script>
 
@@ -40,6 +54,15 @@ export default {
 	width: 100%;
 	z-index: 100;
 	padding: 28px 0 0;
+
+	@media screen and (max-width: $sm) {
+		padding: 0;
+	}
+
+	@media screen and (max-width: $xs) {
+		padding: 0;
+		height: 60px;
+	}
 
 	&__container {
 		display: flex;
@@ -60,21 +83,33 @@ export default {
 		flex: 0 0 266px;
 		max-width: 266px;
 		margin-left: -36px;
+
+		@media screen and (max-width: $sm) {
+			flex: 0 0 167px;
+			max-width: 167px;
+			margin-left: -20px;
+		}
+
+		@media screen and (max-width: $xs) {
+			flex: 0 0 162px;
+			max-width: 162px;
+			margin-left: -18px;
+		}
 	}
 
-	/* &__burger {
-		font: bold 20px/24px $advent;
-		letter-spacing: 0.05em;
-		text-transform: uppercase;
-		color: $white;
+	&__burger {
+		display: none !important;
+
+		@media screen and (max-width: $md) {
+			display: flex !important;
+		}
 	}
 
-	&__login {
-		font: bold 20px/24px $advent;
-		letter-spacing: 0.05em;
-		text-transform: uppercase;
-		color: $white;
-	} */
+	&__soc {
+		@media screen and (max-width: $md) {
+			display: none;
+		}
+	}
 
 	&__menu {
 		display: flex;
@@ -82,6 +117,12 @@ export default {
 		letter-spacing: 0.05em;
 		text-transform: uppercase;
 		color: $white;
+		justify-content: flex-end;
+		flex: 1 1 auto;
+
+		@media screen and (max-width: $md) {
+			display: none;
+		}
 
 		&-item {
 			margin-right: 24px;

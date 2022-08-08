@@ -92,7 +92,7 @@ export default {
 	overflow-y: auto;
 	//@include time(0.4s, opacity);
 	transition: left 0s ease 0.5s, opacity 0.1s ease;
-	background: url('/images/popup-bg.png') 50% 50% no-repeat #090923;
+	background: url('/images/popup-bg.png') 50% 50%/cover no-repeat #090923;
 
 	/* &__overflow {
 		position: fixed;
@@ -117,6 +117,10 @@ export default {
 		transition: all .4s;
 		perspective: 1000px;
 		perspective-origin: 50% 50%;
+
+		@media screen and (max-width: $sm) {
+			max-width: 340px;
+		}
 	}
 
 	&__close {
@@ -138,6 +142,17 @@ export default {
 		letter-spacing: 0.05em;
 		text-transform: uppercase;
 
+		@media screen and (max-width: $sm) {
+			top: 30px;
+			right: 30px;
+		}
+
+		@media screen and (max-width: $xs) {
+			span {
+				display: none;
+			}
+		}
+
 
 		svg {
 			width: 24px;
@@ -150,11 +165,12 @@ export default {
 
 	&__title {
 		text-align: center;
-		letter-spacing: 0.05em;
 		color: $white;
-		font: 700 48px/60px $titleFF;
-		position: relative;
 		margin-bottom: 77px;
+
+		@media screen and (max-width: $sm) {
+			margin-bottom: 55px;
+		}
 
 		span {
 			background: linear-gradient(90deg, #32B0DA 23.14%, #D1FECE 46.22%, #69F5DA 69.31%);
@@ -165,22 +181,16 @@ export default {
 		}
 
 		&:after {
-			content: attr(title);
 			text-align: center;
-			letter-spacing: 0.05em;
-			color: rgba($white, 0.1);
-			filter: blur(4px);
-			font: 700 48px/60px $titleFF;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			transform: translate(22px, -27px);
 		}
 	}
 
 	&__input {
 		margin-bottom: 32px;
+
+		@media screen and (max-width: $sm) {
+			margin-bottom: 16px;
+		}
 
 		&:last-child {
 			margin-bottom: 0;
@@ -203,6 +213,10 @@ export default {
 		text-align: center;
 		font: 24px/32px $baseFF;
 		color: $white;
+
+		@media screen and (max-width: $sm) {
+			font: 14px/19px $baseFF;
+		}
 	}
 
 
@@ -228,11 +242,19 @@ export default {
 
 		&__wrapper {
 			max-width: 592px;
+
+			@media screen and (max-width: $sm) {
+				max-width: 400px;
+			}
 		}
 
 		&__form {
 			max-width: 464px;
 			margin: 0 auto;
+
+			@media screen and (max-width: $sm) {
+				max-width: 340px;
+			}
 		}
 
 		&__buttons {
@@ -243,20 +265,40 @@ export default {
 	&--succesfull & {
 		&__wrapper {
 			max-width: 500px;
+
+			@media screen and (max-width: $sm) {
+				max-width: 400px;
+			}
 		}
 
 		&__img {
 			margin-bottom: 41px;
 			display: flex;
 			justify-content: center;
+
+			@media screen and (max-width: $sm) {
+				margin-bottom: 18px;
+
+				img {
+					max-width: 237px;
+				}
+			}
 		}
 
 		&__title {
 			margin-bottom: 37px;
+
+			@media screen and (max-width: $sm) {
+				margin-bottom: 20px;
+			}
 		}
 
 		&__buttons {
 			margin-top: 63px;
+
+			@media screen and (max-width: $sm) {
+				margin-top: 40px;
+			}
 		}
 	}
 

@@ -26,15 +26,25 @@
 		<svg width="0" height="0" fill="none" xmlns="http://www.w3.org/2000/svg"
 			xmlns:xlink="http://www.w3.org/1999/xlink">
 			<defs>
-				<clipPath id="videoSvgPath">
+				<!-- clipPathUnits="objectBoundingBox" -->
+				<clipPath clipPathUnits="objectBoundingBox" id="videoSvgPath">
 					<path
-						d="M0 53.5897C0 47.3009 4.8552 42.0788 11.1274 41.6215L569.127 0.93852C576.08 0.431611 582 5.93564 582 12.9068V372.365C582 379.236 576.243 384.703 569.382 384.35L11.3823 355.587C5.00341 355.258 0 349.99 0 343.603V53.5897Z"
+						d="M0,0.14 C0,0.123,0.008,0.11,0.019,0.109 L0.978,0.002 C0.99,0.001,1,0.015,1,0.034 V0.971 C1,0.989,0.99,1,0.978,1 L0.02,0.927 C0.009,0.926,0,0.913,0,0.896 V0.14"
 						fill="black" fill-opacity="0.36" />
+					<!-- <path
+						d="M0 53.5897C0 47.3009 4.8552 42.0788 11.1274 41.6215L569.127 0.93852C576.08 0.431611 582 5.93564 582 12.9068V372.365C582 379.236 576.243 384.703 569.382 384.35L11.3823 355.587C5.00341 355.258 0 349.99 0 343.603V53.5897Z"
+						fill="black" fill-opacity="0.36" /> -->
 				</clipPath>
 			</defs>
 		</svg>
 
 		<div class="video-block__popup" v-show="videoPopup" @click.prevent="videoPopupHide()">
+			<a href="#" class="video-block__popup-close" @click.prevent="videoPopupHide()">
+				<span>close</span>
+				<svg>
+					<use xlink:href="images/sprite-svg.svg#close"></use>
+				</svg>
+			</a>
 			<video-player class="video-player-box" ref="videoPlayerPopup" :options="playerPopupOptions"
 				:playsinline="true" customEventName="customstatechangedeventname" @play="onPlayerPlay($event)"
 				@pause="onPlayerPause($event)" @ended="onPlayerEnded($event)" @waiting="onPlayerWaiting($event)"
@@ -157,17 +167,45 @@ export default {
 		&-pink {
 			position: absolute;
 			z-index: 2;
-			top: -70px;
-			left: -10px;
+			top: -7rem;
+			left: -1rem;
 			pointer-events: none;
+			width: 51.4rem;
+			height: 44.7rem;
+
+			@media screen and (max-width: $sm) {
+				width: 388px;
+				height: 320px;
+				left: -17px;
+				top: -44px;
+			}
+
+			@media screen and (max-width: $xs) {
+				width: 350px;
+				height: 275px;
+			}
 		}
 
 		&-white {
 			position: absolute;
 			z-index: 3;
-			top: -15px;
-			left: 35px;
+			top: -1.5rem;
+			left: 3.5rem;
 			pointer-events: none;
+			width: 48.1rem;
+			height: 41.2rem;
+
+			@media screen and (max-width: $sm) {
+				width: 320px;
+				height: 276px;
+				left: 25px;
+			}
+
+			@media screen and (max-width: $xs) {
+				width: 276px;
+				top: -28px;
+				left: 17px;
+			}
 		}
 	}
 
@@ -184,8 +222,17 @@ export default {
 
 		img {
 			display: block;
-			margin-left: -32px;
-			margin-top: 12px;
+			margin-left: -3.2rem;
+			margin-top: 1.2rem;
+
+			@media screen and (max-width: $sm) {
+				max-width: 162px;
+			}
+
+			@media screen and (max-width: $xs) {
+				max-width: 140px;
+				margin-left: -24px;
+			}
 		}
 	}
 
@@ -193,18 +240,28 @@ export default {
 		clip-path: url(#videoSvgPath);
 		position: relative;
 		z-index: 1;
-		max-width: 582px;
-		max-height: 385px;
+		max-width: 58.2rem;
+		max-height: 38.5rem;
+
+		@media screen and (max-width: $sm) {
+			max-width: 390px;
+			max-height: 258px;
+		}
+
+		@media screen and (max-width: $xs) {
+			max-width: 330px;
+			max-height: 220px;
+		}
 
 		.video-player-box {
-			transform: scale(3.2) translate(-15px, 0);
+			transform: scale(3.2) translate(-1.5rem, 0);
 			transform-origin: 50% 50%;
 		}
 
 		.video-js,
 		.video-player-box {
 			max-width: 100%;
-			max-height: 385px;
+			max-height: 38.5rem;
 		}
 	}
 
@@ -218,6 +275,35 @@ export default {
 		background: rgba($black, .7);
 		display: flex;
 		justify-content: center;
+
+		&-close {
+			height: 24px;
+			cursor: pointer;
+			position: absolute;
+			top: 47px;
+			z-index: 10;
+			right: 76px;
+			margin: 0;
+			padding: 0;
+			visibility: visible;
+			transition: all .4s;
+			display: flex;
+			justify-content: flex-end;
+			align-items: center;
+			color: $white;
+			font: bold 20px/24px $advent;
+			letter-spacing: 0.05em;
+			text-transform: uppercase;
+
+
+			svg {
+				width: 24px;
+				height: 24px;
+				display: block;
+				fill: $white;
+				margin-left: 10px;
+			}
+		}
 
 		.video-player-box {
 			height: 100vh;

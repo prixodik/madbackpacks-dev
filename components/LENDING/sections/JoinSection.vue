@@ -1,7 +1,8 @@
 <template>
 	<section class="join-section" id="join-section">
 		<div class="join-section__container container">
-			<form action="#" @submit.prevent="checkFormTelegram" method="post" novalidate="true">
+			<form class="join-section__form" action="#" @submit.prevent="checkFormTelegram" method="post"
+				novalidate="true">
 
 				<div class="join-section__title">
 					<span v-html="title"></span>
@@ -14,7 +15,8 @@
 					<div class="join-section__error" v-if="errors.telegram">{{ errors.telegram }}</div>
 				</div>
 				<div class="join-section__buttons">
-					<button class="btn" type="submit">{{ btnText }}</button>
+					<!-- <button class="btn" type="submit">{{ btnText }}</button> -->
+					<Btn :tag="'button'" :text="btnText"></Btn>
 				</div>
 			</form>
 
@@ -42,6 +44,7 @@
 <script>
 import { KinesisContainer, KinesisElement } from 'vue-kinesis';
 import Dotteds from '../blocks/Dotteds.vue';
+import Btn from '../blocks/Btn.vue';
 
 export default {
 	name: "JoinSection",
@@ -55,7 +58,7 @@ export default {
 
 		};
 	},
-	components: { KinesisContainer, KinesisElement, Dotteds },
+	components: { KinesisContainer, KinesisElement, Dotteds, Btn },
 	methods: {
 		sendForm() {
 			this.popupShow('popup-succesfull');
@@ -89,6 +92,15 @@ export default {
 	background: linear-gradient(92.49deg, #121244 1.75%, rgba(18, 18, 68, 0) 87.53%);
 	padding: 70px 0 84px;
 	position: relative;
+	//overflow: hidden;
+
+	@media screen and (max-width: $sm) {
+		padding: 82px 0 76px;
+	}
+
+	@media screen and (max-width: $xs) {
+		padding: 60px 0;
+	}
 
 	&:before {
 		content: "";
@@ -103,10 +115,24 @@ export default {
 
 	&__container {
 		display: flex;
+
+		@media screen and (max-width: $xs) {
+			flex-wrap: wrap;
+		}
 	}
 
 	&__form {
 		flex: 0 0 50%;
+
+		@media screen and (max-width: $sm) {
+			flex: 0 0 340px;
+			max-width: 340px;
+		}
+
+		@media screen and (max-width: $xs) {
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
 	}
 
 	&__title {
@@ -143,11 +169,46 @@ export default {
 			text-fill-color: transparent;
 			opacity: 0.1;
 		}
+
+		@media screen and (max-width: $md) {
+			font: 700 40px/50px $titleFF;
+
+			&-shadow {
+				font: 700 40px/50px $titleFF;
+
+				//left: 15px;
+			}
+		}
+
+		@media screen and (max-width: $sm) {
+			font: 700 28px/28px $titleFF;
+			padding-top: 28px;
+			margin-bottom: 24px;
+
+			&-shadow {
+				display: none;
+			}
+		}
+
+		@media screen and (max-width: $xs) {
+			font: 700 28px/28px $titleFF;
+
+			/* &-shadow {
+				font: 700 28px/36px $titleFF;
+
+				//transform: translate(10px, -11px);
+			} */
+		}
 	}
 
 	&__input {
 		max-width: 464px;
 		margin-bottom: 46px;
+
+		@media screen and (max-width: $sm) {
+			margin-bottom: 15px;
+			max-width: 335px;
+		}
 	}
 
 	&__error {
@@ -169,6 +230,33 @@ export default {
 			top: 31px;
 			left: 300px;
 		}
+
+		@media screen and (max-width: $sm) {
+			.btn {
+				width: 100%;
+				max-width: 335px;
+			}
+
+			&:after {
+				display: none;
+			}
+		}
+
+		@media screen and (max-width: $xs) {
+			.btn {
+				width: 100%;
+				max-width: 202px;
+				min-width: 202px;
+			}
+
+			&:after {
+				display: block;
+				top: 24px;
+				width: 120px;
+				height: 10px;
+				left: 230px;
+			}
+		}
 	}
 
 	&__img {
@@ -178,14 +266,40 @@ export default {
 		flex: 0 0 50%;
 		max-width: 50%;
 
+		@media screen and (max-width: $sm) {
+			flex: 1 1 auto;
+			max-width: 70%;
+		}
+
+		@media screen and (max-width: $xs) {
+			flex: 0 0 100%;
+			max-width: 100%;
+			height: 166px;
+		}
+
 		&-1 {
 			position: absolute;
 			top: 50%;
 			left: 50%;
 			z-index: 1;
-			width: 624px;
-			height: 624px;
-			margin: -254px 0 0 -346px;
+			width: 62.4rem;
+			height: 62.4rem;
+			margin: -25.4rem 0 0 -34.6rem;
+
+			@media screen and (max-width: $sm) {
+				width: 370px;
+				/* height: 144px; */
+				height: auto;
+				margin: -142px 0 0 -162px;
+			}
+
+			@media screen and (max-width: $xs) {
+				width: 290px;
+				/* height: 144px; */
+				height: auto;
+				margin: -57px 0 0 -120px;
+				transform: none !important;
+			}
 		}
 
 		&-2 {
@@ -195,14 +309,38 @@ export default {
 			z-index: 2;
 			/* width: 202px;
 			height: 202px; */
+			width: 22.4rem;
+
+			@media screen and (max-width: $md) {
+				left: -12%;
+			}
+
+			@media screen and (max-width: $sm) {
+				width: 109px;
+				left: 4%;
+			}
+
+			@media screen and (max-width: $xs) {
+				width: 109px;
+				left: 0%;
+				top: 33%;
+				transform: none !important;
+			}
 
 			&-circle {
 				position: absolute;
 				top: 7%;
 				left: 0;
 				z-index: -1;
+				width: 20rem;
 				animation: 3s joinCircleScale2 linear infinite;
 				transform-origin: 50% 50%;
+
+				@media screen and (max-width: $sm) {
+					width: 109px;
+					top: 5px;
+					left: -6px;
+				}
 			}
 		}
 
@@ -211,8 +349,22 @@ export default {
 			top: -20%;
 			left: 52%;
 			z-index: 3;
+			width: 25.3rem;
 			/* width: 202px;
 			height: 202px; */
+
+			@media screen and (max-width: $sm) {
+				width: 135px;
+				left: 62%;
+				top: -12%;
+			}
+
+			@media screen and (max-width: $xs) {
+				width: 116px;
+				left: 59%;
+				top: 7%;
+				transform: none !important;
+			}
 
 			&-circle {
 				position: absolute;
@@ -220,22 +372,69 @@ export default {
 				left: -6px;
 				z-index: -1;
 				max-width: none;
+				width: 27.5rem;
 				animation: 3s joinCircleScale linear infinite;
 				transform-origin: 50% 50%;
+
+				@media screen and (max-width: $sm) {
+					width: 135px;
+					left: 0;
+					top: 0;
+				}
+
+				@media screen and (max-width: $xs) {
+					width: 116px;
+					left: 0;
+					top: 0;
+				}
 			}
 		}
 	}
 
 	&--2 & {
 		&__img {
+			&-1 {
+				@media screen and (max-width: $xs) {
+					margin-left: -156px;
+				}
+			}
+
 			&-2 {
 				top: -22%;
 				left: 65%;
+
+				@media screen and (max-width: $md) {
+					top: -16%;
+					left: 71%;
+				}
+
+				@media screen and (max-width: $xs) {
+					top: 10%;
+					left: 67%;
+				}
 			}
 
 			&-3 {
 				top: 41%;
 				left: -12%;
+
+				@media screen and (max-width: $md) {
+					top: -11%;
+					left: 0%;
+					width: 100px;
+
+					&-circle {
+						width: 100%;
+						top: 0;
+						left: 0;
+					}
+				}
+
+				@media screen and (max-width: $xs) {
+					top: 18%;
+					left: 0%;
+					width: 82px;
+				}
 			}
 		}
 	}

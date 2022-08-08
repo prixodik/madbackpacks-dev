@@ -1,3 +1,24 @@
+@media (min-width: 2000px) {
+	html {
+		font-size: 10px !important;
+	}
+}
+@media (min-width: 1024px) and (max-width: 2000px) {
+	html {
+		font-size: calc(8px + 2 * (100vw - 1024px) / 1016) !important;
+	}
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+	html {
+		font-size: 8.5px !important;
+	}
+}
+@media (max-width: 767px) {
+	html {
+		font-size: 10px !important;
+	}
+}
+
 html {
 	height: 100%;
 	/* overflow-x: hidden; */
@@ -8,7 +29,7 @@ body {
 	font: 400 16px/20px $baseFF;
 	min-height: 100%;
 	position: relative;
-	//overflow-x: hidden;
+	overflow-x: hidden;
 	background-color: #090923;
 	//overflow-x: hidden;
 	//overflow-y: auto;
@@ -82,8 +103,12 @@ a:hover {
 	margin-right: auto;
 
 	@media screen and (max-width: $md) {
-		padding-left: 10px;
-		padding-right: 10px;
+		padding-left: 15px;
+		padding-right: 15px;
+	}
+
+	@media screen and (max-width: $sm) {
+		max-width: 804px;
 	}
 	// @include media($sm) {
 	// 	max-width: 730px;

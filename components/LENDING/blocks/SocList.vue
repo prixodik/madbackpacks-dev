@@ -54,6 +54,14 @@ export default {
 	&__item {
 		margin-right: 30px;
 
+		@media screen and (max-width: $sm) {
+			margin-right: 56px;
+		}
+
+		@media screen and (max-width: $xs) {
+			margin-right: 38px;
+		}
+
 		&:last-child {
 			margin-right: 0;
 		}
@@ -70,6 +78,26 @@ export default {
 				width: 21px;
 				height: 21px;
 				transition: all .3s;
+			}
+
+			@media screen and (max-width: $sm) {
+				width: 32px;
+				height: 32px;
+
+				svg {
+					width: 32px;
+					height: 32px;
+				}
+			}
+
+			@media screen and (max-width: $xs) {
+				width: 27px;
+				height: 27px;
+
+				svg {
+					width: 27px;
+					height: 27px;
+				}
 			}
 
 			&:hover {

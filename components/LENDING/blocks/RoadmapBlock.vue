@@ -77,7 +77,13 @@ export default {
 
 	&__circle {
 		position: relative;
-		margin-bottom: 88px;
+		margin-bottom: 56px;
+		left: -38px;
+
+		@media screen and (max-width: $sm) {
+			left: -16px;
+			margin-bottom: -30px;
+		}
 
 		&-wrap {
 			display: flex;
@@ -112,6 +118,11 @@ export default {
 				transform: translate(-50%, -50%);
 				background: url('/images/roadmap-block-circle.svg') 0 0/contain no-repeat;
 				z-index: -1;
+
+				@media screen and (max-width: $sm) {
+					width: 256px;
+					height: 256px;
+				}
 			}
 
 			&:after {
@@ -126,6 +137,11 @@ export default {
 				transform-origin: 50% 50%;
 				background: url('/images/roadmap-block-circle-decor.svg') 0 0/contain no-repeat;
 				z-index: -1;
+
+				@media screen and (max-width: $sm) {
+					width: 230px;
+					height: 260px;
+				}
 			}
 
 		}
@@ -147,6 +163,10 @@ export default {
 		-webkit-text-fill-color: transparent;
 		background-clip: text;
 		text-fill-color: transparent;
+
+		@media screen and (max-width: $sm) {
+			font-size: 42px;
+		}
 	}
 
 	&__mounth {
@@ -154,6 +174,10 @@ export default {
 		letter-spacing: 0.05em;
 		text-align: center;
 		color: #FFFFFF;
+
+		@media screen and (max-width: $sm) {
+			font-size: 22px;
+		}
 	}
 
 	&__list {
@@ -163,9 +187,21 @@ export default {
 		letter-spacing: 0.05em;
 		color: $white;
 
+		@media screen and (max-width: $sm) {
+			line-height: 28px;
+		}
+
+		@media screen and (max-width: $xs) {
+			padding: 53px 0 0 48px;
+		}
+
 		&-item {
 			position: relative;
 			padding-left: 24px;
+
+			@media screen and (max-width: $xs) {
+				margin-bottom: 7px;
+			}
 
 			&:before {
 				content: "";
@@ -183,8 +219,18 @@ export default {
 
 	&__decore {
 		position: absolute;
-		top: -14px;
+		top: -17px;
 		left: 0;
+
+		@media screen and (max-width: $sm) {
+			width: 22px;
+			top: 0;
+		}
+
+		@media screen and (max-width: $xs) {
+			top: 30px;
+			left: 20px;
+		}
 	}
 }
 

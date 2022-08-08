@@ -35,8 +35,14 @@ export default {
 .token-block {
 	max-width: 340px;
 
+	@media screen and (max-width: $xs) {
+		max-width: 220px;
+		margin: 0 auto;
+	}
+
 	&__img {
 		margin-bottom: 8px;
+		transition: all 0.3s;
 	}
 
 	&__title {
@@ -50,29 +56,39 @@ export default {
 		position: relative;
 		margin-bottom: 27px;
 		text-align: center;
+		transition: all 0.3s;
 
-		/* &:after {
-			content: "";
-			display: block;
-			width: 100%;
-			height: 4px;
-			background: url('/images/token-block-title-bg.png') 0 0 no-repeat;
-			position: absolute;
-			bottom: 0;
-			left: 0;
+		@media screen and (max-width: $md) {
+			font-size: 30px;
+		}
 
-		} */
+		@media screen and (max-width: $sm) {
+			font-size: 40px;
+			line-height: 50px;
+			font-weight: 900;
+		}
 	}
 
 	&__params {
 		display: flex;
 		justify-content: center;
-		margin: 0 -16px;
+		//margin: 0 -16px;
+		transition: all 0.3s;
+
+		@media screen and (max-width: $xs) {
+			margin-top: -20px;
+			margin-bottom: -20px;
+		}
 
 		&-item {
 			flex: 0 0 117px;
 			max-width: 117px;
-			padding: 0 16px;
+			//padding: 0 16px;
+
+			@media screen and (max-width: $md) {
+				flex: 0 0 100px;
+				max-width: 100px;
+			}
 		}
 	}
 

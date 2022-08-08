@@ -137,6 +137,7 @@ export default {
 	position: relative;
 	z-index: 1;
 	width: 322px;
+	max-width: 100%;
 
 	&__icon {
 		position: absolute;

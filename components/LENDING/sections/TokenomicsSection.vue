@@ -4,7 +4,7 @@
 		<Dotteds class="tokenomics-section__dotteds" :count="12"></Dotteds>
 
 		<div class="tokenomics-section__container container">
-			<div class="tokenomics-section__title" :title="title">{{ title }}</div>
+			<div class="tokenomics-section__title title-h1" :title="title">{{ title }}</div>
 
 			<div class="tokenomics-section__row">
 				<div class="tokenomics-section__left">
@@ -25,9 +25,10 @@
 						<img class="tokenomics-section__img-1" src="images/tokenomics-section-img-1.png" alt="">
 						<img class="tokenomics-section__img-2" src="images/tokenomics-section-img-2.svg" alt="">
 						<!-- <img class="tokenomics-section__img-lines" src="images/tokenomics-section-img-lines.svg" alt=""> -->
-
-						<svg class="tokenomics-section__img-lines" :class="{ 'is-animated': animatedLines }" width="574"
-							height="574" viewBox="0 0 574 574" fill="none" xmlns="http://www.w3.org/2000/svg">
+						<!-- width="574"
+							height="574" -->
+						<svg class="tokenomics-section__img-lines" :class="{ 'is-animated': animatedLines }"
+							viewBox="0 0 574 574" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path
 								d="M562 287C562 250.887 554.887 215.127 541.067 181.762C527.247 148.398 506.99 118.082 481.454 92.5457C455.918 67.0096 425.602 46.7533 392.238 32.9332C358.873 19.1132 323.113 12.0001 287 12.0001"
 								stroke="url(#paint0_linear_244_9355)" stroke-width="24" />
@@ -168,6 +169,14 @@ export default {
 	position: relative;
 	background: url('/images/tokensusage-section-bg.png') 50% 50% no-repeat #090923;
 
+	@media screen and (max-width: $sm) {
+		padding: 56px 0;
+	}
+
+	@media screen and (max-width: $xs) {
+		padding: 69px 0;
+	}
+
 	&:after {
 		content: "";
 		display: block;
@@ -181,31 +190,28 @@ export default {
 
 	&__container {
 		position: relative;
+	}
 
-
+	&__dotteds {
+		z-index: 0;
 	}
 
 	&__title {
 		text-align: center;
-		letter-spacing: 0.05em;
 		color: $white;
-		font: 700 48px/60px $titleFF;
-		position: relative;
 		margin-bottom: 21px;
 		margin-left: -52px;
 
+		@media screen and (max-width: $sm) {
+			margin-left: 38px;
+		}
+
+		@media screen and (max-width: $xs) {
+			margin-left: 0;
+		}
+
 		&:after {
-			content: attr(title);
 			text-align: center;
-			letter-spacing: 0.05em;
-			color: rgba($white, 0.1);
-			filter: blur(4px);
-			font: 700 48px/60px $titleFF;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			transform: translate(33px, -27px);
 		}
 	}
 
@@ -215,13 +221,21 @@ export default {
 		display: inline-block;
 		margin: 0 auto;
 
+		@media screen and (max-width: $sm) {
+			margin-right: -40px;
+		}
+
+		@media screen and (max-width: $xs) {
+			margin: 0 -22px;
+		}
+
 		&:after {
 			content: "";
 			position: absolute;
-			width: 463px;
-			height: 455px;
-			left: 340px;
-			top: 250px;
+			width: 46.3rem;
+			height: 45.5rem;
+			left: 34rem;
+			top: 25rem;
 			z-index: -1;
 			border-radius: 50%;
 
@@ -243,12 +257,28 @@ export default {
 			left: 50%;
 			z-index: 0;
 			transform: translate(-50%, -50%);
+
+			@media screen and (max-width: $xs) {
+				max-width: 260px;
+			}
 		}
 
 		&-3 {
 			position: absolute;
 			top: 5%;
 			left: 6%;
+
+			@media screen and (max-width: $sm) {
+				width: 64px;
+				top: 5px;
+				left: 51px;
+			}
+
+			@media screen and (max-width: $xs) {
+				width: 50px;
+				top: -6px;
+				left: 34px;
+			}
 
 			&-circle {
 				position: absolute;
@@ -257,6 +287,11 @@ export default {
 				animation: 3s dinoCircleScale linear infinite;
 				transform-origin: 0% 0%;
 				max-width: none;
+
+				@media screen and (max-width: $xs) {
+					width: 90px;
+					margin-top: -3px;
+				}
 			}
 		}
 
@@ -265,6 +300,18 @@ export default {
 			bottom: -10%;
 			right: 5%;
 
+			@media screen and (max-width: $sm) {
+				width: 138px;
+				bottom: -6px;
+				right: 31px;
+			}
+
+			@media screen and (max-width: $xs) {
+				width: 120px;
+				bottom: -3px;
+				right: 31px;
+			}
+
 			&-circle {
 				position: absolute;
 				top: 50%;
@@ -272,6 +319,10 @@ export default {
 				animation: 3s dinoCircleScale linear infinite;
 				transform-origin: 0% 0%;
 				max-width: none;
+
+				@media screen and (max-width: $xs) {
+					width: 92px;
+				}
 			}
 		}
 
@@ -281,6 +332,15 @@ export default {
 			left: 50%;
 			z-index: 3;
 			transform: translate(-50%, -50%);
+			width: 57.4rem;
+
+			@media screen and (max-width: $md) {
+				width: 66.4rem;
+			}
+
+			@media screen and (max-width: $md) {
+				width: 70%;
+			}
 
 			path {
 				stroke-dasharray: 1000;
@@ -300,6 +360,16 @@ export default {
 			left: 50%;
 			z-index: 4;
 			margin: -112px 0 0 -305px;
+
+			@media screen and (max-width: $sm) {
+				width: 343px;
+				transform: translate(-50%, -50%) !important;
+				margin: 0;
+			}
+
+			@media screen and (max-width: $xs) {
+				width: 293px;
+			}
 		}
 	}
 
@@ -307,20 +377,77 @@ export default {
 		display: flex;
 		justify-content: center;
 		position: relative;
+
+		@media screen and (max-width: $sm) {
+			flex-wrap: wrap;
+			justify-content: space-between;
+			align-items: center;
+		}
 	}
 
 	&__left {
 		position: absolute;
 		top: 26px;
 		left: 0;
+
+		@media screen and (max-width: $md) {
+			top: 50%;
+			transform: translateY(-50%);
+		}
+
+		@media screen and (max-width: $sm) {
+			position: static;
+			transform: none;
+			flex: 1 0 calc(100% - 410px);
+			max-width: calc(100% - 410px);
+			display: flex;
+			flex-wrap: wrap;
+			padding-left: 42px;
+		}
+
+		@media screen and (max-width: $xs) {
+			flex: 0 0 100%;
+			max-width: 100%;
+			padding-left: 24px;
+		}
 	}
 
-	&__body {}
+	&__body {
+
+		@media screen and (max-width: $md) {
+			transform: scale(0.6);
+		}
+
+		@media screen and (max-width: $sm) {
+			transform: scale(1);
+			flex: 0 0 410px;
+			max-width: 410px;
+		}
+
+		@media screen and (max-width: $xs) {
+			order: -1;
+			flex: 0 0 100%;
+			max-width: 100%;
+		}
+	}
 
 	&__procent {
 		display: flex;
 		margin-bottom: 40px;
 		position: relative;
+
+		@media screen and (max-width: $md) {
+			margin-bottom: 30px;
+		}
+
+		@media screen and (max-width: $sm) {
+			flex: 0 0 50%;
+			max-width: 50%;
+			margin-bottom: 23px;
+			position: relative;
+			padding: 7px 7px 0 7px;
+			z-index: 1;
+		}
 
 		&:last-child {
 			margin-bottom: 0;
@@ -331,6 +458,16 @@ export default {
 			height: 20px;
 			flex: 0 0 20px;
 			margin-right: 18px;
+
+			@media screen and (max-width: $sm) {
+				margin: 0;
+				position: absolute;
+				top: 0;
+				z-index: -1;
+				left: 0;
+				opacity: 0.7;
+				border-radius: 1px;
+			}
 		}
 
 		&-value {
@@ -339,11 +476,25 @@ export default {
 			letter-spacing: 0.05em;
 			text-transform: uppercase;
 			margin-bottom: 7px;
+
+			@media screen and (max-width: $md) {
+				font-size: 18px;
+				line-height: 23px;
+			}
+
+			@media screen and (max-width: $sm) {
+				margin-bottom: 0;
+			}
 		}
 
 		&-label {
 			font: 500 20px/1.6 $baseFF;
 			color: #CECCD6;
+
+			@media screen and (max-width: $md) {
+				font-size: 16px;
+				line-height: 1.3;
+			}
 		}
 
 		&-line {
@@ -351,6 +502,10 @@ export default {
 			top: calc(100% + 9px);
 			left: 37px;
 			max-width: none;
+
+			@media screen and (max-width: $sm) {
+				display: none;
+			}
 
 			&--5,
 			&--6,
@@ -368,11 +523,42 @@ export default {
 		padding: 33px 0 26px;
 		max-width: 285px;
 
+		@media screen and (max-width: $lg) {
+			right: 0;
+			transform: translateY(calc(-50% + 0px));
+		}
+
+		@media screen and (max-width: $sm) {
+			position: relative;
+			top: auto;
+			right: auto;
+			transform: none;
+			flex: 0 0 313px;
+			max-width: 313px;
+			padding-left: 46px;
+			margin-top: -40px;
+			padding-bottom: 16px;
+		}
+
+		@media screen and (max-width: $xs) {
+			margin-top: 15px;
+			flex: 0 0 100%;
+			max-width: 100%;
+			padding-left: 28px;
+			padding-top: 37px;
+			padding-bottom: 6px;
+		}
+
 		&-lt {
 			position: absolute;
 			top: 0;
 			right: 34px;
 			max-width: none;
+
+			@media screen and (max-width: $xs) {
+				right: auto;
+				left: -50px;
+			}
 		}
 
 		&-lb {
@@ -380,11 +566,24 @@ export default {
 			bottom: 0;
 			right: 34px;
 			max-width: none;
+
+			@media screen and (max-width: $xs) {
+				right: auto;
+				left: -50px;
+			}
 		}
 	}
 
 	&__param {
 		margin-bottom: 9px;
+
+		@media screen and (max-width: $sm) {
+			margin-bottom: 10px;
+		}
+
+		@media screen and (max-width: $xs) {
+			margin-bottom: 20px;
+		}
 
 		&-label {
 			font: 900 20px/25px $titleFF;
@@ -392,11 +591,29 @@ export default {
 			letter-spacing: 0.05em;
 			text-transform: uppercase;
 			margin-bottom: 4px;
+
+			@media screen and (max-width: $md) {
+				font-size: 18px;
+			}
+
+			@media screen and (max-width: $xs) {
+				font-size: 18px;
+				line-height: 23px;
+			}
 		}
 
 		&-value {
 			font: 500 24px/1.6 $baseFF;
 			color: #12F3D8;
+
+			@media screen and (max-width: $md) {
+				font-size: 22px;
+			}
+
+			@media screen and (max-width: $xs) {
+				font-size: 22px;
+				line-height: 1.3;
+			}
 		}
 	}
 }

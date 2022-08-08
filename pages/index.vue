@@ -18,7 +18,7 @@
 
 		<Popup class="popup--join" id="popup-join" v-bind:isActive="popupActive" v-bind:showId="popupActiveId"
 			v-on:closePopup="popupHide()">
-			<div class="popup__title" title="_Join IDO">_Join IDO</div>
+			<div class="popup__title title-h1" title="_Join IDO">_Join IDO</div>
 			<form class="popup__form" action="#" @submit.prevent="checkForm" method="post" novalidate="true">
 				<div class="popup__input">
 					<input type="text" name="name" id="name" v-model="orderName" class="form-control"
@@ -36,14 +36,15 @@
 					<div class="popup__error" v-if="errors.telegram">{{ errors.telegram }}</div>
 				</div>
 				<div class="popup__buttons">
-					<button class="btn" type="submit">JOIN</button>
+					<Btn :tag="'button'" :text="'JOIN'"></Btn>
 				</div>
 			</form>
 		</Popup>
 
 		<Popup class="popup--telegram" id="popup-telegram" v-bind:isActive="popupActive" v-bind:showId="popupActiveId"
 			v-on:closePopup="popupHide()">
-			<div class="popup__title" title="Join our newsletter to stay in the loop!"><span>Join our</span> newsletter
+			<div class="popup__title title-h1" title="Join our newsletter to stay in the loop!"><span>Join our</span>
+				newsletter
 				<br>to stay
 				in the loop!
 			</div>
@@ -54,7 +55,7 @@
 					<div class="popup__error" v-if="errors.telegram">{{ errors.telegram }}</div>
 				</div>
 				<div class="popup__buttons">
-					<button class="btn" type="submit">Let's go</button>
+					<Btn :tag="'button'" :text="`Let's go`"></Btn>
 				</div>
 			</form>
 		</Popup>
@@ -64,10 +65,10 @@
 			<div class="popup__img">
 				<img src="images/popup-succesfull-img.png" alt="">
 			</div>
-			<div class="popup__title" title="_Succesfull">_Succesfull</div>
+			<div class="popup__title title-h1" title="_Succesfull">_Succesfull</div>
 			<div class="popup__desc">Your request has been sent successfully</div>
 			<div class="popup__buttons">
-				<a href="#" @click.prevent="popupHide()" class="btn">ok</a>
+				<Btn :tag="'a'" :text="'ok'" @click.prevent.native="popupHide()"></Btn>
 			</div>
 		</Popup>
 
@@ -76,12 +77,14 @@
 			<div class="popup__img">
 				<img src="images/popup-ooops-img.png" alt="">
 			</div>
-			<div class="popup__title" title="_Ooops">_Ooops</div>
+			<div class="popup__title title-h1" title="_Ooops">_Ooops</div>
 			<div class="popup__desc">You have already registered successfully</div>
 			<div class="popup__buttons">
-				<a href="#" @click.prevent="popupHide()" class="btn">ok</a>
+				<Btn :tag="'a'" :text="'ok'" @click.prevent.native="popupHide()"></Btn>
 			</div>
 		</Popup>
+
+		<SpriteBtn></SpriteBtn>
 	</div>
 </template>
 
@@ -99,6 +102,8 @@ import TeamsSection from '../components/LENDING/sections/TeamsSection.vue';
 import Footer from '../components/LENDING/sections/Footer.vue';
 import RoadmapSection from '../components/LENDING/sections/RoadmapSection.vue';
 import Popup from '../components/LENDING/blocks/Popup.vue';
+import SpriteBtn from '../components/LENDING/blocks/SpriteBtn.vue';
+import Btn from '../components/LENDING/blocks/Btn.vue';
 
 export default {
 	name: "IndexPage",
@@ -131,15 +136,19 @@ export default {
 			TokenomicsSectionPosition: false,
 		};
 	},
-	components: { TokensUsageSection, Header, AboutSection, FirstSection, JoinSection, DinoSection, BackpacksSection, TokenomicsSection, PartnersSection, TeamsSection, Footer, RoadmapSection, Popup },
+	components: { TokensUsageSection, Header, AboutSection, FirstSection, JoinSection, DinoSection, BackpacksSection, TokenomicsSection, PartnersSection, TeamsSection, Footer, RoadmapSection, Popup, SpriteBtn, Btn },
 	mounted() {
 		this.wh = window.innerHeight;
 
 		let bs = document.querySelector('.backpacks-section');
-		this.BackpacksSectionPosition = bs.offsetTop;
+		if (bs !== null) {
+			this.BackpacksSectionPosition = bs.offsetTop;
+		}
 
 		let ts = document.querySelector('.tokenomics-section');
-		this.TokenomicsSectionPosition = ts.offsetTop;
+		if (ts !== null) {
+			this.TokenomicsSectionPosition = ts.offsetTop;
+		}
 	},
 	methods: {
 		popupShow(id) {

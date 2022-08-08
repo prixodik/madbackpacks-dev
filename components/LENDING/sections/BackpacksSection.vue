@@ -4,8 +4,8 @@
 		<Dotteds class="backpacks-section__dotteds" :count="15"></Dotteds>
 
 		<div class="backpacks-section__container container">
-			<div class="backpacks-section__title" :title="title">{{ title }}</div>
-			<div class="backpacks-section__desc">{{ desc }}</div>
+			<div class="backpacks-section__title title-h1" :title="title">{{ title }}</div>
+			<!-- <div class="backpacks-section__desc">{{ desc }}</div> -->
 
 			<div class="backpacks-section__row">
 				<div class="backpacks-section__col">
@@ -20,6 +20,9 @@
 				</div>
 				<div class="backpacks-section__col">
 					<VideoBlock class="backpacks-section__video" ref="VideoBlock"></VideoBlock>
+					<div class="backpacks-section__img-xs">
+						<img src="images/backpacks-section-img-xs.png" alt="">
+					</div>
 				</div>
 			</div>
 
@@ -106,7 +109,7 @@ export default {
 	data() {
 		return {
 			title: '_Backpacks',
-			desc: 'As for today, projects are limited to:',
+			//desc: 'As for today, projects are limited to:',
 			paramsTitle: ['Traits', 'Description', 'Upgrade'],
 			params: [{
 				label: 'Capacity',
@@ -138,6 +141,14 @@ export default {
 	position: relative;
 	background: url('/images/backpacks-section-bg.png') 50% 100% no-repeat;
 
+	@media screen and (max-width: $sm) {
+		padding-top: 60px;
+	}
+
+	@media screen and (max-width: $xs) {
+		padding-top: 76px;
+	}
+
 	&:before {
 		content: "";
 		display: block;
@@ -168,17 +179,27 @@ export default {
 
 	&__title {
 		text-align: center;
-		letter-spacing: 0.05em;
+		/* letter-spacing: 0.05em;
 		color: $white;
 		font: 700 48px/60px $titleFF;
-		position: relative;
-		margin-bottom: 24px;
+		position: relative; */
+		margin-bottom: 60px;
 		margin-left: -52px;
 
+		@media screen and (max-width: $sm) {
+			margin-left: 40px;
+			margin-bottom: 145px;
+		}
+
+		@media screen and (max-width: $xs) {
+			margin-left: 0;
+			margin-bottom: 105px;
+		}
+
 		&:after {
-			content: attr(title);
+			//content: attr(title);
 			text-align: center;
-			letter-spacing: 0.05em;
+			/* letter-spacing: 0.05em;
 			color: rgba($white, 0.1);
 			filter: blur(4px);
 			font: 700 48px/60px $titleFF;
@@ -186,7 +207,7 @@ export default {
 			top: 0;
 			left: 0;
 			width: 100%;
-			transform: translate(33px, -27px);
+			transform: translate(33px, -27px); */
 		}
 	}
 
@@ -210,6 +231,33 @@ export default {
 		max-width: 50%;
 		display: flex;
 		justify-content: center;
+
+		@media screen and (max-width: $sm) {
+			&:nth-of-type(1) {
+				flex: 1 1 auto;
+				max-width: none;
+			}
+
+			&:nth-of-type(2) {
+				flex: 0 0 400px;
+				max-width: 400px;
+			}
+		}
+
+		@media screen and (max-width: $xs) {
+			flex: 0 0 100%;
+			max-width: 100%;
+			position: relative;
+
+			&:nth-of-type(1) {
+				display: none;
+			}
+
+			&:nth-of-type(2) {
+				flex: 0 0 100%;
+				max-width: 100%;
+			}
+		}
 	}
 
 	&__img {
@@ -218,6 +266,27 @@ export default {
 		z-index: 10;
 		display: inline-block;
 		left: 37px;
+
+		@media screen and (max-width: $sm) {
+			left: 16px;
+			max-width: 215px;
+		}
+
+		@media screen and (max-width: $xs) {
+			display: none;
+		}
+
+		&-xs {
+			display: none;
+			position: absolute;
+			bottom: -24px;
+			left: -16px;
+			z-index: 10;
+
+			@media screen and (max-width: $xs) {
+				display: block;
+			}
+		}
 
 		&-left {
 			position: absolute;
@@ -247,16 +316,64 @@ export default {
 	}
 
 	&__video {
-		left: -18px;
+		left: -1.8rem;
+
+		@media screen and (max-width: $sm) {
+			left: 0px;
+			top: -22px;
+		}
+
+		@media screen and (max-width: $xs) {
+			max-width: 100%;
+		}
 	}
 
 	&__params {
 		margin: 16px 0 0 27px;
 		max-width: 1315px;
 
+		@media screen and (max-width: $sm) {
+			overflow-x: auto;
+			margin-left: 0;
+			margin-top: 35px;
+			margin-right: -16px;
+
+			&::-webkit-scrollbar {
+				width: 24px;
+				/* ширина для вертикального скролла */
+				height: 3px;
+				/* высота для горизонтального скролла */
+				background: rgba(#D1FECE, 0.4);
+
+
+			}
+
+			/* ползунок скроллбара */
+			&::-webkit-scrollbar-thumb {
+				background: linear-gradient(90deg, #32B0DA 23.14%, #D1FECE 46.22%, #69F5DA 69.31%);
+				border-radius: 0;
+			}
+
+			&::-webkit-scrollbar-thumb:hover {
+				background-color: #32B0DA;
+			}
+		}
+
+		@media screen and (max-width: $xs) {
+			margin-top: 55px;
+		}
+
 		&-head {
 			display: flex;
 			margin-bottom: 39px;
+
+			@media screen and (max-width: $md) {
+				margin-bottom: 24px;
+			}
+
+			@media screen and (max-width: $sm) {
+				margin-bottom: 14px;
+			}
 		}
 
 		&-title {
@@ -271,6 +388,22 @@ export default {
 
 			flex: 0 0 33.33%;
 			max-width: 33.33%;
+
+			@media screen and (max-width: $sm) {
+				font: 700 32px $titleFF;
+
+				flex: 0 0 320px;
+				max-width: 320px;
+
+				&:first-child {
+					flex: 0 0 240px;
+					max-width: 240px;
+				}
+			}
+
+			@media screen and (max-width: $xs) {
+				font: 700 24px $titleFF;
+			}
 		}
 
 		&-row {
@@ -284,6 +417,18 @@ export default {
 			max-width: 33.33%;
 			padding: 0 26px;
 			position: relative;
+
+			@media screen and (max-width: $sm) {
+				flex: 0 0 320px;
+				max-width: 320px;
+				padding: 0 8px;
+
+				&:first-child {
+					flex: 0 0 240px;
+					max-width: 240px;
+					height: 62px;
+				}
+			}
 		}
 	}
 
@@ -293,6 +438,11 @@ export default {
 		left: calc(100% - 42px);
 		transform: translateY(-50%);
 		z-index: 3;
+
+		@media screen and (max-width: $md) {
+			transform: scale(0.5) translateY(-50%);
+			transform-origin: 50% 0%;
+		}
 
 		&-line {
 			animation: 2s animArrowLine linear infinite;
@@ -319,11 +469,21 @@ export default {
 		color: $white;
 		padding: 0 37px;
 
+		@media screen and (max-width: $md) {
+			font: 500 14px/1.2 $baseFF;
+		}
+
 		&--label {
 			background: url('/images/backpacks-section-param-pink.svg') 0 0/100% 100% no-repeat;
 			text-transform: uppercase;
 			font: bold 16px $titleFF;
+
+			@media screen and (max-width: $md) {
+				font: bold 14px $titleFF;
+			}
 		}
+
+
 	}
 }
 

@@ -2,29 +2,42 @@
 	<section class="tokensusage-section" id="tokensusage-section">
 		<div class="tokensusage-section__container container">
 
-			<div class="tokensusage-section__title" :title="title">{{ title }}</div>
+			<div class="tokensusage-section__title title-h1" :title="title">{{ title }}</div>
 			<div class="tokensusage-section__desc">$WWMB in-game utility token | WeWay $WWY token</div>
-			<div class="tokensusage-section__row row">
+			<!-- <div class="tokensusage-section__row row">
 				<div class="tokensusage-section__col col-4" v-for="token in tokens">
 					<TokenBlock :title="token.title" :desc="token.desc" :iconId="token.iconId" :icon="token.animIcon"
 						:dottedColor="token.dottedColor" :floorColor="token.floorColor" :lightColor="token.lightColor"
 						:params="token.params">
 					</TokenBlock>
 				</div>
-			</div>
+			</div> -->
+
+			<Swiper ref="tokensusageSlider" :options="swiperOptions" class="tokensusage-section__row">
+				<SwiperSlide class="tokensusage-section__col" v-for="(token, index) in tokens" :key="index">
+					<TokenBlock :title="token.title" :desc="token.desc" :iconId="token.iconId" :icon="token.animIcon"
+						:dottedColor="token.dottedColor" :floorColor="token.floorColor" :lightColor="token.lightColor"
+						:params="token.params">
+					</TokenBlock>
+				</SwiperSlide>
+
+				<div class="tokensusage-section__pagination swiper-pagination" slot="pagination" />
+			</Swiper>
 
 			<div class="tokensusage-section__buttons">
 				<div class="tokensusage-section__trigger">
 					<img src="images/star.svg" alt="">
 					<span>Burn Triggers</span>
 				</div>
-				<a href="#" @click.prevent="openPopup('popup-join')" class="btn">GET WWMB</a>
+				<!-- <a href="#" @click.prevent="openPopup('popup-join')" class="btn">GET WWMB</a> -->
+				<Btn :tag="'a'" :text="'GET WWMB'" @click.prevent.native="openPopup('popup-join')"></Btn>
 			</div>
 		</div>
 	</section>
 </template>
 <script>
 import TokenBlock from '../blocks/TokenBlock.vue';
+import Btn from '../blocks/Btn.vue';
 
 export default {
 	name: "TokensUsageSection",
@@ -32,6 +45,56 @@ export default {
 		return {
 			title: '_Tokens & usage',
 			desc: '$WWMB in-game utility token | WeWay $WWY token',
+
+			swiperOptions: {
+				spaceBetween: 0,
+				slidesPerView: 4,
+				allowTouchMove: true,
+
+				centerInsufficientSlides: false,
+				centeredSlides: false,
+				centeredSlidesBounds: false,
+
+				slideToClickedSlide: true,
+				passiveListeners: false,
+				enabled: false,
+
+
+				breakpoints: {
+					320: {
+						slidesPerView: 1,
+						spaceBetween: 0,
+						enabled: true,
+						pagination: {
+							el: ".swiper-pagination",
+							type: "bullets",
+							clickable: true,
+						},
+					},
+					993: {
+						slidesPerView: 3,
+						spaceBetween: 16,
+						enabled: false,
+						centeredSlides: true,
+						centeredSlidesBounds: true,
+						/* pagination: {
+							el: ".swiper-pagination",
+							type: "bullets",
+							clickable: true,
+						}, */
+					},
+					1281: {
+						slidesPerView: 3,
+						spaceBetween: 0,
+						enabled: false,
+						/* pagination: {
+							el: ".swiper-pagination",
+							type: "bullets",
+							clickable: true,
+						}, */
+					},
+				}
+			},
 
 			tokens: [{
 				title: '$WWMB',
@@ -187,7 +250,7 @@ export default {
 			}]
 		};
 	},
-	components: { TokenBlock },
+	components: { TokenBlock, Btn },
 	methods: {
 		openPopup(id) {
 			this.$emit('openPopup', id);
@@ -201,18 +264,26 @@ export default {
 	padding: 87px 0;
 	background: url('/images/tokensusage-section-bg.png') 50% 50% no-repeat #090923;
 
+	@media screen and (max-width: $sm) {
+		padding: 60px 0;
+	}
+
+	@media screen and (max-width: $xs) {
+		padding: 30px 0;
+	}
+
 	&__title {
 		text-align: center;
-		letter-spacing: 0.05em;
+		/* letter-spacing: 0.05em;
 		color: $white;
 		font: 700 48px/60px $titleFF;
-		position: relative;
+		position: relative; */
 		margin-bottom: 20px;
 
 		&:after {
-			content: attr(title);
+			//content: attr(title);
 			text-align: center;
-			letter-spacing: 0.05em;
+			/* letter-spacing: 0.05em;
 			color: rgba($white, 0.1);
 			filter: blur(4px);
 			font: 700 48px/60px $titleFF;
@@ -220,7 +291,20 @@ export default {
 			top: 0;
 			left: 0;
 			width: 100%;
-			transform: translate(22px, -27px);
+			transform: translate(22px, -27px); */
+		}
+	}
+
+	&__pagination {
+		margin-top: 18px;
+		display: none;
+
+		@media screen and (max-width: $md) {
+			display: flex;
+		}
+
+		@media screen and (max-width: $xs) {
+			margin-top: 16px;
 		}
 	}
 
@@ -229,17 +313,83 @@ export default {
 		margin-bottom: 40px;
 		font: 500 20px/1.6 $baseFF;
 		color: #CECCD6;
+
+		@media screen and (max-width: $md) {
+			font: 16px/1.4 $baseFF;
+		}
+
+		@media screen and (max-width: $sm) {
+			font: 14px/19px $baseFF;
+			max-width: 255px;
+			margin-left: auto;
+			margin-right: auto;
+		}
 	}
 
 	&__row {
-		display: flex;
+		&:not(.swiper-container-initialized) {
+			display: flex;
+		}
+
+		@media screen and (max-width: $sm) {
+			max-width: 320px;
+			margin: 0 auto;
+			overflow: visible !important;
+		}
+
+		@media screen and (max-width: $xs) {
+			max-width: 276px;
+		}
 	}
 
 	&__col {
-		flex: 0 0 33.33%;
-		max-width: 33.33%;
+		/* flex: 0 0 33.33%;
+		max-width: 33.33%; */
 		display: flex;
 		justify-content: center;
+
+		@media screen and (max-width: $sm) {
+			display: block;
+
+			&.swiper-slide-next,
+			&.swiper-slide-prev {
+				.token-block {
+					max-width: 180px;
+					margin-top: 84px;
+
+					&__img {
+						opacity: 0.6;
+					}
+
+					&__title,
+					&__desc,
+					&__params {
+						opacity: 0;
+					}
+				}
+			}
+
+			&.swiper-slide-prev {
+				display: flex;
+				justify-content: flex-end;
+			}
+
+			&.swiper-slide-next {
+				display: flex;
+				justify-content: flex-start;
+			}
+		}
+
+		@media screen and (max-width: $xs) {
+
+			&.swiper-slide-next,
+			&.swiper-slide-prev {
+				.token-block {
+					max-width: 120px;
+					margin: 78px 0 0;
+				}
+			}
+		}
 	}
 
 	&__buttons {
@@ -247,6 +397,16 @@ export default {
 		display: flex;
 		justify-content: center;
 		position: relative;
+
+		@media screen and (max-width: $sm) {
+			margin-top: 24px;
+		}
+
+		@media screen and (max-width: $sm) {
+			margin: 16px auto 0;
+
+			max-width: 280px;
+		}
 	}
 
 	&__trigger {
@@ -262,6 +422,10 @@ export default {
 		max-width: 298px;
 		padding: 7px 10px 20px;
 		font: bold 16px/35px $titleFF;
+
+		@media screen and (max-width: $sm) {
+			display: none;
+		}
 
 		&:after {
 			content: "";

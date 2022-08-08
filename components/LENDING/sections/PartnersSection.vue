@@ -1,7 +1,7 @@
 <template>
 	<section class="partners-section" id="partners-section">
 		<div class="partners-section__container container">
-			<div class="partners-section__title" :title="title">{{ title }}</div>
+			<div class="partners-section__title title-h1" :title="title">{{ title }}</div>
 
 			<div class="partners-section__group">
 				<div class="partners-section__subtitle"><span>{{ subtitle }}</span></div>
@@ -90,26 +90,22 @@ export default {
 	background: url('/images/partners-section-top-line.svg') 0 0 repeat-x, url('/images/about-section-bg.png') 50% 50% no-repeat #090923;
 	overflow: hidden;
 
+	@media screen and (max-width: $sm) {
+		padding: 126px 0;
+	}
+
+	@media screen and (max-width: $xs) {
+		padding: 106px 0;
+	}
+
 	&__title {
 		text-align: center;
-		letter-spacing: 0.05em;
 		color: $white;
-		font: 700 48px/60px $titleFF;
-		position: relative;
 		margin-bottom: 64px;
 
-		&:after {
-			content: attr(title);
-			text-align: center;
-			letter-spacing: 0.05em;
-			color: rgba($white, 0.1);
-			filter: blur(4px);
-			font: 700 48px/60px $titleFF;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			transform: translate(22px, -27px);
+		@media screen and (max-width: $sm) {
+			margin: 0 auto 36px;
+			max-width: 400px;
 		}
 	}
 
@@ -123,6 +119,11 @@ export default {
 		-webkit-text-fill-color: transparent;
 		background-clip: text;
 		text-fill-color: transparent;
+
+		@media screen and (max-width: $xs) {
+			font: 700 12px/15px $titleFF;
+			margin-bottom: 26px;
+		}
 
 
 		span {
@@ -156,6 +157,14 @@ export default {
 	&__group {
 		margin-bottom: 48px;
 
+		@media screen and (max-width: $sm) {
+			margin-bottom: 60px;
+		}
+
+		@media screen and (max-width: $xs) {
+			margin-bottom: 70px;
+		}
+
 		&:last-child {
 			margin-bottom: 0;
 		}
@@ -173,6 +182,17 @@ export default {
 			padding: 0 22px;
 			flex: 0 0 25%;
 			max-width: 25%;
+
+			@media screen and (max-width: $sm) {
+				margin-bottom: 27px;
+			}
+
+			@media screen and (max-width: $xs) {
+				flex: 0 0 50%;
+				max-width: 50%;
+				padding: 0 12px;
+				margin-bottom: 2px;
+			}
 		}
 	}
 }

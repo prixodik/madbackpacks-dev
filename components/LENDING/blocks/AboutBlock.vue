@@ -60,6 +60,23 @@ export default {
 
 	&__img {
 		margin-bottom: 15px;
+
+		img {
+			margin: 0 auto;
+			display: block;
+		}
+
+		@media screen and (max-width: $sm) {
+			margin-bottom: 0;
+
+			img {
+				width: 100%;
+			}
+		}
+
+		@media screen and (max-width: $xs) {
+			margin-bottom: 28px;
+		}
 	}
 
 	&__title {
@@ -72,6 +89,15 @@ export default {
 		padding-top: 22px;
 		margin-bottom: 13px;
 		letter-spacing: 0.05em;
+
+		@media screen and (max-width: $sm) {
+			font-size: 28px;
+		}
+
+		@media screen and (max-width: $xs) {
+			font-size: 24px;
+			margin-bottom: 12px;
+		}
 
 		span {
 			background: linear-gradient(90deg, #32B0DA 23.14%, #D1FECE 46.22%, #69F5DA 69.31%);
@@ -103,6 +129,15 @@ export default {
 		//max-width: 310px;
 		color: #CECCD6;
 		flex: 1 1 auto;
+
+		@media screen and (max-width: $sm) {
+			font-size: 14px;
+		}
+
+		@media screen and (max-width: $xs) {
+			font-size: 14px;
+			line-height: 19px;
+		}
 	}
 
 	&__bg {
@@ -124,6 +159,10 @@ export default {
 		margin-top: 52px;
 		display: flex;
 		justify-content: center;
+
+		@media screen and (max-width: $sm) {
+			display: none;
+		}
 	}
 }
 

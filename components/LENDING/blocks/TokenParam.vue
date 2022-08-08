@@ -154,6 +154,10 @@ export default {
 		justify-content: center;
 		align-items: center;
 
+		@media screen and (max-width: $sm) {
+			transform: scale(0.7);
+		}
+
 		&-main {
 			&--mobile {
 				width: 40px;
@@ -194,6 +198,10 @@ export default {
 		font: 500 16px/26px $baseFF;
 		display: flex;
 		justify-content: center;
+
+		@media screen and (max-width: $md) {
+			font: 400 14px/18px $baseFF;
+		}
 	}
 
 	&__list {

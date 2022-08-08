@@ -21,33 +21,16 @@ a.btn,
 	align-items: center;
 	position: relative;
 
-	&:after {
-		content: "";
-		display: block;
-		position: absolute;
-		top: 50%;
-		left: 50%;
-		width: 80%;
-		height: 80%;
-		background: #ff37f8;
-		filter: blur(30px);
-		transform: translate(-50%, -50%) scale(0);
-		opacity: 0;
-		z-index: -1;
-		transition: all 0.7s;
-	}
-
 	@media screen and (max-width: $xs) {
 	}
 
-	&:hover,
+	&:hover {
+		color: $white;
+		background: url("/images/btn-bg-pink-hover.svg") 50% 50% / contain no-repeat;
+	}
 	&:active {
 		color: $white;
-
-		&:after {
-			opacity: 1;
-			transform: translate(-50%, -50%) scale(1);
-		}
+		background: url("/images/btn-bg-pink-click.svg") 50% 50% / contain no-repeat;
 	}
 
 	&:focus {
@@ -57,7 +40,7 @@ a.btn,
 	&:disabled,
 	&[disabled],
 	&:disabled:focus {
-		opacity: 0.4;
+		background: url("/images/btn-bg-pink-disabled.svg") 50% 50% / contain no-repeat;
 		pointer-events: none;
 	}
 
@@ -98,8 +81,9 @@ a.btn,
 		min-width: 62px;
 		background: url("/images/btn-bg-soc.svg") 50% 50% / contain no-repeat;
 
-		&:after {
-			display: none;
+		&:hover,
+		&:focus {
+			background: url("/images/btn-bg-soc-pink.svg") 50% 50% / contain no-repeat;
 		}
 
 		svg {

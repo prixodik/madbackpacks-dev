@@ -3,21 +3,32 @@
 
 		<div class="roadmap-section__container container">
 			<div class="roadmap-section__head">
-				<div class="roadmap-section__title" :title="title">{{ title }}</div>
+				<div class="roadmap-section__title title-h1" :title="title">{{ title }}</div>
 				<div class="roadmap-section__head-line">
 					<img src="images/roadmap-section-head-bg.svg" alt="">
 				</div>
 				<div class="roadmap-section__arrows">
-					<div class="roadmap-section__arrow btn btn--arrow" @click.prevent="sliderPrev()">
+					<Btn :tag="'a'" class="roadmap-section__arrow btn--arrow" @click.prevent.native="sliderPrev()">
 						<svg>
 							<use xlink:href="images/sprite-svg.svg#arrow-left"></use>
 						</svg>
-					</div>
-					<div class="roadmap-section__arrow btn btn--arrow btn--next" @click.prevent="sliderNext()">
+					</Btn>
+					<Btn :tag="'a'" class="roadmap-section__arrow btn--arrow btn--next"
+						@click.prevent.native="sliderNext()">
 						<svg>
 							<use xlink:href="images/sprite-svg.svg#arrow-left"></use>
 						</svg>
-					</div>
+					</Btn>
+					<!-- <div class="roadmap-section__arrow btn btn--arrow" @click.prevent="sliderPrev()">
+						<svg>
+							<use xlink:href="images/sprite-svg.svg#arrow-left"></use>
+						</svg>
+					</div> -->
+					<!-- <div class="roadmap-section__arrow btn btn--arrow btn--next" @click.prevent="sliderNext()">
+						<svg>
+							<use xlink:href="images/sprite-svg.svg#arrow-left"></use>
+						</svg>
+					</div> -->
 				</div>
 			</div>
 
@@ -37,6 +48,7 @@
 <script>
 import Dotteds from '../blocks/Dotteds.vue';
 import RoadmapBlock from '../blocks/RoadmapBlock.vue';
+import Btn from '../blocks/Btn.vue';
 
 //import 'swiper/swiper.scss';
 
@@ -47,7 +59,7 @@ export default {
 			title: '_Roadmap',
 			activeSlide: 0,
 			swiperOptions: {
-				spaceBetween: 124,
+				spaceBetween: 24,
 				slidesPerView: 3,
 				allowTouchMove: false,
 
@@ -59,27 +71,43 @@ export default {
 				passiveListeners: false,
 				focusableElements: '.roadmap-block, input, select, option, textarea, button, video, label',
 
-				/* breakpoints: {
+				breakpoints: {
 					320: {
 						slidesPerView: 1,
-						spaceBetween: 10,
+						spaceBetween: 0,
 						enabled: true,
+						allowTouchMove: true,
+						pagination: {
+							el: ".swiper-pagination",
+							type: "bullets",
+							clickable: true,
+						},
 					},
-					640: {
-						slidesPerView: 1,
+					760: {
+						slidesPerView: 2,
 						spaceBetween: 16,
-						enabled: true,
+						//enabled: false,
+						//centeredSlides: true,
+						//centeredSlidesBounds: true,
+						/* pagination: {
+							el: ".swiper-pagination",
+							type: "bullets",
+							clickable: true,
+						}, */
 					},
-					992: {
-						slidesPerView: 1,
-						spaceBetween: 25,
-						enabled: true,
+					1280: {
+						slidesPerView: 3,
+						spaceBetween: 24,
+						//enabled: false,
+						//centeredSlides: true,
+						//centeredSlidesBounds: true,
+						/* pagination: {
+							el: ".swiper-pagination",
+							type: "bullets",
+							clickable: true,
+						}, */
 					},
-				}, */
-				/* navigation: {
-					nextEl: '.swiper-button-next',
-					prevEl: '.swiper-button-prev',
-				}, */
+				}
 			},
 
 			slides: [{
@@ -136,7 +164,8 @@ export default {
 		}
 	},
 	components: {
-		RoadmapBlock
+		RoadmapBlock,
+		Btn
 	},
 	methods: {
 		goToSlide(index) {
@@ -179,7 +208,9 @@ export default {
 	overflow: hidden;
 	background: url('/images/tokensusage-section-bg.png') 50% 50% no-repeat #090923;
 
-
+	@media screen and (max-width: $xs) {
+		padding: 105px 0 96px;
+	}
 
 	&__container {
 		position: relative;
@@ -205,12 +236,20 @@ export default {
 
 	&__head {
 		display: flex;
-		margin-bottom: 112px;
+		margin-bottom: 76px;
 		justify-content: space-between;
 		align-items: center;
 
+		@media screen and (max-width: $sm) {
+			margin-bottom: 10px;
+		}
+
 		&-line {
 			flex: 1 1 auto;
+
+			@media screen and (max-width: $xs) {
+				display: none;
+			}
 
 			img {
 				width: 100%;
@@ -221,25 +260,9 @@ export default {
 	}
 
 	&__title {
-		letter-spacing: 0.05em;
 		color: $white;
-		font: 700 48px/60px $titleFF;
-		position: relative;
 		margin-bottom: 0;
 		margin-right: 52px;
-
-		&:after {
-			content: attr(title);
-			letter-spacing: 0.05em;
-			color: rgba($white, 0.1);
-			filter: blur(4px);
-			font: 700 48px/60px $titleFF;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			transform: translate(33px, -27px);
-		}
 	}
 
 	&__arrows {
@@ -259,6 +282,14 @@ export default {
 		max-width: 1205px;
 		margin: 0 !important;
 
+		@media screen and (max-width: $md) {
+			max-width: 800px;
+		}
+
+		@media screen and (max-width: $xs) {
+			max-width: 90%;
+		}
+
 		&:before {
 			content: "";
 			display: block;
@@ -267,8 +298,16 @@ export default {
 			height: 5px;
 			background: url('/images/roadmap-section-slider-bg.svg') 0 0 repeat-x;
 			position: absolute;
-			top: 407px;
+			top: 444px;
 			left: 0;
+
+			@media screen and (max-width: $sm) {
+				top: 358px;
+			}
+
+			@media screen and (max-width: $xs) {
+				display: none;
+			}
 		}
 
 		&-item {

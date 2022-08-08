@@ -1,7 +1,7 @@
 <template>
 	<section class="teams-section" id="teams-section">
 		<div class="teams-section__container container">
-			<div class="teams-section__title" :title="title">{{ title }}</div>
+			<div class="teams-section__title title-h1" :title="title">{{ title }}</div>
 
 			<div class="teams-section__row">
 				<div class="teams-section__item" v-for="team in teams">
@@ -114,23 +114,15 @@ export default {
 	}
 
 	&__title {
-		letter-spacing: 0.05em;
 		color: $white;
-		font: 700 48px/60px $titleFF;
-		position: relative;
 		margin-bottom: 72px;
 
-		&:after {
-			content: attr(title);
-			letter-spacing: 0.05em;
-			color: rgba($white, 0.1);
-			filter: blur(4px);
-			font: 700 48px/60px $titleFF;
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			transform: translate(22px, -27px);
+		@media screen and (max-width: $md) {
+			margin-bottom: 64px;
+		}
+
+		@media screen and (max-width: $sm) {
+			margin-bottom: 42px;
 		}
 	}
 
@@ -139,6 +131,40 @@ export default {
 		flex-wrap: wrap;
 		margin: 0 -12px -60px;
 		max-width: 1390px;
+
+		@media screen and (max-width: $lg) {
+			max-width: none;
+		}
+
+		@media screen and (max-width: $md) {
+			margin: 0 -9px -48px;
+		}
+
+		@media screen and (max-width: $sm) {
+			flex-wrap: nowrap;
+			overflow-x: auto;
+			margin-bottom: 0;
+
+			&::-webkit-scrollbar {
+				width: 24px;
+				/* ширина для вертикального скролла */
+				height: 3px;
+				/* высота для горизонтального скролла */
+				background: rgba(#D1FECE, 0.4);
+
+
+			}
+
+			/* ползунок скроллбара */
+			&::-webkit-scrollbar-thumb {
+				background: linear-gradient(90deg, #32B0DA 23.14%, #D1FECE 46.22%, #69F5DA 69.31%);
+				border-radius: 0;
+			}
+
+			&::-webkit-scrollbar-thumb:hover {
+				background-color: #32B0DA;
+			}
+		}
 	}
 
 	&__item {
@@ -146,6 +172,17 @@ export default {
 		max-width: 33.33%;
 		padding: 0 12px;
 		margin-bottom: 60px;
+
+		@media screen and (max-width: $md) {
+			padding: 0 9px;
+			margin-bottom: 48px;
+		}
+
+		@media screen and (max-width: $sm) {
+			margin-bottom: 92px;
+			flex: 0 0 274px;
+			max-width: 274px;
+		}
 
 		&:nth-of-type(2n) {
 			.team-block__position {
