@@ -6,7 +6,8 @@
 				<a href="#" class="header__burger">Menu</a>
 			</div> -->
 			<div class="header__logo">
-				<img src="/images/logo.png" alt="MadBackpacks">
+				<Webp src="/images/logo.png" alt="MadBackpacks"></Webp>
+				<!-- <img src="/images/logo.png" alt="MadBackpacks"> -->
 			</div>
 			<div class="header__menu">
 				<a href="#" v-scroll-to="'#about-section'" class="header__menu-item">about</a>
@@ -31,6 +32,7 @@
 <script>
 import SocDropdown from '../blocks/SocDropdown.vue';
 import MobMenu from '../blocks/MobMenu.vue';
+import Webp from '../blocks/Webp.vue';
 
 export default {
 	name: "Header",
@@ -39,7 +41,7 @@ export default {
 			mobileMenuShow: false
 		};
 	},
-	components: { SocDropdown, MobMenu },
+	components: { SocDropdown, MobMenu, Webp },
 	methods: {
 		mobileMenuToggle() {
 			this.mobileMenuShow = !this.mobileMenuShow;

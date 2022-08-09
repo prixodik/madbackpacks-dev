@@ -7,7 +7,8 @@
 				<div class="partners-section__subtitle"><span>{{ subtitle }}</span></div>
 				<div class="partners-section__list">
 					<div class="partners-section__list-item" v-for="item in list">
-						<img :src="item.src" :alt="item.title">
+						<Webp :src="item.src" :alt="item.title"></Webp>
+						<!-- <img :src="item.src" :alt="item.title"> -->
 					</div>
 				</div>
 			</div>
@@ -16,7 +17,8 @@
 				<div class="partners-section__subtitle"><span>{{ subtitle2 }}</span></div>
 				<div class="partners-section__list">
 					<div class="partners-section__list-item" v-for="item in list2">
-						<img :src="item.src" :alt="item.title">
+						<Webp :src="item.src" :alt="item.title"></Webp>
+						<!-- <img :src="item.src" :alt="item.title"> -->
 					</div>
 				</div>
 			</div>
@@ -24,6 +26,7 @@
 	</section>
 </template>
 <script>
+import Webp from '../blocks/Webp.vue';
 
 export default {
 	name: "PartnersSection",
@@ -80,7 +83,7 @@ export default {
 
 		};
 	},
-	components: {}
+	components: { Webp }
 }
 </script>
 

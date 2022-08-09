@@ -24,21 +24,25 @@
 
 				<div class="dino-section__img-wrap">
 					<kinesis-element :strength="20" type="depth" class="dino-section__img-1">
-						<img src="images/dino-section-img-1.png" alt="">
+						<Webp src="images/dino-section-img-1.png"></Webp>
+						<!-- <img src="images/dino-section-img-1.png" alt=""> -->
 					</kinesis-element>
 
 					<kinesis-element :strength="25" class="dino-section__img-2">
-						<img src="images/dino-section-img-2.png" alt="">
+						<Webp src="images/dino-section-img-2.png"></Webp>
+						<!-- <img src="images/dino-section-img-2.png" alt=""> -->
 						<img class="dino-section__img-2-circle" src="images/dino-section-img-2-circle.svg" alt=""></img>
 					</kinesis-element>
 
 					<kinesis-element :strength="15" class="dino-section__img-3">
-						<img src="images/dino-section-img-3.png" alt="">
+						<Webp src="images/dino-section-img-3.png"></Webp>
+						<!-- <img src="images/dino-section-img-3.png" alt=""> -->
 						<img class="dino-section__img-3-circle" src="images/dino-section-img-3-circle.svg" alt="">
 					</kinesis-element>
 
 					<kinesis-element :strength="10" class="dino-section__img-4">
-						<img src="images/dino-section-img-4.png" alt="">
+						<Webp src="images/dino-section-img-4.png"></Webp>
+						<!-- <img src="images/dino-section-img-4.png" alt=""> -->
 						<img class="dino-section__img-4-circle" src="images/dino-section-img-4-circle.svg" alt="">
 					</kinesis-element>
 				</div>
@@ -49,6 +53,7 @@
 <script>
 import { KinesisContainer, KinesisElement } from 'vue-kinesis';
 import Dotteds from '../blocks/Dotteds.vue';
+import Webp from '../blocks/Webp.vue';
 
 export default {
 	name: "DinoSection",
@@ -74,7 +79,7 @@ export default {
 
 		};
 	},
-	components: { KinesisContainer, KinesisElement, Dotteds },
+	components: { KinesisContainer, KinesisElement, Dotteds, Webp },
 	methods: {
 		infoToggle(index) {
 			this.infoIndex = index;

@@ -22,7 +22,8 @@
 				</div>
 				<div class="tokenomics-section__body">
 					<kinesis-container class="tokenomics-section__img">
-						<img class="tokenomics-section__img-1" src="images/tokenomics-section-img-1.png" alt="">
+						<Webp class="tokenomics-section__img-1" src="images/tokenomics-section-img-1.png"></Webp>
+						<!-- <img class="tokenomics-section__img-1" src="images/tokenomics-section-img-1.png" alt=""> -->
 						<img class="tokenomics-section__img-2" src="images/tokenomics-section-img-2.svg" alt="">
 						<!-- <img class="tokenomics-section__img-lines" src="images/tokenomics-section-img-lines.svg" alt=""> -->
 						<!-- width="574"
@@ -58,17 +59,20 @@
 							</defs>
 						</svg>
 						<kinesis-element :strength="25" type="depth" class="tokenomics-section__img-logo">
-							<img src="images/tokenomics-section-img-logo.png" alt="">
+							<Webp src="images/tokenomics-section-img-logo.png"></Webp>
+							<!-- <img src="images/tokenomics-section-img-logo.png" alt=""> -->
 						</kinesis-element>
 
 						<kinesis-element :strength="15" class="tokenomics-section__img-3">
-							<img src="images/tokenomics-section-img-3.png" alt="">
+							<Webp src="images/tokenomics-section-img-3.png"></Webp>
+							<!-- <img src="images/tokenomics-section-img-3.png" alt=""> -->
 							<img class="tokenomics-section__img-3-circle"
 								src="images/tokenomics-section-img-3-circle.svg" alt="">
 						</kinesis-element>
 
 						<kinesis-element :strength="10" class="tokenomics-section__img-4">
-							<img src="images/tokenomics-section-img-4.png" alt="">
+							<Webp src="images/tokenomics-section-img-4.png"></Webp>
+							<!-- <img src="images/tokenomics-section-img-4.png" alt=""> -->
 							<img class="tokenomics-section__img-4-circle"
 								src="images/tokenomics-section-img-4-circle.svg" alt="">
 						</kinesis-element>
@@ -91,6 +95,7 @@
 <script>
 import { KinesisContainer, KinesisElement } from 'vue-kinesis';
 import Dotteds from '../blocks/Dotteds.vue';
+import Webp from '../blocks/Webp.vue';
 
 export default {
 	name: "TokenomicsSection",
@@ -154,7 +159,7 @@ export default {
 			]
 		};
 	},
-	components: { KinesisContainer, KinesisElement, Dotteds },
+	components: { KinesisContainer, KinesisElement, Dotteds, Webp },
 	methods: {
 		playLines() {
 			this.animatedLines = true;

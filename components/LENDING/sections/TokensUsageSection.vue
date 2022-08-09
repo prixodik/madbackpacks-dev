@@ -327,6 +327,8 @@ export default {
 	}
 
 	&__row {
+		overflow: visible !important;
+
 		&:not(.swiper-container-initialized) {
 			display: flex;
 		}

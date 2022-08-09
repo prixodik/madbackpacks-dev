@@ -24,16 +24,19 @@
 				<Dotteds :count="12" :maxWidth="12"></Dotteds>
 
 				<kinesis-element :strength="15" type="depth" class="join-section__img-1">
-					<img :src="img" alt="">
+					<Webp :src="img"></Webp>
+					<!-- <img :src="img" alt=""> -->
 				</kinesis-element>
 
 				<kinesis-element :strength="25" class="join-section__img-2">
-					<img src="images/join-section-img-2.png" alt="">
+					<Webp src="images/join-section-img-2.png"></Webp>
+					<!-- <img src="images/join-section-img-2.png" alt=""> -->
 					<img class="join-section__img-2-circle" src="images/join-section-img-2-circle.svg" alt=""></img>
 				</kinesis-element>
 
 				<kinesis-element :strength="15" class="join-section__img-3">
-					<img src="images/join-section-img-3.png" alt="">
+					<Webp src="images/join-section-img-3.png"></Webp>
+					<!-- <img src="images/join-section-img-3.png" alt=""> -->
 					<img class="join-section__img-3-circle" src="images/join-section-img-3-circle.svg" alt="">
 				</kinesis-element>
 
@@ -45,6 +48,7 @@
 import { KinesisContainer, KinesisElement } from 'vue-kinesis';
 import Dotteds from '../blocks/Dotteds.vue';
 import Btn from '../blocks/Btn.vue';
+import Webp from '../blocks/Webp.vue';
 
 export default {
 	name: "JoinSection",
@@ -58,7 +62,7 @@ export default {
 
 		};
 	},
-	components: { KinesisContainer, KinesisElement, Dotteds, Btn },
+	components: { KinesisContainer, KinesisElement, Dotteds, Btn, Webp },
 	methods: {
 		sendForm() {
 			this.popupShow('popup-succesfull');

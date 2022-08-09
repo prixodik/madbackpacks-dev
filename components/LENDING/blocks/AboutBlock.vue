@@ -1,7 +1,8 @@
 <template>
 	<div class="about-block">
 		<div class="about-block__img">
-			<img :src="icon" :alt="title">
+			<!-- <img :src="icon" :alt="title"> -->
+			<Webp :src="icon" :alt="title"></Webp>
 		</div>
 		<div class="about-block__title" v-html="title"></div>
 		<div class="about-block__desc" v-html="desc"></div>
@@ -36,6 +37,7 @@
 </template>
 <script>
 import AnimIcon from "../blocks/AnimIcon.vue";
+import Webp from "./Webp.vue";
 
 export default {
 	name: "AboutBlock",
@@ -46,7 +48,7 @@ export default {
 
 		};
 	},
-	components: {}
+	components: { Webp }
 }
 </script>
 

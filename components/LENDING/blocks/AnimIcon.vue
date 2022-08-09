@@ -1,8 +1,10 @@
 <template>
 	<div class="anim-icon">
-		<img class="anim-icon__icon" :src="icon" alt="">
-		<img class="anim-icon__light2" src="images/anim-icon-light-1.png" alt="">
-		<!-- <img class="anim-icon__bg" src="images/icon-anim-bg-1.svg" alt=""> -->
+		<Webp class="anim-icon__icon" :src="icon"></Webp>
+		<Webp class="anim-icon__light2" src="images/anim-icon-light-1.png"></Webp>
+		<!-- <img class="anim-icon__icon" :src="icon" alt="">
+		<img class="anim-icon__light2" src="images/anim-icon-light-1.png" alt=""> -->
+
 		<svg id="eKkwjmqeQWY1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 			viewBox="0 0 443 562" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">
 			<defs>
@@ -120,6 +122,7 @@
 	</div>
 </template>
 <script>
+import Webp from './Webp.vue';
 export default {
 	name: "AnimIcon",
 	props: ['iconId', 'icon', 'dottedColor', 'floorColor', 'lightColor'],
@@ -128,7 +131,7 @@ export default {
 
 		};
 	},
-	components: {}
+	components: { Webp }
 }
 </script>
 

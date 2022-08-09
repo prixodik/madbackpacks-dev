@@ -28,31 +28,39 @@
 			<kinesis-container class="first-section__img">
 
 				<kinesis-element :strength="65" class="first-section__img-1">
-					<img src="images/first-section-img-1.png" alt="">
-					<img class="first-section__img-1-shadow" src="images/first-section-img-1.png" alt="">
+					<Webp src="images/first-section-img-1.png"></Webp>
+					<Webp class="first-section__img-1-shadow" src="images/first-section-img-1.png"></Webp>
+					<!-- <img src="images/first-section-img-1.png" alt="">
+					<img class="first-section__img-1-shadow" src="images/first-section-img-1.png" alt=""> -->
 				</kinesis-element>
 
 				<kinesis-element :strength="45" class="first-section__img-2">
-					<img src="images/first-section-img-2.png" alt="">
-					<img class="first-section__img-2-shadow" src="images/first-section-img-2.png" alt=""></img>
+					<Webp src="images/first-section-img-2.png"></Webp>
+					<Webp class="first-section__img-2-shadow" src="images/first-section-img-2.png"></Webp>
+					<!-- <img src="images/first-section-img-2.png" alt="">
+					<img class="first-section__img-2-shadow" src="images/first-section-img-2.png" alt=""></img> -->
 				</kinesis-element>
 
 				<kinesis-element :strength="85" class="first-section__img-3">
-					<img src="images/first-section-img-3.png" alt="">
+					<Webp src="images/first-section-img-3.png"></Webp>
+					<!-- <img src="images/first-section-img-3.png" alt=""> -->
 					<img class="first-section__img-3-circle" src="images/first-section-img-3-circle.svg" alt=""></img>
 				</kinesis-element>
 
 				<kinesis-element :strength="65" class="first-section__img-4">
-					<img src="images/first-section-img-4.png" alt="">
+					<Webp src="images/first-section-img-4.png"></Webp>
+					<!-- <img src="images/first-section-img-4.png" alt=""> -->
 					<img class="first-section__img-4-circle" src="images/first-section-img-4-circle.svg" alt="">
 				</kinesis-element>
 
 				<kinesis-element :strength="45" class="first-section__img-5">
-					<img src="images/first-section-img-5.png" alt="">
+					<Webp src="images/first-section-img-5.png"></Webp>
+					<!-- <img src="images/first-section-img-5.png" alt=""> -->
 				</kinesis-element>
 
 				<kinesis-element :strength="25" class="first-section__img-6">
-					<img src="images/first-section-img-6.png" alt="">
+					<Webp src="images/first-section-img-6.png"></Webp>
+					<!-- <img src="images/first-section-img-6.png" alt=""> -->
 				</kinesis-element>
 			</kinesis-container>
 
@@ -63,6 +71,7 @@
 import { KinesisContainer, KinesisElement } from 'vue-kinesis';
 import Dotteds from '../blocks/Dotteds.vue';
 import Btn from '../blocks/Btn.vue';
+import Webp from '../blocks/Webp.vue';
 
 export default {
 	name: "FirstSection",
@@ -72,7 +81,7 @@ export default {
 			desc: 'Explore a whole new world of treasure hunting',
 		};
 	},
-	components: { KinesisContainer, KinesisElement, Dotteds, Btn },
+	components: { KinesisContainer, KinesisElement, Dotteds, Btn, Webp },
 	methods: {
 		openPopup(id) {
 			console.log(1);

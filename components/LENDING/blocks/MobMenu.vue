@@ -23,7 +23,8 @@
 		</div>
 		<SocList class="mob-menu__soc soc-list--big"></SocList>
 		<div class="mob-menu__logo">
-			<img src="/images/logo.png" alt="MadBackpacks">
+			<Webp src="/images/logo.png" alt="MadBackpacks"></Webp>
+			<!-- <img src="/images/logo.png" alt="MadBackpacks"> -->
 		</div>
 		<div class="mob-menu__copyright">Your personal data is processed in accordance with our <a
 				href="https://madbackpacks.io/pdf/Privacy.pdf" target="_blank">Privacy
@@ -33,6 +34,7 @@
 
 <script>
 import SocList from './SocList.vue';
+import Webp from './Webp.vue';
 export default {
 	name: "MobMenu",
 	data() {
@@ -61,7 +63,7 @@ export default {
 			this.$emit('hideMenu');
 		},
 	},
-	components: { SocList }
+	components: { SocList, Webp }
 };
 </script>
 

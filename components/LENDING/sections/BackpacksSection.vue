@@ -13,15 +13,17 @@
 						<img src="/images/dino-section-info-title-bg.svg" alt="" class="backpacks-section__img-left">
 						<img src="/images/dino-section-info-title-bg-reverse.svg" alt=""
 							class="backpacks-section__img-right">
-						</img>
-						<img src="/images/backpacks-section-img.png" alt="">
-						<img class="backpacks-section__img-shadow" src="/images/backpacks-section-img.png" alt="">
+						<Webp src="/images/backpacks-section-img.png"></Webp>
+						<Webp class="backpacks-section__img-shadow" src="/images/backpacks-section-img.png"></Webp>
+						<!-- <img src="/images/backpacks-section-img.png" alt=""> -->
+						<!-- <img class="backpacks-section__img-shadow" src="/images/backpacks-section-img.png" alt=""> -->
 					</div>
 				</div>
 				<div class="backpacks-section__col">
 					<VideoBlock class="backpacks-section__video" ref="VideoBlock"></VideoBlock>
 					<div class="backpacks-section__img-xs">
-						<img src="images/backpacks-section-img-xs.png" alt="">
+						<Webp src="images/backpacks-section-img-xs.png"></Webp>
+						<!-- <img src="images/backpacks-section-img-xs.png" alt=""> -->
 					</div>
 				</div>
 			</div>
@@ -103,6 +105,7 @@
 import { KinesisContainer, KinesisElement } from 'vue-kinesis';
 import Dotteds from '../blocks/Dotteds.vue';
 import VideoBlock from '../blocks/VideoBlock.vue';
+import Webp from '../blocks/Webp.vue';
 
 export default {
 	name: "BackpacksSection",
@@ -126,7 +129,7 @@ export default {
 			}]
 		};
 	},
-	components: { KinesisContainer, KinesisElement, Dotteds, VideoBlock },
+	components: { KinesisContainer, KinesisElement, Dotteds, VideoBlock, Webp },
 	methods: {
 		playVideo() {
 			this.$refs.VideoBlock.playVideo();

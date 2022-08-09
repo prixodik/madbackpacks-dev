@@ -6,7 +6,8 @@
 				<a href="#" class="footer__burger">Menu</a>
 			</div> -->
 				<div class="footer__logo">
-					<img src="/images/logo.png" alt="MadBackpacks">
+					<Webp src="/images/logo.png" alt="MadBackpacks"></Webp>
+					<!-- <img src="/images/logo.png" alt="MadBackpacks"> -->
 				</div>
 				<div class="footer__menu">
 					<a href="#" v-scroll-to="'#about-section'" class="footer__menu-item">about</a>
@@ -28,13 +29,14 @@
 </template>
 <script>
 import SocList from '../blocks/SocList.vue';
+import Webp from '../blocks/Webp.vue';
 
 export default {
 	name: "Footer",
 	data() {
 		return {};
 	},
-	components: { SocList }
+	components: { SocList, Webp }
 }
 </script>
 

@@ -1,7 +1,8 @@
 <template>
 	<div class="team-block">
 		<div class="team-block__img">
-			<img :src="img" :alt="name">
+			<Webp :src="img" :alt="name"></Webp>
+			<!-- <img :src="img" :alt="name"> -->
 			<!-- <a :href="socLink" class="team-block__soc btn btn--soc btn--pink">
 				<svg>
 					<use xlink:href="/images/sprite-svg.svg#linkedin"></use>
@@ -21,6 +22,7 @@
 </template>
 <script>
 import Btn from './Btn.vue';
+import Webp from './Webp.vue';
 export default {
 	name: "TeamBlock",
 	props: ['name', 'position', 'socLink', 'img'],
@@ -30,7 +32,7 @@ export default {
 
 		};
 	},
-	components: { Btn }
+	components: { Btn, Webp }
 }
 </script>
 
