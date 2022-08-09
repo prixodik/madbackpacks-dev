@@ -110,5 +110,46 @@ export default {
 		}
 	}
 
+	&--big {
+		justify-content: center;
+	}
+
+	&--big & {
+		&__item {
+			margin-right: 56px;
+
+			@media screen and (max-width: $xs) {
+				margin-right: 38px;
+			}
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			a {
+
+				width: 32px;
+				height: 32px;
+
+				svg {
+					width: 32px;
+					height: 32px;
+				}
+
+
+				@media screen and (max-width: $xs) {
+					width: 27px;
+					height: 27px;
+
+					svg {
+						width: 27px;
+						height: 27px;
+					}
+				}
+
+			}
+		}
+	}
+
 }
 </style>

@@ -42,8 +42,12 @@ export default {
 	buildModules: [
 		// https://go.nuxtjs.dev/vuetify
 		'@nuxtjs/vuetify',
-		'@nuxt/postcss8'
+		'@nuxt/postcss8',
+		'@nuxtjs/google-analytics'
 	],
+	googleAnalytics: {
+		id: 'G-VJYD71JYDC'
+	},
 
 	// Modules: https://go.nuxtjs.dev/config-modules
 	modules: [
@@ -54,6 +58,7 @@ export default {
 	vuetify: {
 		customVariables: ['~/assets/scss/lending/variables.scss'],
 		treeShake: true,
+		defaultAssets: false,
 		theme: {
 			dark: false,
 			themes: {

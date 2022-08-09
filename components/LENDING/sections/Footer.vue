@@ -10,16 +10,17 @@
 				</div>
 				<div class="footer__menu">
 					<a href="#" v-scroll-to="'#about-section'" class="footer__menu-item">about</a>
-					<a href="#" v-scroll-to="'#tokensusage-section'" class="footer__menu-item">Mechanics</a>
+					<a href="#" v-scroll-to="'#dino-section'" class="footer__menu-item">Mechanics</a>
 					<a href="#" v-scroll-to="'#tokenomics-section'" class="footer__menu-item">Tokenomics</a>
 					<a href="#" v-scroll-to="'#roadmap-section'" class="footer__menu-item">roadmap</a>
-					<a href="#" v-scroll-to="'#partners-section'" class="footer__menu-item">team & partners</a>
+					<a href="#" v-scroll-to="'#partners-section'" class="footer__menu-item">Partners & Team</a>
 
 				</div>
 
 				<SocList class="footer__soc"></SocList>
 			</div>
-			<div class="footer__copyright">Your personal data is processed in accordance with our <a href="#">Privacy
+			<div class="footer__copyright">Your personal data is processed in accordance with our <a
+					href="https://madbackpacks.io/pdf/Privacy.pdf" target="_blank">Privacy
 					Notice</a></div>
 
 		</div>

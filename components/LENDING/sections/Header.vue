@@ -10,11 +10,10 @@
 			</div>
 			<div class="header__menu">
 				<a href="#" v-scroll-to="'#about-section'" class="header__menu-item">about</a>
-				<a href="#" v-scroll-to="'#tokensusage-section'" class="header__menu-item">token</a>
-				<a href="#" v-scroll-to="'#roadmap-section'" class="header__menu-item">roadmap</a>
-				<a href="#" v-scroll-to="'#partners-section'" class="header__menu-item">team & partners</a>
-				<a href="#" v-scroll-to="'#join-section'" class="header__menu-item">how to play</a>
+				<a href="#" v-scroll-to="'#dino-section'" class="header__menu-item">Mechanics</a>
 				<a href="#" v-scroll-to="'#tokenomics-section'" class="header__menu-item">Tokenomics</a>
+				<a href="#" v-scroll-to="'#roadmap-section'" class="header__menu-item">roadmap</a>
+				<a href="#" v-scroll-to="'#partners-section'" class="header__menu-item">Partners & Team</a>
 			</div>
 
 			<SocDropdown class="header__soc"></SocDropdown>
@@ -25,10 +24,13 @@
 			</a>
 
 		</div>
+
+		<MobMenu ref="mobmenu" @hideMenu="mobileMenuHide()"></MobMenu>
 	</header>
 </template>
 <script>
 import SocDropdown from '../blocks/SocDropdown.vue';
+import MobMenu from '../blocks/MobMenu.vue';
 
 export default {
 	name: "Header",
@@ -37,10 +39,15 @@ export default {
 			mobileMenuShow: false
 		};
 	},
-	components: { SocDropdown },
+	components: { SocDropdown, MobMenu },
 	methods: {
 		mobileMenuToggle() {
 			this.mobileMenuShow = !this.mobileMenuShow;
+			this.$refs.mobmenu.toggleMenu();
+		},
+		mobileMenuHide() {
+			this.mobileMenuShow = false;
+			//this.$refs.mobmenu.toggleMenu();
 		}
 	}
 }
@@ -55,8 +62,12 @@ export default {
 	z-index: 100;
 	padding: 28px 0 0;
 
+	@media screen and (max-width: $md) {
+		padding: 8px 0 0;
+	}
+
 	@media screen and (max-width: $sm) {
-		padding: 0;
+		padding: 8px 0 0;
 	}
 
 	@media screen and (max-width: $xs) {
@@ -99,6 +110,10 @@ export default {
 
 	&__burger {
 		display: none !important;
+
+		&.is-active {
+			z-index: 1002;
+		}
 
 		@media screen and (max-width: $md) {
 			display: flex !important;
