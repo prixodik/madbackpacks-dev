@@ -1,5 +1,5 @@
 <template>
-	<section class="tokenomics-section">
+	<section class="tokenomics-section" id="tokenomics-section">
 
 		<Dotteds class="tokenomics-section__dotteds" :count="12"></Dotteds>
 
