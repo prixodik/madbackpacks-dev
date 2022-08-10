@@ -68,7 +68,7 @@ export default {
 
 			this.timer = setTimeout(() => {
 				this.activeAnimation();
-			}, 3000);
+			}, 30000);
 		},
 		stopAnimation() {
 			//clearInterval(this.timer);
