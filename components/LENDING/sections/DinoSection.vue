@@ -1,12 +1,12 @@
 <template>
 	<section class="dino-section" id="dino-section">
 
-		<Dotteds class="dino-section__dotteds" :count="15"></Dotteds>
+		<Dotteds ref="dotteds" class="dino-section__dotteds" :count="15"></Dotteds>
 
 		<div class="dino-section__container container">
 			<div class="dino-section__title title-h1" :title="title">{{ title }}</div>
 
-			<kinesis-container class="dino-section__img">
+			<kinesis-container :active="animationSection" class="dino-section__img">
 
 				<div class="dino-section__info-wrap">
 					<div :class="`dino-section__info dino-section__info--${index + 1}`" v-for="(info, index) in infos">
@@ -61,6 +61,7 @@ export default {
 		return {
 			title: '_Dive into the experience',
 			infoIndex: 0,
+			animationSection: false,
 			infos: [
 				{
 					title: 'Inventory management',
@@ -81,6 +82,14 @@ export default {
 	},
 	components: { KinesisContainer, KinesisElement, Dotteds, Webp },
 	methods: {
+		activeAnimation() {
+			this.animationSection = true;
+			this.$refs.dotteds.activeAnimation();
+		},
+		stopAnimation() {
+			this.animationSection = false;
+			this.$refs.dotteds.stopAnimation();
+		},
 		infoToggle(index) {
 			this.infoIndex = index;
 		}

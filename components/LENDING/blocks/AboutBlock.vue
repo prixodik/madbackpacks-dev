@@ -131,6 +131,7 @@ export default {
 		//max-width: 310px;
 		color: #CECCD6;
 		flex: 1 1 auto;
+		min-height: 52px;
 
 		@media screen and (max-width: $sm) {
 			font-size: 14px;

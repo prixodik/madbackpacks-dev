@@ -36,6 +36,8 @@ export default {
 			title: '_About the game',
 			desc: 'MadBackpacks is the next-gen AR game powered by WeWay<br> Bringing augmented reality to your everyday life for an ultimate gaming experience',
 
+			animationSection: false,
+
 			swiperOptions: {
 				spaceBetween: 0,
 				slidesPerView: 4,
@@ -109,6 +111,16 @@ export default {
 		};
 	},
 	components: { AboutBlock },
+	methods: {
+		activeAnimation() {
+			this.animationSection = true;
+			//this.$refs.dotteds.activeAnimation();
+		},
+		stopAnimation() {
+			this.animationSection = false;
+			//this.$refs.dotteds.stopAnimation();
+		}
+	}
 	/* directives: {
 		swiper: directive,
 	}, */

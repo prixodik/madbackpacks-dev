@@ -10,6 +10,10 @@
 export default {
 	name: "Dotteds",
 	props: {
+		/* active: {
+			type: Boolean,
+			default: "false"
+		}, */
 		count: {
 			type: Number,
 			default: "15"
@@ -26,6 +30,7 @@ export default {
 	data() {
 		return {
 			items: [],
+			timer: null,
 		};
 	},
 	created() {
@@ -39,18 +44,36 @@ export default {
 			});
 		}
 
-		setTimeout(() => {
+		/* setTimeout(() => {
 			this.setParams();
-		}, 100);
+		}, 100); */
 
 	},
 	mounted() {
 
-		setInterval(() => {
+		/* this.timer = setInterval(() => {
 			this.setParams();
-		}, 30000);
+		}, 30000); */
 	},
 	methods: {
+		activeAnimation() {
+			/* setTimeout(() => {
+				this.setParams();
+			}, 100);
+			this.timer = setInterval(() => {
+				this.setParams();
+			}, 30000); */
+
+			this.setParams();
+
+			this.timer = setTimeout(() => {
+				this.activeAnimation();
+			}, 3000);
+		},
+		stopAnimation() {
+			//clearInterval(this.timer);
+			clearTimeout(this.timer);
+		},
 		setParams() {
 			//console.log(Math.floor(Math.random() * 5));
 			this.items.forEach((item) => {

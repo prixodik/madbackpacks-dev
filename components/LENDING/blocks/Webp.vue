@@ -26,7 +26,6 @@ export default {
 	computed: {
 		webpSrc() {
 			const url = this.src.replace(/\.\w{1,5}$/, ".webp");
-			console.log(url);
 			return url;
 		}
 	},

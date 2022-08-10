@@ -20,8 +20,8 @@
 				</div>
 			</form>
 
-			<kinesis-container class="join-section__img">
-				<Dotteds :count="12" :maxWidth="12"></Dotteds>
+			<kinesis-container class="join-section__img" :active="animationSection">
+				<Dotteds ref="dotteds" :count="12" :maxWidth="12"></Dotteds>
 
 				<kinesis-element :strength="15" type="depth" class="join-section__img-1">
 					<Webp :src="img"></Webp>
@@ -59,11 +59,19 @@ export default {
 				telegram: null
 			},
 			orderTelegram: null,
-
+			animationSection: false,
 		};
 	},
 	components: { KinesisContainer, KinesisElement, Dotteds, Btn, Webp },
 	methods: {
+		activeAnimation() {
+			this.animationSection = true;
+			this.$refs.dotteds.activeAnimation();
+		},
+		stopAnimation() {
+			this.animationSection = false;
+			this.$refs.dotteds.stopAnimation();
+		},
 		sendForm() {
 			this.popupShow('popup-succesfull');
 		},

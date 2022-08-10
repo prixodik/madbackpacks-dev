@@ -1,7 +1,7 @@
 <template>
 	<section class="first-section">
 
-		<Dotteds :count="15" color="#94FFEC"></Dotteds>
+		<Dotteds ref="dotteds" :count="15" color="#94FFEC"></Dotteds>
 
 		<div class="first-section__container container">
 			<div class="first-section__wrapper">
@@ -25,7 +25,7 @@
 				</div>
 			</div>
 
-			<kinesis-container class="first-section__img">
+			<kinesis-container :active="animationSection" class="first-section__img">
 
 				<kinesis-element :strength="65" class="first-section__img-1">
 					<Webp src="images/first-section-img-1.png"></Webp>
@@ -79,10 +79,19 @@ export default {
 		return {
 			title: '<span class="first-section__title--blue">_MADBACKPACKS</span> <br>is the first Find-to-Earn <br>game <span class="first-section__title--red">by WeWay</span>',
 			desc: 'Explore a whole new world of treasure hunting',
+			animationSection: false,
 		};
 	},
 	components: { KinesisContainer, KinesisElement, Dotteds, Btn, Webp },
 	methods: {
+		activeAnimation() {
+			this.animationSection = true;
+			this.$refs.dotteds.activeAnimation();
+		},
+		stopAnimation() {
+			this.animationSection = false;
+			this.$refs.dotteds.stopAnimation();
+		},
 		openPopup(id) {
 			console.log(1);
 			this.$emit('openPopup', id);

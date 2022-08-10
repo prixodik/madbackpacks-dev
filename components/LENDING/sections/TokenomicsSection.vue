@@ -1,7 +1,7 @@
 <template>
 	<section class="tokenomics-section" id="tokenomics-section">
 
-		<Dotteds class="tokenomics-section__dotteds" :count="12"></Dotteds>
+		<Dotteds ref="dotteds" class="tokenomics-section__dotteds" :count="12"></Dotteds>
 
 		<div class="tokenomics-section__container container">
 			<div class="tokenomics-section__title title-h1" :title="title">{{ title }}</div>
@@ -21,7 +21,7 @@
 					</div>
 				</div>
 				<div class="tokenomics-section__body">
-					<kinesis-container class="tokenomics-section__img">
+					<kinesis-container :active="animationSection" class="tokenomics-section__img">
 						<Webp class="tokenomics-section__img-1" src="images/tokenomics-section-img-1.png"></Webp>
 						<!-- <img class="tokenomics-section__img-1" src="images/tokenomics-section-img-1.png" alt=""> -->
 						<img class="tokenomics-section__img-2" src="images/tokenomics-section-img-2.svg" alt="">
@@ -103,6 +103,7 @@ export default {
 		return {
 			title: '_Tokenomics',
 			animatedLines: false,
+			animationSection: false,
 			procents: [{
 				color: '#FE38EB',
 				value: '25',
@@ -161,6 +162,14 @@ export default {
 	},
 	components: { KinesisContainer, KinesisElement, Dotteds, Webp },
 	methods: {
+		activeAnimation() {
+			this.animationSection = true;
+			this.$refs.dotteds.activeAnimation();
+		},
+		stopAnimation() {
+			this.animationSection = false;
+			this.$refs.dotteds.stopAnimation();
+		},
 		playLines() {
 			this.animatedLines = true;
 		}

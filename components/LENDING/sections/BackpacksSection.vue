@@ -1,7 +1,7 @@
 <template>
 	<section class="backpacks-section" id="backpacks-section">
 
-		<Dotteds class="backpacks-section__dotteds" :count="15"></Dotteds>
+		<Dotteds ref="dotteds" class="backpacks-section__dotteds" :count="15"></Dotteds>
 
 		<div class="backpacks-section__container container">
 			<div class="backpacks-section__title title-h1" :title="title">{{ title }}</div>
@@ -114,6 +114,7 @@ export default {
 			title: '_Backpacks',
 			//desc: 'As for today, projects are limited to:',
 			paramsTitle: ['Traits', 'Description', 'Upgrade'],
+			animationSection: false,
 			params: [{
 				label: 'Capacity',
 				param1: 'Minigame backpack capacity in coins',
@@ -131,6 +132,14 @@ export default {
 	},
 	components: { KinesisContainer, KinesisElement, Dotteds, VideoBlock, Webp },
 	methods: {
+		activeAnimation() {
+			this.animationSection = true;
+			this.$refs.dotteds.activeAnimation();
+		},
+		stopAnimation() {
+			this.animationSection = false;
+			this.$refs.dotteds.stopAnimation();
+		},
 		playVideo() {
 			this.$refs.VideoBlock.playVideo();
 		}

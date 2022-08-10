@@ -45,6 +45,7 @@ export default {
 		return {
 			title: '_Tokens & usage',
 			desc: '$WWMB in-game utility token | WeWay $WWY token',
+			animationSection: false,
 
 			swiperOptions: {
 				spaceBetween: 0,
@@ -252,6 +253,14 @@ export default {
 	},
 	components: { TokenBlock, Btn },
 	methods: {
+		activeAnimation() {
+			this.animationSection = true;
+			//this.$refs.dotteds.activeAnimation();
+		},
+		stopAnimation() {
+			this.animationSection = false;
+			//this.$refs.dotteds.stopAnimation();
+		},
 		openPopup(id) {
 			this.$emit('openPopup', id);
 		}
