@@ -250,6 +250,18 @@ export default {
 		}
 	}
 
+	&--icon {
+		display: inline-flex;
+
+		svg.btn__icon {
+			width: 21px;
+			height: 21px;
+			fill: $white;
+			stroke: $white;
+			margin-right: 12px;
+		}
+	}
+
 	&--arrow {
 		min-width: 62px;
 		padding-left: 0;

@@ -545,7 +545,7 @@ export default {
 			@media screen and (max-width: $md) {
 				max-height: 0;
 				overflow: hidden;
-				transition: all 0.4s;
+				//transition: all 0.4s;
 				font: 900 18px/1.7 $titleFF;
 
 				&.is-active {

@@ -7,7 +7,7 @@
 				<div class="roadmap-block__mounth">{{ mounth }}</div>
 			</div>
 		</div>
-		<div class="roadmap-block__list">
+		<div class="roadmap-block__list" @click.prevent="acitveCurrent()">
 			<svg class="roadmap-block__decore" width="33" height="109" viewBox="0 0 33 109" fill="none"
 				xmlns="http://www.w3.org/2000/svg">
 				<g class="roadmap-block__decore-cube">

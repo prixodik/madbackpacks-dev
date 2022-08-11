@@ -60,6 +60,16 @@ export default {
 				passiveListeners: false,
 				enabled: false,
 
+				speed: 1000,
+				effect: 'coverflow',
+				coverflowEffect: {
+					rotate: 0,
+					stretch: 90,
+					scale: 0.65,
+					depth: 200,
+					modifier: 1,
+					slideShadows: false,
+				},
 
 				breakpoints: {
 					320: {
@@ -71,18 +81,27 @@ export default {
 							type: "bullets",
 							clickable: true,
 						},
+
 					},
 					993: {
 						slidesPerView: 3,
 						spaceBetween: 16,
 						enabled: false,
-						centeredSlides: true,
-						centeredSlidesBounds: true,
+						centeredSlides: false,
+						centeredSlidesBounds: false,
 						/* pagination: {
 							el: ".swiper-pagination",
 							type: "bullets",
 							clickable: true,
 						}, */
+						coverflowEffect: {
+							rotate: 0,
+							stretch: 0,
+							scale: 1,
+							depth: 0,
+							modifier: 1,
+							slideShadows: false,
+						},
 					},
 					1281: {
 						slidesPerView: 3,
@@ -358,24 +377,71 @@ export default {
 		max-width: 33.33%; */
 		display: flex;
 		justify-content: center;
+		position: static;
 
 		@media screen and (max-width: $sm) {
 			display: block;
+			opacity: 0;
+			transition: all .1s;
+
+			.token-block {
+				//max-width: 140px;
+				//margin-top: 103px;
+
+				&__img {
+					opacity: 0;
+					transition: all .1s;
+				}
+
+				&__title,
+				&__desc,
+				&__params {
+					opacity: 0;
+					transition: all .1s;
+				}
+			}
+
+			&.swiper-slide-active {
+				opacity: 1;
+				transition: all .7s;
+
+				.token-block {
+					//max-width: 100%;
+					//margin-top: 0;
+
+					&__img {
+						opacity: 1;
+						transition: all .7s;
+					}
+
+					&__title,
+					&__desc,
+					&__params {
+						opacity: 1;
+						transition: all .7s;
+					}
+				}
+			}
 
 			&.swiper-slide-next,
 			&.swiper-slide-prev {
+				opacity: 1;
+				transition: all .7s;
+
 				.token-block {
-					max-width: 180px;
-					margin-top: 84px;
+					//max-width: 180px;
+					//margin-top: 84px;
 
 					&__img {
 						opacity: 0.6;
+						transition: all .3s;
 					}
 
 					&__title,
 					&__desc,
 					&__params {
 						opacity: 0;
+						transition: all .3s;
 					}
 				}
 			}

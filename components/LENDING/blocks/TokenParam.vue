@@ -1,5 +1,5 @@
 <template>
-	<div class="token-param">
+	<div class="token-param" :class="{ 'is-active': active }">
 		<div class="token-param__icon">
 			<svg :class="`token-param__icon-main token-param__icon-main--${icon}`" :fill="currentColor.iconColor"
 				:stroke="currentColor.iconColor">
@@ -59,7 +59,7 @@ import { createDecipheriv } from 'crypto';
 
 export default {
 	name: "TokenParam",
-	props: ['icon', 'color', 'title', 'list'],
+	props: ['icon', 'color', 'title', 'list', 'active'],
 	data() {
 		return {
 			colors: {
@@ -135,6 +135,9 @@ export default {
 
 			return color;
 		}
+	},
+	methods: {
+
 	}
 }
 </script>
@@ -153,6 +156,7 @@ export default {
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		pointer-events: none;
 
 		@media screen and (max-width: $sm) {
 			transform: scale(0.7);
@@ -213,8 +217,21 @@ export default {
 		width: 418px;
 		pointer-events: none;
 
+		@media screen and (max-width: $sm) {
+			left: 50%;
+			transform: translateX(-50%);
+			top: auto;
+			bottom: 100%;
+			width: 250px;
+		}
+
 		&-item {
 			margin: 0 4px 4px 0;
+
+			@media screen and (max-width: $sm) {
+				margin-right: 0;
+				width: 100%;
+			}
 		}
 
 		&-block {
@@ -242,6 +259,12 @@ export default {
 				max-width: 25px;
 				height: 25px;
 			}
+
+			@media screen and (max-width: $sm) {
+				display: flex;
+				justify-content: center;
+				text-align: center;
+			}
 		}
 	}
 
@@ -258,6 +281,10 @@ export default {
 	&--group-2 & {
 		&__list {
 			max-width: 300px;
+
+			@media screen and (max-width: $sm) {
+				max-width: 250px;
+			}
 		}
 	}
 
@@ -266,6 +293,11 @@ export default {
 			left: auto;
 			right: 83px;
 			justify-content: flex-end;
+
+			@media screen and (max-width: $sm) {
+				left: 50%;
+				right: auto;
+			}
 		}
 	}
 

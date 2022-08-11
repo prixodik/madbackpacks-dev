@@ -254,8 +254,20 @@ export default {
 		}
 
 		.video-player-box {
-			transform: scale(3.2) translate(-1.5rem, 0);
+			transform: scale(2.9) translate(0, 0);
 			transform-origin: 50% 50%;
+
+			@media screen and (max-width: $md) {
+				transform: scale(2.7) translate(0, 0);
+			}
+
+			@media screen and (max-width: $sm) {
+				transform: scale(2.2) translate(0, 0);
+			}
+
+			@media screen and (max-width: $xs) {
+				transform: scale(1.6) translate(0, 0);
+			}
 		}
 
 		.video-js,

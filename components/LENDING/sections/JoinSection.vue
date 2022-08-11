@@ -1,7 +1,7 @@
 <template>
 	<section class="join-section" id="join-section">
 		<div class="join-section__container container">
-			<form class="join-section__form" action="#" @submit.prevent="checkFormTelegram" method="post"
+			<form class="join-section__form" action="#" @submit.prevent="checkFormEmail" method="post"
 				novalidate="true">
 
 				<div class="join-section__title">
@@ -10,9 +10,9 @@
 				</div>
 
 				<div class="join-section__input">
-					<input type="text" name="telegram" id="telegram" v-model="orderTelegram" class="form-control"
-						:class="{ 'is-error': errors.telegram }" placeholder="Telegram @username" required>
-					<div class="join-section__error" v-if="errors.telegram">{{ errors.telegram }}</div>
+					<input type="email" name="email" id="email" v-model="orderEmail" class="form-control"
+						:class="{ 'is-error': errors.email }" placeholder="E-mail" required>
+					<div class="join-section__error" v-if="errors.email">{{ errors.email }}</div>
 				</div>
 				<div class="join-section__buttons">
 					<!-- <button class="btn" type="submit">{{ btnText }}</button> -->
@@ -56,14 +56,24 @@ export default {
 	data() {
 		return {
 			errors: {
-				telegram: null
+				email: null
 			},
-			orderTelegram: null,
+			orderEmail: null,
 			animationSection: false,
 		};
 	},
 	components: { KinesisContainer, KinesisElement, Dotteds, Btn, Webp },
 	methods: {
+		popupShow(id) {
+			this.popupActiveId = id;
+			this.popupActive = true;
+			this.$emit('openPopup', this.popupActiveId);
+		},
+		popupHide() {
+			this.popupActive = false;
+			this.popupActiveId = false;
+			//this.$emit('closePopup', this.popupActive);
+		},
 		activeAnimation() {
 			this.animationSection = true;
 			this.$refs.dotteds.activeAnimation();
@@ -75,13 +85,13 @@ export default {
 		sendForm() {
 			this.popupShow('popup-succesfull');
 		},
-		checkFormTelegram: function (e) {
+		checkFormEmail: function (e) {
 			this.errors = [];
 
-			if (!this.orderTelegram) {
-				this.errors.telegram = 'Enter Telegram';
-			} else if (!this.validTelegram(this.orderTelegram)) {
-				this.errors.telegram = 'Not correct username';
+			if (!this.orderEmail) {
+				this.errors.email = 'Enter E-mail';
+			} else if (!this.validEmail(this.orderEmail)) {
+				this.errors.email = 'Not correct E-mail';
 			}
 
 			if (!this.errors.name && !this.errors.email && !this.errors.telegram) {
@@ -94,7 +104,11 @@ export default {
 		validTelegram: function (telegram) {
 			var re = /^@([a-zA-Z0-9_.]{1,30}$)/;
 			return re.test(telegram);
-		}
+		},
+		validEmail: function (email) {
+			var re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			return re.test(email);
+		},
 	},
 }
 </script>

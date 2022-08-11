@@ -4,7 +4,7 @@
 		<FirstSection ref="FirstSection" @openPopup="popupShow"></FirstSection>
 		<AboutSection ref="AboutSection"></AboutSection>
 		<JoinSection id="join-section-1" ref="JoinSection1" :title="joinSectionParams.title"
-			:btnText="joinSectionParams.btnText" :img="joinSectionParams.img">
+			:btnText="joinSectionParams.btnText" :img="joinSectionParams.img" @openPopup="popupShow">
 		</JoinSection>
 		<DinoSection ref="DinoSection"></DinoSection>
 		<BackpacksSection ref="BackpacksSection"></BackpacksSection>

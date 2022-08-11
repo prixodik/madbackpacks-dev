@@ -14,20 +14,11 @@
 				<div class="about-section__pagination swiper-pagination" slot="pagination" />
 			</Swiper>
 
-			<!-- <div class="about-section__row">
-				<div class="about-section__col" v-for="(about, index) in abouts" :key="index">
-					<AboutBlock :title="about.title" :desc="about.desc" :icon="about.icon" :delay="about.delay">
-					</AboutBlock>
-				</div>
-			</div> -->
-
 		</div>
 	</section>
 </template>
 <script>
 import AboutBlock from '../blocks/AboutBlock.vue';
-
-//const { directive } = VueAwesomeSwiper(SwiperClass)
 
 export default {
 	name: "AboutSection",
@@ -56,6 +47,17 @@ export default {
 					clickable: true,
 				},
 
+				speed: 1000,
+				effect: 'coverflow',
+				coverflowEffect: {
+					rotate: 0,
+					stretch: 40,
+					scale: 0.6,
+					depth: 200,
+					modifier: 1,
+					slideShadows: false,
+				},
+
 				breakpoints: {
 					320: {
 						slidesPerView: 1,
@@ -63,11 +65,11 @@ export default {
 						enabled: true,
 					},
 					993: {
-						slidesPerView: 3,
+						slidesPerView: 1,
 						spaceBetween: 16,
 						enabled: true,
 						centeredSlides: true,
-						centeredSlidesBounds: true,
+						centeredSlidesBounds: false,
 						/* pagination: {
 							el: ".swiper-pagination",
 							type: "bullets",
@@ -247,7 +249,7 @@ export default {
 			display: flex;
 		}
 
-		@media screen and (max-width: $sm) {
+		@media screen and (max-width: $md) {
 			max-width: 320px;
 			margin: 0 auto;
 			overflow: visible !important;
@@ -264,23 +266,69 @@ export default {
 		display: flex;
 		justify-content: center;
 
-		@media screen and (max-width: $sm) {
+		@media screen and (max-width: $md) {
 			display: block;
+			opacity: 0;
+			transition: all .1s;
+
+			.about-block {
+				//max-width: 140px;
+				//margin-top: 103px;
+
+				&__img {
+					opacity: 0;
+					transition: all .1s;
+				}
+
+				&__title,
+				&__desc,
+				&__bottom {
+					opacity: 0;
+					transition: all .1s;
+				}
+			}
+
+			&.swiper-slide-active {
+				opacity: 1;
+				transition: all .7s;
+
+				.about-block {
+					//max-width: 100%;
+					//margin-top: 0;
+
+					&__img {
+						opacity: 1;
+						transition: all .7s;
+					}
+
+					&__title,
+					&__desc,
+					&__bottom {
+						opacity: 1;
+						transition: all .7s;
+					}
+				}
+			}
 
 			&.swiper-slide-next,
 			&.swiper-slide-prev {
+				opacity: 1;
+				transition: all .7s;
+
 				.about-block {
-					max-width: 140px;
-					margin-top: 103px;
+					//max-width: 140px;
+					//margin-top: 103px;
 
 					&__img {
 						opacity: 0.6;
+						transition: all .3s;
 					}
 
 					&__title,
 					&__desc,
 					&__bottom {
 						opacity: 0;
+						transition: all .3s;
 					}
 				}
 			}

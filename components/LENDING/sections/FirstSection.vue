@@ -8,14 +8,18 @@
 				<div class="first-section__title" v-html="title"></div>
 				<div class="first-section__desc" v-html="desc"></div>
 				<div class="first-section__buttons">
-					<Btn :tag="'a'" :href="'#'" :text="'Join IDO'" @click.prevent.native="openPopup('popup-join')">
+					<Btn class="btn--icon" tag="a" href="https://t.me/MadBackpacks" target="_blank">
+						<svg class="btn__icon">
+							<use xlink:href="/images/sprite-svg.svg#telegram"></use>
+						</svg>
+						<span>Join community</span>
 					</Btn>
 
-					<Btn :tag="'a'" :href="'#'" class="btn--soc" @click.prevent.native="openPopup('popup-telegram')">
+					<!-- <Btn :tag="'a'" :href="'#'" class="btn--soc" @click.prevent.native="openPopup('popup-telegram')">
 						<svg>
 							<use xlink:href="/images/sprite-svg.svg#telegram"></use>
 						</svg>
-					</Btn>
+					</Btn> -->
 
 					<!-- <a href="#" @click.prevent="openPopup('popup-telegram')" class="btn btn--soc">
 						<svg>
