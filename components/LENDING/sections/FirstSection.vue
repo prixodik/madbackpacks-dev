@@ -32,39 +32,39 @@
 			<kinesis-container :active="animationSection" class="first-section__img">
 
 				<kinesis-element :strength="65" class="first-section__img-1">
-					<Webp src="images/first-section-img-1.png"></Webp>
-					<Webp class="first-section__img-1-shadow" src="images/first-section-img-1.png"></Webp>
-					<!-- <img src="images/first-section-img-1.png" alt="">
-					<img class="first-section__img-1-shadow" src="images/first-section-img-1.png" alt=""> -->
+					<Webp src="/images/first-section-img-1.png"></Webp>
+					<Webp class="first-section__img-1-shadow" src="/images/first-section-img-1.png"></Webp>
+					<!-- <img src="/images/first-section-img-1.png" alt="">
+					<img class="first-section__img-1-shadow" src="/images/first-section-img-1.png" alt=""> -->
 				</kinesis-element>
 
 				<kinesis-element :strength="45" class="first-section__img-2">
-					<Webp src="images/first-section-img-2.png"></Webp>
-					<Webp class="first-section__img-2-shadow" src="images/first-section-img-2.png"></Webp>
-					<!-- <img src="images/first-section-img-2.png" alt="">
-					<img class="first-section__img-2-shadow" src="images/first-section-img-2.png" alt=""></img> -->
+					<Webp src="/images/first-section-img-2.png"></Webp>
+					<Webp class="first-section__img-2-shadow" src="/images/first-section-img-2.png"></Webp>
+					<!-- <img src="/images/first-section-img-2.png" alt="">
+					<img class="first-section__img-2-shadow" src="/images/first-section-img-2.png" alt=""></img> -->
 				</kinesis-element>
 
 				<kinesis-element :strength="85" class="first-section__img-3">
-					<Webp src="images/first-section-img-3.png"></Webp>
-					<!-- <img src="images/first-section-img-3.png" alt=""> -->
-					<img class="first-section__img-3-circle" src="images/first-section-img-3-circle.svg" alt=""></img>
+					<Webp src="/images/first-section-img-3.png"></Webp>
+					<!-- <img src="/images/first-section-img-3.png" alt=""> -->
+					<img class="first-section__img-3-circle" src="/images/first-section-img-3-circle.svg" alt=""></img>
 				</kinesis-element>
 
 				<kinesis-element :strength="65" class="first-section__img-4">
-					<Webp src="images/first-section-img-4.png"></Webp>
-					<!-- <img src="images/first-section-img-4.png" alt=""> -->
-					<img class="first-section__img-4-circle" src="images/first-section-img-4-circle.svg" alt="">
+					<Webp src="/images/first-section-img-4.png"></Webp>
+					<!-- <img src="/images/first-section-img-4.png" alt=""> -->
+					<img class="first-section__img-4-circle" src="/images/first-section-img-4-circle.svg" alt="">
 				</kinesis-element>
 
 				<kinesis-element :strength="45" class="first-section__img-5">
-					<Webp src="images/first-section-img-5.png"></Webp>
-					<!-- <img src="images/first-section-img-5.png" alt=""> -->
+					<Webp src="/images/first-section-img-5.png"></Webp>
+					<!-- <img src="/images/first-section-img-5.png" alt=""> -->
 				</kinesis-element>
 
 				<kinesis-element :strength="25" class="first-section__img-6">
-					<Webp src="images/first-section-img-6.png"></Webp>
-					<!-- <img src="images/first-section-img-6.png" alt=""> -->
+					<Webp src="/images/first-section-img-6.png"></Webp>
+					<!-- <img src="/images/first-section-img-6.png" alt=""> -->
 				</kinesis-element>
 			</kinesis-container>
 
@@ -110,7 +110,7 @@ export default {
 	position: relative;
 	overflow: hidden;
 	z-index: 1;
-	background: url('/images/first-section-bg.jpg') 50% 100%/cover no-repeat;
+	background: url('/images/first-section-bg.webp') 50% 100%/cover no-repeat;
 
 	@media screen and (max-width: $md) {
 		min-height: 810px;
@@ -339,15 +339,16 @@ export default {
 				width: 29.5rem;
 				bottom: 27.5%;
 				left: 9%;
+				transform: translate3d(65px, 65px, 0px) !important;
 			}
 
 			@media screen and (max-width: $xs) {
 				width: 19rem;
-				/* bottom: 15.5%;
-				left: -15%; */
-				bottom: 5.5%;
+				bottom: 15.5%;
+				left: -15%;
+				/* bottom: 5.5%;
 				left: 5%;
-				transform: none !important;
+				transform: none !important; */
 			}
 
 			&-shadow {
@@ -375,15 +376,16 @@ export default {
 				width: 35.5rem;
 				left: 76%;
 				top: 42.5%;
+				transform: translate3d(45px, 45px, 0px) !important;
 			}
 
 			@media screen and (max-width: $xs) {
 				width: 26rem;
-				/* left: 88%;
-				top: 57.5%; */
+				left: 88%;
+				top: 57.5%;
 
-				left: 95%;
-				top: 65.5%;
+				/* left: 95%;
+				top: 65.5%; */
 			}
 
 			&-shadow {
@@ -406,6 +408,7 @@ export default {
 				width: 11rem;
 				top: 4%;
 				left: 19%;
+				transform: translate3d(85px, 85px, 0px) !important;
 			}
 
 			@media screen and (max-width: $xs) {
@@ -438,6 +441,7 @@ export default {
 				width: 20rem;
 				bottom: 36.5%;
 				right: 19%;
+				transform: translate3d(65px, 65px, 0px) !important;
 			}
 
 			@media screen and (max-width: $xs) {
@@ -469,6 +473,7 @@ export default {
 				width: 10rem;
 				top: 17.5%;
 				left: 41%;
+				transform: translate3d(45px, 45px, 0px) !important;
 			}
 
 			@media screen and (max-width: $xs) {

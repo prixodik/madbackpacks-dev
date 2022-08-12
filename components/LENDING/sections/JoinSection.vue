@@ -29,15 +29,15 @@
 				</kinesis-element>
 
 				<kinesis-element :strength="45" class="join-section__img-2">
-					<Webp src="images/join-section-img-2.png"></Webp>
-					<!-- <img src="images/join-section-img-2.png" alt=""> -->
-					<img class="join-section__img-2-circle" src="images/join-section-img-2-circle.svg" alt=""></img>
+					<Webp src="/images/join-section-img-2.png"></Webp>
+					<!-- <img src="/images/join-section-img-2.png" alt=""> -->
+					<img class="join-section__img-2-circle" src="/images/join-section-img-2-circle.svg" alt=""></img>
 				</kinesis-element>
 
 				<kinesis-element :strength="30" class="join-section__img-3">
-					<Webp src="images/join-section-img-3.png"></Webp>
-					<!-- <img src="images/join-section-img-3.png" alt=""> -->
-					<img class="join-section__img-3-circle" src="images/join-section-img-3-circle.svg" alt="">
+					<Webp src="/images/join-section-img-3.png"></Webp>
+					<!-- <img src="/images/join-section-img-3.png" alt=""> -->
+					<img class="join-section__img-3-circle" src="/images/join-section-img-3-circle.svg" alt="">
 				</kinesis-element>
 
 			</kinesis-container>

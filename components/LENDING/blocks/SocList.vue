@@ -1,37 +1,37 @@
 <template>
 	<div class="soc-list">
 		<div class="soc-list__item">
-			<a href="#">
+			<a href="https://t.me/MadBackpacks" target="_blank">
 				<svg>
-					<use xlink:href="images/sprite-svg.svg#telegram"></use>
+					<use xlink:href="/images/sprite-svg.svg#telegram"></use>
 				</svg>
 			</a>
 		</div>
 		<div class="soc-list__item">
-			<a href="#">
+			<a href="https://www.instagram.com/mad_backpacks/" target="_blank">
 				<svg>
-					<use xlink:href="images/sprite-svg.svg#instagram"></use>
+					<use xlink:href="/images/sprite-svg.svg#instagram"></use>
 				</svg>
 			</a>
 		</div>
 		<div class="soc-list__item">
-			<a href="#">
+			<a href="https://twitter.com/BackpacksMad" target="_blank">
 				<svg>
-					<use xlink:href="images/sprite-svg.svg#twitter"></use>
+					<use xlink:href="/images/sprite-svg.svg#twitter"></use>
 				</svg>
 			</a>
 		</div>
 		<div class="soc-list__item">
-			<a href="#">
+			<a href="https://youtube.com/channel/UCv1vf4YMhL51biKoS5bwTBw" target="_blank">
 				<svg>
-					<use xlink:href="images/sprite-svg.svg#youtube"></use>
+					<use xlink:href="/images/sprite-svg.svg#youtube"></use>
 				</svg>
 			</a>
 		</div>
 		<div class="soc-list__item">
-			<a href="#">
+			<a href="https://discord.gg/Wa9fdhz2qC" target="_blank">
 				<svg>
-					<use xlink:href="images/sprite-svg.svg#discord"></use>
+					<use xlink:href="/images/sprite-svg.svg#discord"></use>
 				</svg>
 			</a>
 		</div>

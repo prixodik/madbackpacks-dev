@@ -22,8 +22,8 @@
 				<div class="backpacks-section__col">
 					<VideoBlock class="backpacks-section__video" ref="VideoBlock"></VideoBlock>
 					<div class="backpacks-section__img-xs">
-						<Webp src="images/backpacks-section-img-xs.png"></Webp>
-						<!-- <img src="images/backpacks-section-img-xs.png" alt=""> -->
+						<Webp src="/images/backpacks-section-img-xs.png"></Webp>
+						<!-- <img src="/images/backpacks-section-img-xs.png" alt=""> -->
 					</div>
 				</div>
 			</div>
@@ -151,7 +151,7 @@ export default {
 .backpacks-section {
 	padding: 75px 0 84px;
 	position: relative;
-	background: url('/images/backpacks-section-bg.png') 50% 100% no-repeat;
+	background: url('/images/backpacks-section-bg.webp') 50% 100% no-repeat;
 
 	@media screen and (max-width: $sm) {
 		padding-top: 60px;

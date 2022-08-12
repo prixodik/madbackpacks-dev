@@ -69,7 +69,7 @@ export default {
 
 <style lang="scss" scoped>
 .mob-menu {
-	background: url('/images/mob-menu-line.svg') 0 88px repeat-x, url('/images/mob-menu-bg.png') 0 0/cover no-repeat #090923;
+	background: url('/images/mob-menu-line.svg') 0 88px repeat-x, url('/images/mob-menu-bg.webp') 0 0/cover no-repeat #090923;
 	padding: 88px 60px 20px;
 	position: fixed;
 	top: 0;
@@ -89,7 +89,7 @@ export default {
 	}
 
 	@media screen and (max-width: $xs) {
-		background: url('/images/mob-menu-line.svg') 0 62px repeat-x, url('/images/mob-menu-bg.png') 0 0/cover no-repeat #090923;
+		background: url('/images/mob-menu-line.svg') 0 62px repeat-x, url('/images/mob-menu-bg.webp') 0 0/cover no-repeat #090923;
 		padding: 60px 40px 20px;
 	}
 

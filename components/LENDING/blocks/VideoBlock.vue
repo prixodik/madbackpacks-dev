@@ -1,14 +1,14 @@
 <template>
 	<div class="video-block">
-		<img class="video-block__bg-pink" src="images/video-block-bg-pink.svg" alt="">
-		<img class="video-block__bg-white" src="images/video-block-bg-white.svg" alt="">
+		<img class="video-block__bg-pink" src="/images/video-block-bg-pink.svg" alt="">
+		<img class="video-block__bg-white" src="/images/video-block-bg-white.svg" alt="">
 
 		<div class="video-block__wrapper">
 
 			<a href="#" class="video-block__play" @click.prevent="videoPopupShow()">
-				<img src="images/video-play.svg" alt="">
+				<img src="/images/video-play.svg" alt="">
 			</a>
-			<!-- <vue-player video-placeholder-src="images/video.mp4" src="images/video.mp4" poster="images/video-thumb.jpg"
+			<!-- <vue-player video-placeholder-src="/images/video.mp4" src="/images/video.mp4" poster="/images/video-thumb.jpg"
 				title="this is a title" v-model="playing" :playsinline="true">
 			</vue-player> -->
 
@@ -42,7 +42,7 @@
 			<a href="#" class="video-block__popup-close" @click.prevent="videoPopupHide()">
 				<span>close</span>
 				<svg>
-					<use xlink:href="images/sprite-svg.svg#close"></use>
+					<use xlink:href="/images/sprite-svg.svg#close"></use>
 				</svg>
 			</a>
 			<video-player class="video-player-box" ref="videoPlayerPopup" :options="playerPopupOptions"
@@ -75,9 +75,9 @@ export default {
 				playbackRates: [0.7, 1.0, 1.5, 2.0],
 				sources: [{
 					type: "video/mp4",
-					src: "images/video.mp4"
+					src: "/images/video.mp4"
 				}],
-				poster: "images/video-thumb.jpg",
+				poster: "/images/video-thumb.jpg",
 				controls: false,
 			},
 			playerPopupOptions: {
@@ -87,9 +87,9 @@ export default {
 				playbackRates: [0.7, 1.0, 1.5, 2.0],
 				sources: [{
 					type: "video/mp4",
-					src: "images/video.mp4"
+					src: "/images/video.mp4"
 				}],
-				poster: "images/video-thumb.jpg",
+				poster: "/images/video-thumb.jpg",
 				controls: false,
 			},
 			videoPopup: false

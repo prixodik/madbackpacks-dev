@@ -26,7 +26,7 @@
 
 			<div class="tokensusage-section__buttons">
 				<div class="tokensusage-section__trigger">
-					<img src="images/star.svg" alt="">
+					<img src="/images/star.svg" alt="">
 					<span>Burn Triggers</span>
 				</div>
 				<!-- <a href="#" @click.prevent="openPopup('popup-join')" class="btn">GET WWMB</a> -->
@@ -51,7 +51,7 @@ export default {
 	data() {
 		return {
 			title: '_Tokens & usage',
-			desc: '$WWMB in-game utility token | WeWay $WWY token',
+			desc: '$WWMB in-game utility token | $WWY governance token',
 			animationSection: false,
 
 			swiperOptions: {
@@ -305,7 +305,7 @@ export default {
 <style lang="scss" scroped>
 .tokensusage-section {
 	padding: 87px 0;
-	background: url('/images/tokensusage-section-bg.png') 50% 50% no-repeat #090923;
+	background: url('/images/tokensusage-section-bg.webp') 50% 50% no-repeat #090923;
 
 	@media screen and (max-width: $sm) {
 		padding: 60px 0;
@@ -394,10 +394,14 @@ export default {
 		justify-content: center;
 		position: static;
 
+		&:hover {
+			z-index: 200 !important;
+		}
+
 		@media screen and (max-width: $sm) {
 			display: block;
 			opacity: 0;
-			transition: all .1s;
+			transition: opacity .1s;
 
 			.token-block {
 				//max-width: 140px;

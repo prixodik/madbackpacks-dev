@@ -64,7 +64,7 @@
 		<Popup class="popup--succesfull" id="popup-succesfull" v-bind:isActive="popupActive"
 			v-bind:showId="popupActiveId" v-on:closePopup="popupHide()">
 			<div class="popup__img">
-				<img src="images/popup-succesfull-img.png" alt="">
+				<img src="/images/popup-succesfull-img.png" alt="">
 			</div>
 			<div class="popup__title title-h1" title="_Succesfull">_Succesfull</div>
 			<div class="popup__desc">Your request has been sent successfully</div>
@@ -76,7 +76,7 @@
 		<Popup class="popup--succesfull" id="popup-ooops" v-bind:isActive="popupActive" v-bind:showId="popupActiveId"
 			v-on:closePopup="popupHide()">
 			<div class="popup__img">
-				<img src="images/popup-ooops-img.png" alt="">
+				<img src="/images/popup-ooops-img.png" alt="">
 			</div>
 			<div class="popup__title title-h1" title="_Ooops">_Ooops</div>
 			<div class="popup__desc">You have already registered successfully</div>

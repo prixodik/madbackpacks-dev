@@ -1,9 +1,9 @@
 <template>
 	<div class="anim-icon">
 		<Webp class="anim-icon__icon" :src="icon"></Webp>
-		<Webp class="anim-icon__light2" src="images/anim-icon-light-1.png"></Webp>
+		<Webp class="anim-icon__light2" src="/images/anim-icon-light-1.png"></Webp>
 		<!-- <img class="anim-icon__icon" :src="icon" alt="">
-		<img class="anim-icon__light2" src="images/anim-icon-light-1.png" alt=""> -->
+		<img class="anim-icon__light2" src="/images/anim-icon-light-1.png" alt=""> -->
 
 		<svg id="eKkwjmqeQWY1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
 			viewBox="0 0 443 562" shape-rendering="geometricPrecision" text-rendering="geometricPrecision">

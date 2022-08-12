@@ -1,7 +1,7 @@
 <template>
 	<picture>
-		<source :data-srcset="webpSrc" type="image/webp" />
-		<img :src="src" :alt="alt" />
+		<source :data-srcset="src" type="image/png" />
+		<img :src="webpSrc" :alt="alt" />
 	</picture>
 </template>
 <script>

@@ -8,7 +8,7 @@
 		<a href="#" class="popup__close" @click.prevent="hideActive()">
 			<span>close</span>
 			<svg>
-				<use xlink:href="images/sprite-svg.svg#close"></use>
+				<use xlink:href="/images/sprite-svg.svg#close"></use>
 			</svg>
 		</a>
 
@@ -92,7 +92,7 @@ export default {
 	overflow-y: auto;
 	//@include time(0.4s, opacity);
 	transition: left 0s ease 0.5s, opacity 0.1s ease;
-	background: url('/images/popup-bg.png') 50% 50%/cover no-repeat #090923;
+	background: url('/images/popup-bg.webp') 50% 50%/cover no-repeat #090923;
 
 	/* &__overflow {
 		position: fixed;

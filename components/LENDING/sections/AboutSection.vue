@@ -145,7 +145,7 @@ export default {
 <style lang="scss" scroped>
 .about-section {
 	padding: 87px 0;
-	background: url('/images/about-section-line-top.svg') 0 0 no-repeat, url('/images/about-section-bg.png') 50% 50% no-repeat #090923;
+	background: url('/images/about-section-line-top.svg') 0 0 no-repeat, url('/images/about-section-bg.webp') 50% 50% no-repeat #090923;
 	overflow: hidden;
 
 	@media screen and (max-width: $sm) {

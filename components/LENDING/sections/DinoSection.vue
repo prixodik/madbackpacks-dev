@@ -14,7 +14,7 @@
 							@click.prevent="infoToggle(index)">
 							<span>{{ info.title }}</span>
 							<svg class="dino-section__info-arrow" v-bind:class="{ 'is-active': index === infoIndex }">
-								<use xlink:href="images/sprite-svg.svg#arrow-left"></use>
+								<use xlink:href="/images/sprite-svg.svg#arrow-left"></use>
 							</svg>
 						</div>
 						<div class="dino-section__info-text" v-bind:class="{ 'is-active': index === infoIndex }"
@@ -24,26 +24,27 @@
 
 				<div class="dino-section__img-wrap">
 					<kinesis-element :strength="20" class="dino-section__img-1">
-						<Webp src="images/dino-section-img-1.png"></Webp>
-						<!-- <img src="images/dino-section-img-1.png" alt=""> -->
+						<Webp src="/images/dino-section-img-1.png"></Webp>
+						<!-- <img src="/images/dino-section-img-1.png" alt=""> -->
 					</kinesis-element>
 
 					<kinesis-element :strength="35" class="dino-section__img-2">
-						<Webp src="images/dino-section-img-2.png"></Webp>
-						<!-- <img src="images/dino-section-img-2.png" alt=""> -->
-						<img class="dino-section__img-2-circle" src="images/dino-section-img-2-circle.svg" alt=""></img>
+						<Webp src="/images/dino-section-img-2.png"></Webp>
+						<!-- <img src="/images/dino-section-img-2.png" alt=""> -->
+						<img class="dino-section__img-2-circle" src="/images/dino-section-img-2-circle.svg"
+							alt=""></img>
 					</kinesis-element>
 
 					<kinesis-element :strength="55" class="dino-section__img-3">
-						<Webp src="images/dino-section-img-3.png"></Webp>
-						<!-- <img src="images/dino-section-img-3.png" alt=""> -->
-						<img class="dino-section__img-3-circle" src="images/dino-section-img-3-circle.svg" alt="">
+						<Webp src="/images/dino-section-img-3.png"></Webp>
+						<!-- <img src="/images/dino-section-img-3.png" alt=""> -->
+						<img class="dino-section__img-3-circle" src="/images/dino-section-img-3-circle.svg" alt="">
 					</kinesis-element>
 
 					<kinesis-element :strength="40" class="dino-section__img-4">
-						<Webp src="images/dino-section-img-4.png"></Webp>
-						<!-- <img src="images/dino-section-img-4.png" alt=""> -->
-						<img class="dino-section__img-4-circle" src="images/dino-section-img-4-circle.svg" alt="">
+						<Webp src="/images/dino-section-img-4.png"></Webp>
+						<!-- <img src="/images/dino-section-img-4.png" alt=""> -->
+						<img class="dino-section__img-4-circle" src="/images/dino-section-img-4-circle.svg" alt="">
 					</kinesis-element>
 				</div>
 			</kinesis-container>
