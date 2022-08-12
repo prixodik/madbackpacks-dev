@@ -23,18 +23,18 @@
 			<kinesis-container class="join-section__img" :active="animationSection">
 				<Dotteds ref="dotteds" :count="12" :maxWidth="12"></Dotteds>
 
-				<kinesis-element :strength="15" type="depth" class="join-section__img-1">
+				<kinesis-element :strength="15" class="join-section__img-1">
 					<Webp :src="img"></Webp>
 					<!-- <img :src="img" alt=""> -->
 				</kinesis-element>
 
-				<kinesis-element :strength="25" class="join-section__img-2">
+				<kinesis-element :strength="45" class="join-section__img-2">
 					<Webp src="images/join-section-img-2.png"></Webp>
 					<!-- <img src="images/join-section-img-2.png" alt=""> -->
 					<img class="join-section__img-2-circle" src="images/join-section-img-2-circle.svg" alt=""></img>
 				</kinesis-element>
 
-				<kinesis-element :strength="15" class="join-section__img-3">
+				<kinesis-element :strength="30" class="join-section__img-3">
 					<Webp src="images/join-section-img-3.png"></Webp>
 					<!-- <img src="images/join-section-img-3.png" alt=""> -->
 					<img class="join-section__img-3-circle" src="images/join-section-img-3-circle.svg" alt="">
@@ -83,7 +83,20 @@ export default {
 			this.$refs.dotteds.stopAnimation();
 		},
 		sendForm() {
-			this.popupShow('popup-succesfull');
+			const self = this;
+			//this.$axios.post('https://wepad-api.weway.dev/api/v1/users-mbp', {
+			this.$axios.post('https://wepad-api.wepad.io/api/v1/users-mbp', {
+				email: self.orderEmail,
+			})
+				.then(function (response) {
+					console.log(response);
+					self.popupShow('popup-succesfull');
+				})
+				.catch(function (error) {
+					console.log(error);
+					self.popupShow('popup-ooops');
+				});
+
 		},
 		checkFormEmail: function (e) {
 			this.errors = [];

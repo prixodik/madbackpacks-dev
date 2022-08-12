@@ -343,8 +343,11 @@ export default {
 
 			@media screen and (max-width: $xs) {
 				width: 19rem;
-				bottom: 15.5%;
-				left: -15%;
+				/* bottom: 15.5%;
+				left: -15%; */
+				bottom: 5.5%;
+				left: 5%;
+				transform: none !important;
 			}
 
 			&-shadow {
@@ -376,8 +379,11 @@ export default {
 
 			@media screen and (max-width: $xs) {
 				width: 26rem;
-				left: 88%;
-				top: 57.5%;
+				/* left: 88%;
+				top: 57.5%; */
+
+				left: 95%;
+				top: 65.5%;
 			}
 
 			&-shadow {

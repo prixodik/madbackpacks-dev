@@ -52,6 +52,7 @@ export default {
 	// Modules: https://go.nuxtjs.dev/config-modules
 	modules: [
 		['vue-scrollto/nuxt', { duration: 300 }],
+		['@nuxtjs/axios'],
 	],
 
 	// Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify

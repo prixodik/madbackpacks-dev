@@ -80,6 +80,14 @@ export default {
 						slidesPerView: 4,
 						spaceBetween: 0,
 						enabled: false,
+						coverflowEffect: {
+							rotate: 0,
+							stretch: 0,
+							scale: 1,
+							depth: 0,
+							modifier: 1,
+							slideShadows: false,
+						},
 						/* pagination: {
 							el: ".swiper-pagination",
 							type: "bullets",

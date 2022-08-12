@@ -30,7 +30,14 @@
 					<span>Burn Triggers</span>
 				</div>
 				<!-- <a href="#" @click.prevent="openPopup('popup-join')" class="btn">GET WWMB</a> -->
-				<Btn :tag="'a'" :text="'GET WWMB'" @click.prevent.native="openPopup('popup-join')"></Btn>
+				<!-- <Btn :tag="'a'" :text="'GET WWMB'" @click.prevent.native="openPopup('popup-join')"></Btn> -->
+
+				<Btn class="btn--icon" tag="a" href="https://t.me/MadBackpacks" target="_blank">
+					<svg class="btn__icon">
+						<use xlink:href="/images/sprite-svg.svg#telegram"></use>
+					</svg>
+					<span>Join community</span>
+				</Btn>
 			</div>
 		</div>
 	</section>
@@ -107,6 +114,14 @@ export default {
 						slidesPerView: 3,
 						spaceBetween: 0,
 						enabled: false,
+						coverflowEffect: {
+							rotate: 0,
+							stretch: 0,
+							scale: 1,
+							depth: 0,
+							modifier: 1,
+							slideShadows: false,
+						},
 						/* pagination: {
 							el: ".swiper-pagination",
 							type: "bullets",
