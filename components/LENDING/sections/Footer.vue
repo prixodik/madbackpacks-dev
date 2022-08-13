@@ -42,7 +42,7 @@ export default {
 
 <style lang="scss" scroped>
 .footer {
-	padding: 42px 0 16px;
+	padding: 42px 0 56px;
 	background: url('/images/footer-bg.svg') 0 0 repeat-x;
 
 	@media screen and (max-width: $sm) {
@@ -70,7 +70,7 @@ export default {
 		text-align: center;
 		font: 14px/20px $baseFF;
 		letter-spacing: 0.04em;
-		margin-top: 10px;
+		margin-top: -20px;
 		color: rgba(148, 250, 255, 0.3);
 
 		@media screen and (max-width: $md) {
@@ -121,11 +121,17 @@ export default {
 
 	&__menu {
 		display: flex;
+		justify-content: center;
 		font: bold 12px/15px $titleFF;
 		letter-spacing: 0.05em;
 		text-transform: uppercase;
 		color: $white;
-		margin-right: 48px;
+		//margin-right: 48px;
+		flex: 1 1 auto;
+
+		@media screen and (max-width: $md) {
+			justify-content: flex-start;
+		}
 
 		@media screen and (max-width: $sm) {
 			display: block;
@@ -140,9 +146,18 @@ export default {
 		}
 
 		&-item {
-			margin-right: 26px;
+			margin-right: 13px;
+			margin-left: 13px;
 			display: block;
 			position: relative;
+
+			&:last-child {
+				margin-right: 0;
+			}
+
+			&:first-child {
+				margin-left: 0;
+			}
 
 			@media screen and (max-width: $sm) {
 				margin: 0 0 32px;
@@ -187,7 +202,10 @@ export default {
 	}
 
 	&__soc {
-		margin-right: 28px;
+		//margin-right: 28px;
+		flex: 0 0 309px;
+		display: flex;
+		justify-content: flex-end;
 
 		@media screen and (max-width: $sm) {
 			display: flex;

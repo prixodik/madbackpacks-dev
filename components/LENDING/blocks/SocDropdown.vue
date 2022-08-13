@@ -12,7 +12,7 @@
 		</div>
 
 		<div class="soc-dropdown__list">
-			<div class="soc-dropdown__item" v-for="item in list">
+			<div class="soc-dropdown__item" :class="`soc-dropdown__item--${item.icon}`" v-for="item in list">
 				<a :href="item.link">
 					<svg>
 						<use :xlink:href="`/images/sprite-svg.svg#${item.icon}`"></use>
@@ -31,19 +31,22 @@ export default {
 			currentIcon: 'telegram',
 			currentLink: '#',
 			list: [{
-				link: '#',
-				icon: 'telegram'
+				link: 'https://t.me/MadBackpacks',
+				icon: 'telegram-en'
 			}, {
-				link: '##',
+				link: 'https://t.me/MadBackpacks_ru',
+				icon: 'telegram-ru'
+			}, {
+				link: 'https://youtube.com/channel/UCv1vf4YMhL51biKoS5bwTBw',
 				icon: 'youtube'
 			}, {
-				link: '###',
+				link: 'https://discord.gg/Wa9fdhz2qC',
 				icon: 'discord'
 			}, {
-				link: '####',
+				link: 'https://www.instagram.com/mad_backpacks/',
 				icon: 'instagram'
 			}, {
-				link: '###',
+				link: 'https://twitter.com/BackpacksMad',
 				icon: 'twitter'
 			}]
 
@@ -91,8 +94,8 @@ export default {
 
 	&__list {
 		position: absolute;
-		top: -17px;
-		left: -7px;
+		top: -13px;
+		left: -5px;
 		width: 47px;
 		background: rgba(217, 217, 217, 0.1);
 		border-radius: 24px;
@@ -120,6 +123,14 @@ export default {
 			height: 21px;
 			fill: #12F3D8;
 			stroke: #12F3D8;
+		}
+
+		&--telegram-en,
+		&--telegram-ru {
+			svg {
+				width: 26px;
+				height: 30px;
+			}
 		}
 	}
 

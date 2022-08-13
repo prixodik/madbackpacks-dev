@@ -1,9 +1,16 @@
 <template>
 	<div class="soc-list">
-		<div class="soc-list__item">
+		<div class="soc-list__item soc-list__item--lang">
 			<a href="https://t.me/MadBackpacks" target="_blank">
 				<svg>
-					<use xlink:href="/images/sprite-svg.svg#telegram"></use>
+					<use xlink:href="/images/sprite-svg.svg#telegram-en"></use>
+				</svg>
+			</a>
+		</div>
+		<div class="soc-list__item soc-list__item--lang">
+			<a href="https://t.me/MadBackpacks_ru" target="_blank">
+				<svg>
+					<use xlink:href="/images/sprite-svg.svg#telegram-ru"></use>
 				</svg>
 			</a>
 		</div>
@@ -52,14 +59,14 @@ export default {
 	display: flex;
 
 	&__item {
-		margin-right: 30px;
+		margin-right: 24px;
 
 		@media screen and (max-width: $sm) {
-			margin-right: 56px;
+			margin-right: 46px;
 		}
 
 		@media screen and (max-width: $xs) {
-			margin-right: 38px;
+			margin-right: 26px;
 		}
 
 		&:last-child {
@@ -105,8 +112,38 @@ export default {
 					fill: $white;
 				}
 			}
+		}
 
+		&--lang {
+			a {
+				width: 26px;
+				height: 30px;
 
+				svg {
+					width: 26px;
+					height: 30px;
+				}
+
+				@media screen and (max-width: $sm) {
+					width: 29px;
+					height: 33px;
+
+					svg {
+						width: 29px;
+						height: 33px;
+					}
+				}
+
+				@media screen and (max-width: $xs) {
+					width: 26px;
+					height: 30px;
+
+					svg {
+						width: 26px;
+						height: 30px;
+					}
+				}
+			}
 		}
 	}
 

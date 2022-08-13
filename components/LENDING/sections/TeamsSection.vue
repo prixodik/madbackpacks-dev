@@ -31,11 +31,6 @@ export default {
 				position: 'Creative Producer',
 				socLink: '#'
 			}, {
-				img: 'images/team-img-3.png',
-				name: 'Eugene Kitkin',
-				position: 'Game Producer',
-				socLink: '#'
-			}, {
 				img: 'images/team-img-4.png',
 				name: 'Vlad Synticate',
 				position: '3D Designer',
@@ -44,11 +39,6 @@ export default {
 				img: 'images/team-img-5.png',
 				name: 'Yuliia Yuffa ',
 				position: 'Project Manager',
-				socLink: '#'
-			}, {
-				img: 'images/team-img-6.png',
-				name: 'Eugene Ipatko',
-				position: 'CTO',
 				socLink: '#'
 			}, {
 				img: 'images/team-img-7.png',
@@ -61,9 +51,19 @@ export default {
 				position: 'Business Developer',
 				socLink: '#'
 			}, {
+				img: 'images/team-img-6.png',
+				name: 'Eugene Ipatko',
+				position: 'CTO',
+				socLink: '#'
+			}, {
 				img: 'images/team-img-9.png',
 				name: 'Marina Maya',
 				position: 'PR / Marketing',
+				socLink: '#'
+			}, {
+				img: 'images/team-img-3.png',
+				name: 'Eugene Kitkin',
+				position: 'Game Producer',
 				socLink: '#'
 			}]
 		};
