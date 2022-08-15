@@ -147,7 +147,7 @@ export default {
 				rotate: -150
 			}, {
 				num: '08',
-				mounth: 'Mart',
+				mounth: 'March',
 				list: ['PvP Challenges & Tournaments'],
 				rotate: -175
 			}]

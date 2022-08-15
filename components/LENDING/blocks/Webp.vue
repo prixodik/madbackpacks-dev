@@ -1,7 +1,10 @@
 <template>
 	<picture>
 		<source :data-srcset="src" type="image/png" />
-		<img :src="webpSrc" :alt="alt" />
+		<img v-if="retina" :srcset="`${webpSrc},
+		${webpSrc2x} 2x`" :src="webpSrc" :alt="alt" />
+
+		<img v-else :src="webpSrc" :alt="alt" />
 	</picture>
 </template>
 <script>
@@ -15,6 +18,10 @@ export default {
 		alt: {
 			type: String,
 			default: ''
+		},
+		retina: {
+			type: Boolean,
+			default: false
 		}
 	},
 	data() {
@@ -26,6 +33,10 @@ export default {
 	computed: {
 		webpSrc() {
 			const url = this.src.replace(/\.\w{1,5}$/, ".webp");
+			return url;
+		},
+		webpSrc2x() {
+			const url = this.src.replace(/\.\w{1,5}$/, "@2x.webp");
 			return url;
 		}
 	},

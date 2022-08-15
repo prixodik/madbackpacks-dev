@@ -9,7 +9,7 @@
 				</svg>
 			</a> -->
 
-			<Btn :tag="'a'" :href="socLink" class="team-block__soc btn--soc btn--pink">
+			<Btn v-if="socLink" :tag="'a'" :href="socLink" class="team-block__soc btn--soc btn--pink">
 				<svg>
 					<use xlink:href="/images/sprite-svg.svg#linkedin"></use>
 				</svg>

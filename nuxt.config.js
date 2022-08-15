@@ -10,7 +10,7 @@ export default {
 	// Global page headers: https://go.nuxtjs.dev/config-head
 	head: {
 		titleTemplate: '%s - MadBackpacks',
-		title: 'madbackpacks',
+		title: 'MADBACKPACKS is the first Find-to-Earn game by WeWay',
 		htmlAttrs: {
 			lang: 'en'
 		},

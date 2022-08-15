@@ -24,7 +24,7 @@
 				<Dotteds ref="dotteds" :count="12" :maxWidth="12"></Dotteds>
 
 				<kinesis-element :strength="15" class="join-section__img-1">
-					<Webp :src="img"></Webp>
+					<Webp :src="img" :retina="true"></Webp>
 					<!-- <img :src="img" alt=""> -->
 				</kinesis-element>
 

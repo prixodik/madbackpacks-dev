@@ -24,7 +24,7 @@
 
 				<div class="dino-section__img-wrap">
 					<kinesis-element :strength="20" class="dino-section__img-1">
-						<Webp src="/images/dino-section-img-1.png"></Webp>
+						<Webp src="/images/dino-section-img-1.png" :retina="true"></Webp>
 						<!-- <img src="/images/dino-section-img-1.png" alt=""> -->
 					</kinesis-element>
 

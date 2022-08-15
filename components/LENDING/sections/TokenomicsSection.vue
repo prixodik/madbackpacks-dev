@@ -59,7 +59,7 @@
 							</defs>
 						</svg>
 						<kinesis-element :strength="25" type="depth" class="tokenomics-section__img-logo">
-							<Webp src="/images/tokenomics-section-img-logo.png"></Webp>
+							<Webp src="/images/tokenomics-section-img-logo.png" :retina="true"></Webp>
 							<!-- <img src="/images/tokenomics-section-img-logo.png" alt=""> -->
 						</kinesis-element>
 

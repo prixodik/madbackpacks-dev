@@ -13,7 +13,7 @@
 						<img src="/images/dino-section-info-title-bg.svg" alt="" class="backpacks-section__img-left">
 						<img src="/images/dino-section-info-title-bg-reverse.svg" alt=""
 							class="backpacks-section__img-right">
-						<Webp src="/images/backpacks-section-img.png"></Webp>
+						<Webp src="/images/backpacks-section-img.png" :retina="true"></Webp>
 						<Webp class="backpacks-section__img-shadow" src="/images/backpacks-section-img.png"></Webp>
 						<!-- <img src="/images/backpacks-section-img.png" alt=""> -->
 						<!-- <img class="backpacks-section__img-shadow" src="/images/backpacks-section-img.png" alt=""> -->

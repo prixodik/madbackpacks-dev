@@ -12,7 +12,7 @@
 		<TokensUsageSection ref="TokensUsageSection" @openPopup="popupShow"></TokensUsageSection>
 		<RoadmapSection></RoadmapSection>
 		<JoinSection class="join-section--2" id="join-section-2" ref="JoinSection2" :title="joinSectionParams2.title"
-			:btnText="joinSectionParams2.btnText" :img="joinSectionParams2.img"></JoinSection>
+			:btnText="joinSectionParams2.btnText" :img="joinSectionParams2.img" @openPopup="popupShow"></JoinSection>
 		<PartnersSection></PartnersSection>
 		<TeamsSection></TeamsSection>
 		<Footer></Footer>
@@ -174,6 +174,9 @@ export default {
 			secStart: 0,
 			secStop: 0,
 		};
+	},
+	head: {
+		title: 'MADBACKPACKS is the first Find-to-Earn game by WeWay'
 	},
 	components: { TokensUsageSection, Header, AboutSection, FirstSection, JoinSection, DinoSection, BackpacksSection, TokenomicsSection, PartnersSection, TeamsSection, Footer, RoadmapSection, Popup, SpriteBtn, Btn },
 	mounted() {

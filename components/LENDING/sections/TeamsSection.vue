@@ -24,47 +24,44 @@ export default {
 				img: 'images/team-img-1.png',
 				name: 'Fuad Fatullaev',
 				position: 'WeWay Founder & CEO',
-				socLink: '#'
+				socLink: 'https://www.linkedin.com/in/fuad-fatullaev-89b51062'
 			}, {
 				img: 'images/team-img-2.png',
 				name: 'Lena Vesna',
-				position: 'Creative Producer',
-				socLink: '#'
+				position: 'Creative Producer'
 			}, {
 				img: 'images/team-img-4.png',
 				name: 'Vlad Synticate',
 				position: '3D Designer',
-				socLink: '#'
+				socLink: 'https://www.linkedin.com/in/vlad-tkachuk-a8195311'
 			}, {
 				img: 'images/team-img-5.png',
 				name: 'Yuliia Yuffa ',
-				position: 'Project Manager',
-				socLink: '#'
+				position: 'Project Manager'
 			}, {
 				img: 'images/team-img-7.png',
 				name: 'Roman Tarasyuta',
 				position: 'Lead Game developer',
-				socLink: '#'
+				socLink: 'https://www.linkedin.com/in/roman-tarasyuta-7a7175198'
 			}, {
 				img: 'images/team-img-8.png',
 				name: 'Illia Pashkov',
 				position: 'Business Developer',
-				socLink: '#'
+				socLink: 'https://www.linkedin.com/in/pashkov '
 			}, {
 				img: 'images/team-img-6.png',
 				name: 'Eugene Ipatko',
 				position: 'CTO',
-				socLink: '#'
+				socLink: 'https://www.linkedin.com/in/eipatko'
 			}, {
 				img: 'images/team-img-9.png',
 				name: 'Marina Maya',
-				position: 'PR / Marketing',
-				socLink: '#'
+				position: 'PR / Marketing'
 			}, {
 				img: 'images/team-img-3.png',
 				name: 'Eugene Kitkin',
 				position: 'Game Producer',
-				socLink: '#'
+				socLink: 'https://www.linkedin.com/in/kitkin'
 			}]
 		};
 	},

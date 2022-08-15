@@ -2,7 +2,7 @@
 	<div class="about-block">
 		<div class="about-block__img">
 			<!-- <img :src="icon" :alt="title"> -->
-			<Webp :src="icon" :alt="title"></Webp>
+			<Webp :src="icon" :alt="title" :retina="true"></Webp>
 		</div>
 		<div class="about-block__title" v-html="title"></div>
 		<div class="about-block__desc" v-html="desc"></div>
