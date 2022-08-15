@@ -44,6 +44,8 @@ export default {
 			});
 		}
 
+
+
 		/* setTimeout(() => {
 			this.setParams();
 		}, 100); */

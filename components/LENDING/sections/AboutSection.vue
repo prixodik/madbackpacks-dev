@@ -51,8 +51,8 @@ export default {
 				effect: 'coverflow',
 				coverflowEffect: {
 					rotate: 0,
-					stretch: 40,
-					scale: 0.6,
+					stretch: 90,
+					scale: 0.65,
 					depth: 200,
 					modifier: 1,
 					slideShadows: false,
@@ -63,6 +63,7 @@ export default {
 						slidesPerView: 1,
 						spaceBetween: 0,
 						enabled: true,
+
 					},
 					993: {
 						slidesPerView: 1,
@@ -70,6 +71,7 @@ export default {
 						enabled: true,
 						centeredSlides: true,
 						centeredSlidesBounds: false,
+
 						/* pagination: {
 							el: ".swiper-pagination",
 							type: "bullets",
@@ -277,22 +279,23 @@ export default {
 		@media screen and (max-width: $md) {
 			display: block;
 			opacity: 0;
-			transition: all .1s;
+			transition: all .4s;
 
 			.about-block {
 				//max-width: 140px;
 				//margin-top: 103px;
+				transition: max-width .4s;
 
 				&__img {
 					opacity: 0;
-					transition: all .1s;
+					transition: all .4s;
 				}
 
 				&__title,
 				&__desc,
 				&__bottom {
 					opacity: 0;
-					transition: all .1s;
+					transition: all .4s;
 				}
 			}
 
@@ -303,6 +306,7 @@ export default {
 				.about-block {
 					//max-width: 100%;
 					//margin-top: 0;
+					transition: max-width .7s, margin-top 0s;
 
 					&__img {
 						opacity: 1;
@@ -326,6 +330,12 @@ export default {
 				.about-block {
 					//max-width: 140px;
 					//margin-top: 103px;
+
+					@media screen and (max-width: $xs) {
+						//max-width: 120px;
+						//margin-top: 78px;
+						transition: max-width .7s, margin-top 0s;
+					}
 
 					&__img {
 						opacity: 0.6;
@@ -352,16 +362,7 @@ export default {
 			}
 		}
 
-		@media screen and (max-width: $xs) {
 
-			&.swiper-slide-next,
-			&.swiper-slide-prev {
-				.about-block {
-					max-width: 120px;
-					margin-top: 78px;
-				}
-			}
-		}
 	}
 
 	&__pagination {

@@ -481,8 +481,8 @@ export default {
 			&.swiper-slide-next,
 			&.swiper-slide-prev {
 				.token-block {
-					max-width: 120px;
-					margin: 78px 0 0;
+					//max-width: 120px;
+					//margin: 78px 0 0;
 				}
 			}
 		}

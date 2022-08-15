@@ -84,12 +84,16 @@ export default {
 	components: { KinesisContainer, KinesisElement, Dotteds, Webp },
 	methods: {
 		activeAnimation() {
-			this.animationSection = true;
-			this.$refs.dotteds.activeAnimation();
+			if (!navigator.userAgent.toLowerCase().match(/(ipad|iphone)/)) {
+				this.animationSection = true;
+				this.$refs.dotteds.activeAnimation();
+			}
 		},
 		stopAnimation() {
-			this.animationSection = false;
-			this.$refs.dotteds.stopAnimation();
+			if (!navigator.userAgent.toLowerCase().match(/(ipad|iphone)/)) {
+				this.animationSection = false;
+				this.$refs.dotteds.stopAnimation();
+			}
 		},
 		infoToggle(index) {
 			this.infoIndex = index;
@@ -311,12 +315,17 @@ export default {
 				position: absolute;
 				top: 50%;
 				left: 50%;
+				transform: translate(-50%, -50%);
 				animation: 3s dinoCircleScale linear infinite;
 				transform-origin: 0% 0%;
+				transform-box: fill-box;
 				width: 27.5rem;
+				height: 27.5rem;
+				object-fit: contain;
 
 				@media screen and (max-width: $sm) {
-					width: 120px
+					width: 120px;
+					height: 120px;
 				}
 			}
 		}
@@ -462,14 +471,17 @@ export default {
 		&-title {
 			letter-spacing: 0.05em;
 			font: bold 32px/40px $titleFF;
-			background: linear-gradient(90deg, #32B0DA 23.14%, #D1FECE 46.22%, #69F5DA 69.31%);
-			-webkit-background-clip: text;
-			-webkit-text-fill-color: transparent;
-			background-clip: text;
-			text-fill-color: transparent;
 			position: relative;
 			padding-bottom: 16px;
 			margin-bottom: 16px;
+
+			span {
+				background: linear-gradient(90deg, #32B0DA 23%, #D1FECE 46%, #69F5DA 69%);
+				-webkit-background-clip: text;
+				-webkit-text-fill-color: transparent;
+				text-fill-color: transparent;
+				background-clip: text;
+			}
 
 			&:after {
 				content: "";

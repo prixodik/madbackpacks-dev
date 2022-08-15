@@ -89,15 +89,18 @@ export default {
 	components: { KinesisContainer, KinesisElement, Dotteds, Btn, Webp },
 	methods: {
 		activeAnimation() {
-			this.animationSection = true;
-			this.$refs.dotteds.activeAnimation();
+			if (!navigator.userAgent.toLowerCase().match(/(ipad|iphone)/)) {
+				this.animationSection = true;
+				this.$refs.dotteds.activeAnimation();
+			}
 		},
 		stopAnimation() {
-			this.animationSection = false;
-			this.$refs.dotteds.stopAnimation();
+			if (!navigator.userAgent.toLowerCase().match(/(ipad|iphone)/)) {
+				this.animationSection = false;
+				this.$refs.dotteds.stopAnimation();
+			}
 		},
 		openPopup(id) {
-			console.log(1);
 			this.$emit('openPopup', id);
 		}
 	}
@@ -423,10 +426,17 @@ export default {
 				left: 50%;
 				z-index: -1;
 				transform: translate(-50%, -50%);
-				/* width: 100%;
-				height: 100%; */
+				/* width: 90px;
+				height: 90px; */
+				object-fit: contain;
 				animation: 3s circleScale2 linear infinite;
 				transform-origin: 0% 0%;
+				transform-box: fill-box;
+
+				@media screen and (max-width: $xs) {
+					width: 9rem;
+					height: 9rem;
+				}
 			}
 		}
 
@@ -458,8 +468,14 @@ export default {
 				transform: translate(-50%, -50%);
 				/* width: 100%;
 				height: 100%; */
-				animation: 3s circleScale linear infinite;
+				animation: 3s circleScale2 linear infinite;
 				transform-origin: 0% 0%;
+				object-fit: contain;
+
+				@media screen and (max-width: $xs) {
+					width: 13rem;
+					height: 13rem;
+				}
 			}
 		}
 
@@ -506,19 +522,19 @@ export default {
 	}
 
 	25% {
-		transform: scale(1.05) rotate(90deg) translate(-50%, -50%);
+		transform: scale(1.05) rotate(0deg) translate(-50%, -50%);
 	}
 
 	50% {
-		transform: scale(1) rotate(180deg) translate(-50%, -50%);
+		transform: scale(1) rotate(0deg) translate(-50%, -50%);
 	}
 
 	75% {
-		transform: scale(0.9) rotate(270deg) translate(-50%, -50%);
+		transform: scale(0.9) rotate(0deg) translate(-50%, -50%);
 	}
 
 	100% {
-		transform: scale(1) rotate(360deg) translate(-50%, -50%);
+		transform: scale(1) rotate(0deg) translate(-50%, -50%);
 	}
 }
 

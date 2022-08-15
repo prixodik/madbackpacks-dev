@@ -75,12 +75,16 @@ export default {
 			//this.$emit('closePopup', this.popupActive);
 		},
 		activeAnimation() {
-			this.animationSection = true;
-			this.$refs.dotteds.activeAnimation();
+			if (!navigator.userAgent.toLowerCase().match(/(ipad|iphone)/)) {
+				this.animationSection = true;
+				this.$refs.dotteds.activeAnimation();
+			}
 		},
 		stopAnimation() {
-			this.animationSection = false;
-			this.$refs.dotteds.stopAnimation();
+			if (!navigator.userAgent.toLowerCase().match(/(ipad|iphone)/)) {
+				this.animationSection = false;
+				this.$refs.dotteds.stopAnimation();
+			}
 		},
 		sendForm() {
 			const self = this;

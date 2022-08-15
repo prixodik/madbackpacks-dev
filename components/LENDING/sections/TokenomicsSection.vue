@@ -163,12 +163,16 @@ export default {
 	components: { KinesisContainer, KinesisElement, Dotteds, Webp },
 	methods: {
 		activeAnimation() {
-			this.animationSection = true;
-			this.$refs.dotteds.activeAnimation();
+			if (!navigator.userAgent.toLowerCase().match(/(ipad|iphone)/)) {
+				this.animationSection = true;
+				this.$refs.dotteds.activeAnimation();
+			}
 		},
 		stopAnimation() {
-			this.animationSection = false;
-			this.$refs.dotteds.stopAnimation();
+			if (!navigator.userAgent.toLowerCase().match(/(ipad|iphone)/)) {
+				this.animationSection = false;
+				this.$refs.dotteds.stopAnimation();
+			}
 		},
 		playLines() {
 			this.animatedLines = true;
@@ -298,12 +302,15 @@ export default {
 				position: absolute;
 				top: 50%;
 				left: 50%;
+				transform: translate(-50%, -50%);
 				animation: 3s dinoCircleScale linear infinite;
 				transform-origin: 0% 0%;
 				max-width: none;
+				object-fit: contain;
 
 				@media screen and (max-width: $xs) {
 					width: 90px;
+					height: 90px;
 					margin-top: -3px;
 				}
 			}
@@ -330,12 +337,15 @@ export default {
 				position: absolute;
 				top: 50%;
 				left: 50%;
+				transform: translate(-50%, -50%);
 				animation: 3s dinoCircleScale linear infinite;
 				transform-origin: 0% 0%;
 				max-width: none;
+				object-fit: contain;
 
 				@media screen and (max-width: $xs) {
 					width: 92px;
+					height: 92px;
 				}
 			}
 		}

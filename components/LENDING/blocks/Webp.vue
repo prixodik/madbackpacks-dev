@@ -1,10 +1,14 @@
 <template>
 	<picture>
-		<source :data-srcset="src" type="image/png" />
-		<img v-if="retina" :srcset="`${webpSrc},
-		${webpSrc2x} 2x`" :src="webpSrc" :alt="alt" />
+		<source v-if="retina" :srcset="`${webpSrc},
+		${webpSrc2x} 2x`" type="image/webp" />
+		<source v-else :srcset="`${webpSrc}`" type="image/webp" />
 
-		<img v-else :src="webpSrc" :alt="alt" />
+		<source :srcset="src" type="image/png" />
+		<!-- <img v-if="retina" :srcset="`${webpSrc},
+		${webpSrc2x} 2x`" :src="webpSrc" :alt="alt" /> -->
+
+		<img :src="src" :alt="alt" />
 	</picture>
 </template>
 <script>

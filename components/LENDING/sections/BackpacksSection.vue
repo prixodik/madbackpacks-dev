@@ -133,12 +133,16 @@ export default {
 	components: { KinesisContainer, KinesisElement, Dotteds, VideoBlock, Webp },
 	methods: {
 		activeAnimation() {
-			this.animationSection = true;
-			this.$refs.dotteds.activeAnimation();
+			if (!navigator.userAgent.toLowerCase().match(/(ipad|iphone)/)) {
+				this.animationSection = true;
+				this.$refs.dotteds.activeAnimation();
+			}
 		},
 		stopAnimation() {
-			this.animationSection = false;
-			this.$refs.dotteds.stopAnimation();
+			if (!navigator.userAgent.toLowerCase().match(/(ipad|iphone)/)) {
+				this.animationSection = false;
+				this.$refs.dotteds.stopAnimation();
+			}
 		},
 		playVideo() {
 			this.$refs.VideoBlock.playVideo();
