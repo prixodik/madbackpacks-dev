@@ -53,7 +53,11 @@ export default {
 	modules: [
 		['vue-scrollto/nuxt', { duration: 300 }],
 		['@nuxtjs/axios'],
+		['@nuxtjs/gtm'],
 	],
+	gtm: {
+		id: 'GTM-NZBD9TX'
+	},
 
 	// Vuetify module configuration: https://go.nuxtjs.dev/config-vuetify
 	vuetify: {

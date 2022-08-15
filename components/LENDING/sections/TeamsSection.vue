@@ -39,6 +39,11 @@ export default {
 				name: 'Yuliia Yuffa ',
 				position: 'Project Manager'
 			}, {
+				img: 'images/team-img-6.png',
+				name: 'Eugene Ipatko',
+				position: 'CTO',
+				socLink: 'https://www.linkedin.com/in/eipatko'
+			}, {
 				img: 'images/team-img-7.png',
 				name: 'Roman Tarasyuta',
 				position: 'Lead Game developer',
@@ -48,11 +53,6 @@ export default {
 				name: 'Illia Pashkov',
 				position: 'Business Developer',
 				socLink: 'https://www.linkedin.com/in/pashkov '
-			}, {
-				img: 'images/team-img-6.png',
-				name: 'Eugene Ipatko',
-				position: 'CTO',
-				socLink: 'https://www.linkedin.com/in/eipatko'
 			}, {
 				img: 'images/team-img-9.png',
 				name: 'Marina Maya',
