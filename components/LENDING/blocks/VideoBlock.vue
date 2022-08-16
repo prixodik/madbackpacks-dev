@@ -67,7 +67,7 @@ export default {
 	props: [],
 	data() {
 		return {
-			url: 'images/video.mp4',
+			url: 'images/video-thumb.mp4',
 			playerOptions: {
 				// videojs options
 				muted: true,
@@ -76,7 +76,7 @@ export default {
 				playbackRates: [0.7, 1.0, 1.5, 2.0],
 				sources: [{
 					type: "video/mp4",
-					src: "/images/video.mp4"
+					src: "/images/video-thumb.mp4"
 				}],
 				poster: "/images/video-thumb.jpg",
 				controls: false,
