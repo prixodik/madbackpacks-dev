@@ -237,6 +237,11 @@ export default {
 		this.$refs.FirstSection.activeAnimation();
 		this.FirstSectionActive = true;
 		console.log('start - FirstSection');
+
+		this.$nextTick(() => {
+			this.$nuxt.$loading.start()
+			setTimeout(() => this.$nuxt.$loading.finish(), 1000)
+		})
 	},
 	methods: {
 		popupShow(id) {

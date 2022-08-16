@@ -498,7 +498,7 @@ export default {
 			margin-top: 24px;
 		}
 
-		@media screen and (max-width: $sm) {
+		@media screen and (max-width: $xs) {
 			margin: 16px auto 0;
 
 			max-width: 280px;
@@ -520,6 +520,13 @@ export default {
 		font: bold 16px/35px $titleFF;
 
 		@media screen and (max-width: $sm) {
+			//display: none;
+			max-width: 190px;
+			padding: 5px 0px 10px;
+			top: -10px;
+		}
+
+		@media screen and (max-width: $xs) {
 			display: none;
 		}
 

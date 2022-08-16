@@ -29,18 +29,20 @@ export default {
 	css: [
 		'~/assets/scss/lending/main.scss',
 	],
-	loadingIndicator: {
-		name: 'circle',
-		color: '#3B8070',
-		background: 'black'
-	},
+	loading: '~/components/LENDING/sections/LoadingBar.vue',
+	loadingIndicator: '~/components/custom-loading-indicator.html',
+	/* loadingIndicator: {
+		//name: 'circle',
+		//color: '#3B8070',
+		background: '#090923'
+	}, */
 	render: {
-		//resourceHints: false,
-		bundleRenderer: {
+		resourceHints: false,
+		/* bundleRenderer: {
 			shouldPreload: (file, type) => {
 				return ['script', 'style', 'font'].includes(type)
 			}
-		}
+		} */
 	},
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
 	plugins: [
