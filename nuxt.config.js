@@ -29,7 +29,19 @@ export default {
 	css: [
 		'~/assets/scss/lending/main.scss',
 	],
-
+	loadingIndicator: {
+		name: 'circle',
+		color: '#3B8070',
+		background: 'black'
+	},
+	render: {
+		//resourceHints: false,
+		bundleRenderer: {
+			shouldPreload: (file, type) => {
+				return ['script', 'style', 'font'].includes(type)
+			}
+		}
+	},
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
 	plugins: [
 		{ src: '@/plugins/vue-plugins.js', mode: 'client' },

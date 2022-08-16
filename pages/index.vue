@@ -1,6 +1,6 @@
 <template>
 	<div class="lending-page__wrapper">
-		<Header></Header>
+		<Header ref="Header"></Header>
 		<FirstSection ref="FirstSection" @openPopup="popupShow"></FirstSection>
 		<AboutSection ref="AboutSection"></AboutSection>
 		<JoinSection id="join-section-1" ref="JoinSection1" :title="joinSectionParams.title"
@@ -407,6 +407,8 @@ export default {
 				if (this.DinoSectionActive === false) {
 					this.$refs.DinoSection.activeAnimation();
 					this.DinoSectionActive = true;
+
+					this.$refs.BackpacksSection.playVideo();
 					console.log('start - DinoSection');
 				}
 			} else {
@@ -449,6 +451,12 @@ export default {
 					this.$refs.FirstSection.stopAnimation();
 					console.log('end- FirstSection');
 				}
+			}
+
+			if (window.scrollY >= 200) {
+				this.$refs.Header.activeAnimation();
+			} else {
+				this.$refs.Header.inactiveAnimation();
 			}
 
 			/* if (window.scrollY >= this.JoinSection2Position) {

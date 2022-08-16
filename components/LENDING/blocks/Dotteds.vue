@@ -1,7 +1,8 @@
 <template>
 	<div class="dotteds">
 		<div class="dotteds__item" v-for="item in items"
-			:style="`top: ${item.top}; left: ${item.left}; width: ${item.width}; height: ${item.width}; background: ${color}; filter: blur(${item.blur}px);`">
+			:style="`top: ${item.top}; left: ${item.left}; width: ${item.width}; height: ${item.width}; background: ${color}; opacity: ${item.blur}`">
+			<!-- filter: blur(${item.blur}px); -->
 		</div>
 	</div>
 </template>
@@ -40,7 +41,8 @@ export default {
 				top: Math.ceil(Math.random() * 100) + '%',
 				left: Math.ceil(Math.random() * 100) + '%',
 				width: Math.ceil(Math.random() * this.maxWidth) + 'px',
-				blur: Math.ceil(Math.random() * 5),
+				//blur: Math.ceil(Math.random() * 5),
+				blur: Math.random() * 10 * 0.1,
 			});
 		}
 
@@ -81,9 +83,11 @@ export default {
 			this.items.forEach((item) => {
 				item.top = Math.ceil(Math.random() * 100) + '%';
 				item.left = Math.ceil(Math.random() * 100) + '%';
-				item.width = Math.ceil(Math.random() * this.maxWidth) + 'px';
-				item.blur = Math.floor(Math.random() * 5);
+				//item.width = Math.ceil(Math.random() * this.maxWidth) + 'px';
+				//item.blur = Math.floor(Math.random() * 5);
+				item.blur = Math.random() * 10 * 0.1;
 			});
+
 		}
 	}
 }
@@ -105,6 +109,7 @@ export default {
 		height: 20px; */
 		/* background: #94FFEC;
 		filter: blur(2px); */
+		border-radius: 2px;
 		position: absolute;
 		transition: all 60s linear;
 	}

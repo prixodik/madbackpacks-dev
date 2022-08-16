@@ -33,7 +33,8 @@
 			</div>
 
 
-			<Swiper ref="roadmapSlider" :options="swiperOptions" class="roadmap-section__slider">
+			<Swiper ref="roadmapSlider" @slideChange="slideChange()" :options="swiperOptions"
+				class="roadmap-section__slider">
 				<SwiperSlide class="roadmap-section__slider-item" :class="{ 'is-active-slide': activeSlide === index }"
 					v-for="(slide, index) in slides" :key="`slide-${index}`">
 					<RoadmapBlock :num="slide.num" :mounth="slide.mounth" :list="slide.list" :rotate="slide.rotate"
@@ -168,10 +169,14 @@ export default {
 		Btn
 	},
 	methods: {
+		slideChange() {
+			console.log(this.swiper.activeIndex);
+			this.activeSlide = this.swiper.activeIndex;
+		},
 		goToSlide(index) {
 			//console.log(this.swiper);
 			this.swiper.slideTo(index);
-			this.activeSlide = index;
+			//this.activeSlide = index;
 
 			this.slides.forEach((element) => {
 				element.rotate += 25;
@@ -180,7 +185,7 @@ export default {
 		sliderPrev() {
 			this.swiper.slidePrev();
 			if (this.activeSlide > 0) {
-				this.activeSlide -= 1;
+				//this.activeSlide -= 1;
 
 				this.slides.forEach((element) => {
 					element.rotate -= 25;
@@ -190,7 +195,7 @@ export default {
 		sliderNext() {
 			this.swiper.slideNext();
 			if (this.activeSlide < (this.slides.length - 1)) {
-				this.activeSlide += 1;
+				//this.activeSlide += 1;
 
 				this.slides.forEach((element) => {
 					element.rotate += 25;

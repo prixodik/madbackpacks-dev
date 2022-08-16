@@ -51,7 +51,7 @@ export default {
 	data() {
 		return {
 			title: '_Tokens & usage',
-			desc: '$WWMB in-game utility token | $WWY governance token',
+			desc: ' $WWMB in-game utility token | $WWY governance token',
 			animationSection: false,
 
 			swiperOptions: {

@@ -1,5 +1,5 @@
 <template>
-	<header class="header">
+	<header class="header" :class="{ 'is-fixed': isFixed }">
 		<div class="header__container container">
 
 			<!-- <div class="header__left">
@@ -38,7 +38,8 @@ export default {
 	name: "Header",
 	data() {
 		return {
-			mobileMenuShow: false
+			mobileMenuShow: false,
+			isFixed: false,
 		};
 	},
 	components: { SocDropdown, MobMenu, Webp },
@@ -50,6 +51,12 @@ export default {
 		mobileMenuHide() {
 			this.mobileMenuShow = false;
 			//this.$refs.mobmenu.toggleMenu();
+		},
+		activeAnimation() {
+			this.isFixed = true;
+		},
+		inactiveAnimation() {
+			this.isFixed = false;
 		}
 	}
 }
@@ -57,12 +64,13 @@ export default {
 
 <style lang="scss" scroped>
 .header {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100%;
 	z-index: 100;
 	padding: 28px 0 0;
+	transition: all .4s;
 
 	@media screen and (max-width: $md) {
 		padding: 8px 0 0;
@@ -75,6 +83,10 @@ export default {
 	@media screen and (max-width: $xs) {
 		padding: 0;
 		height: 60px;
+	}
+
+	&.is-fixed {
+		padding: 0;
 	}
 
 	&__container {
