@@ -1,24 +1,26 @@
 <template>
 	<div class="loading-page" :class="{ 'is-active': loading }">
 		<div class="loading">
-			<img class="loading__main" src="/images/loading-img.png" alt="">
-			<img class="loading__circle" src="/images/loading-circle.svg" alt="">
+			<Webp class="loading__main" src="/images/logo.png" :retina="true"></Webp>
+			<!-- <img class="loading__circle" src="/images/loading-circle.svg" alt=""> -->
 		</div>
 	</div>
 </template>
 <script>
+import Webp from '../blocks/Webp.vue';
 export default {
 	data: () => ({
 		loading: true,
 	}),
 	methods: {
 		start() {
-			this.loading = true
+			this.loading = true;
 		},
 		finish() {
-			this.loading = false
+			this.loading = false;
 		},
 	},
+	components: { Webp }
 }
 </script>
 <style lang="scss" scoped>
@@ -48,17 +50,19 @@ export default {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: 200px;
-	height: 200px;
+	width: 300px;
+	height: 300px;
 	position: relative;
 	z-index: 1;
 }
 
 .loading__main {
-	width: 70px;
-	height: 70px;
+	/* width: 70px;
+	height: 70px; */
 	object-fit: contain;
 	display: block;
+	animation: spin 3s ease-in-out infinite;
+	transform-origin: 50% 50%;
 	/* position: absolute;
 		top: 50%;
 		left: 50%;
@@ -67,33 +71,38 @@ export default {
 }
 
 .loading__circle {
-	width: 200px;
-	height: 200px;
+	width: 300px;
+	height: 300px;
 	object-fit: contain;
 	display: block;
-	animation: spin 1s ease-in-out infinite;
+	animation: spin 3s ease-in-out infinite;
 	transform-origin: 0% 0%;
 	position: absolute;
 	top: 50%;
 	left: 50%;
 	z-index: -1;
 	transform: translate(-50%, -50%);
+
+	img {
+		max-width: 100%;
+		object-fit: contain;
+	}
 }
 
 @keyframes spin {
 	0% {
-		-webkit-transform: rotate(0deg) scale(1) translate(-50%, -50%);
-		transform: rotate(0deg) scale(1) translate(-50%, -50%);
+		-webkit-transform: rotate(0deg) scale(1);
+		transform: rotate(0deg) scale(1);
 	}
 
 	50% {
-		-webkit-transform: rotate(180deg) scale(0.6) translate(-50%, -50%);
-		transform: rotate(180deg) scale(0.6) translate(-50%, -50%);
+		-webkit-transform: rotate(0deg) scale(0.96);
+		transform: rotate(0deg) scale(0.96);
 	}
 
 	100% {
-		-webkit-transform: rotate(360deg) scale(1) translate(-50%, -50%);
-		transform: rotate(360deg) scale(1) translate(-50%, -50%);
+		-webkit-transform: rotate(0deg) scale(1);
+		transform: rotate(0deg) scale(1);
 	}
 }
 </style>

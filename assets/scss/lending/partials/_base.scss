@@ -118,13 +118,9 @@ a:hover {
 	@media screen and (max-width: $sm) {
 		max-width: 804px;
 	}
-	// @include media($sm) {
-	// 	max-width: 730px;
-	// }
-
-	// &.container-fluid {
-	// 	max-width: 100%;
-	// }
+	@media screen and (max-width: $xs) {
+		max-width: 450px;
+	}
 }
 
 p {

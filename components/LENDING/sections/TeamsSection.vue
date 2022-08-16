@@ -56,7 +56,8 @@ export default {
 			}, {
 				img: 'images/team-img-9.png',
 				name: 'Marina Maya',
-				position: 'PR / Marketing'
+				position: 'PR / Marketing',
+				socLink: 'https://www.linkedin.com/in/mayamarina'
 			}, {
 				img: 'images/team-img-3.png',
 				name: 'Eugene Kitkin',

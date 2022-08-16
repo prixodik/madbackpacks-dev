@@ -6,7 +6,7 @@
 				<a href="#" class="footer__burger">Menu</a>
 			</div> -->
 				<div class="footer__logo">
-					<Webp src="/images/logo.png" alt="MadBackpacks"></Webp>
+					<Webp src="/images/logo.png" :retina="true" alt="MadBackpacks"></Webp>
 					<!-- <img src="/images/logo.png" alt="MadBackpacks"> -->
 				</div>
 				<div class="footer__menu">

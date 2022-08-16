@@ -317,7 +317,7 @@ export default {
 		@media screen and (max-width: $xs) {
 			flex: 0 0 100%;
 			max-width: 100%;
-			height: 166px;
+			height: 186px;
 		}
 
 		&-1 {
@@ -340,7 +340,8 @@ export default {
 				width: 290px;
 				/* height: 144px; */
 				height: auto;
-				margin: -57px 0 0 -120px;
+				top: 0;
+				margin: 0px 0 0 -150px;
 				transform: none !important;
 			}
 		}

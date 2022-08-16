@@ -3,7 +3,7 @@
 		<div class="tokensusage-section__container container">
 
 			<div class="tokensusage-section__title title-h1" :title="title">{{ title }}</div>
-			<div class="tokensusage-section__desc">$WWMB in-game utility token | WeWay $WWY token</div>
+			<div class="tokensusage-section__desc">{{ desc }}</div>
 			<!-- <div class="tokensusage-section__row row">
 				<div class="tokensusage-section__col col-4" v-for="token in tokens">
 					<TokenBlock :title="token.title" :desc="token.desc" :iconId="token.iconId" :icon="token.animIcon"
@@ -502,6 +502,7 @@ export default {
 			margin: 16px auto 0;
 
 			max-width: 280px;
+			flex-direction: column;
 		}
 	}
 
@@ -527,7 +528,13 @@ export default {
 		}
 
 		@media screen and (max-width: $xs) {
-			display: none;
+			//display: none;
+			top: 0;
+			left: 0;
+			position: relative;
+			order: 2;
+			margin-top: 16px;
+			max-width: 100%;
 		}
 
 		&:after {
@@ -552,6 +559,10 @@ export default {
 			width: 350px;
 			pointer-events: none;
 			background: url("/images/trigger-bg-top.svg") 0% 0/auto 100% no-repeat;
+
+			@media screen and (max-width: $xs) {
+				top: 0;
+			}
 		}
 
 		img {

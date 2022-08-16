@@ -131,13 +131,13 @@ export default {
 			z-index: 1002;
 		}
 
-		@media screen and (max-width: $md) {
+		@media screen and (max-width: 1040px) {
 			display: flex !important;
 		}
 	}
 
 	&__soc {
-		@media screen and (max-width: $md) {
+		@media screen and (max-width: 1040px) {
 			display: none;
 		}
 	}
@@ -151,7 +151,7 @@ export default {
 		justify-content: flex-end;
 		flex: 1 1 auto;
 
-		@media screen and (max-width: $md) {
+		@media screen and (max-width: 1040px) {
 			display: none;
 		}
 

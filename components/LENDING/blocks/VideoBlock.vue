@@ -72,6 +72,7 @@ export default {
 				// videojs options
 				muted: true,
 				language: 'en',
+				loop: true,
 				playbackRates: [0.7, 1.0, 1.5, 2.0],
 				sources: [{
 					type: "video/mp4",
@@ -103,7 +104,8 @@ export default {
 	},
 	methods: {
 		playVideo() {
-			this.$refs.videoPlayer.player.play();
+
+			console.log(this.$refs.videoPlayer.player.play());
 		},
 
 		videoPopupShow() {
@@ -116,7 +118,7 @@ export default {
 		},
 		// listen event
 		onPlayerPlay(player) {
-			// console.log('player play!', player)
+			//alert('player play!', player)
 		},
 		onPlayerPause(player) {
 			// console.log('player pause!', player)
@@ -306,6 +308,11 @@ export default {
 			font: bold 20px/24px $advent;
 			letter-spacing: 0.05em;
 			text-transform: uppercase;
+
+			@media screen and (max-width: $xs) {
+				top: 26px;
+				right: 26px;
+			}
 
 
 			svg {

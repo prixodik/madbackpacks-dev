@@ -314,7 +314,7 @@ export default {
 		}
 
 		@media screen and (max-width: $md) {
-			right: -150px;
+			right: -250px;
 			width: 75%;
 		}
 

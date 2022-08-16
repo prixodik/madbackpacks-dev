@@ -170,12 +170,14 @@ export default {
 	},
 	methods: {
 		slideChange() {
-			console.log(this.swiper.activeIndex);
+			//console.log(this.swiper.activeIndex);
 			this.activeSlide = this.swiper.activeIndex;
 		},
 		goToSlide(index) {
 			//console.log(this.swiper);
-			this.swiper.slideTo(index);
+			if (this.swiper.slideTo(index) === false) {
+				this.activeSlide = index;
+			}
 			//this.activeSlide = index;
 
 			this.slides.forEach((element) => {
@@ -193,7 +195,11 @@ export default {
 			}
 		},
 		sliderNext() {
-			this.swiper.slideNext();
+			if (this.swiper.slideNext() === false) {
+				if (this.activeSlide < (this.slides.length - 1)) {
+					this.activeSlide += 1;
+				}
+			}
 			if (this.activeSlide < (this.slides.length - 1)) {
 				//this.activeSlide += 1;
 

@@ -390,7 +390,7 @@ export default {
 					this.$refs.BackpacksSection.activeAnimation();
 					this.BackpacksSectionActive = true;
 
-					this.$refs.BackpacksSection.playVideo();
+					//this.$refs.BackpacksSection.playVideo();
 
 					console.log('start - BackpacksSection');
 				}
