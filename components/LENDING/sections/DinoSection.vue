@@ -249,6 +249,7 @@ export default {
 				flex: 0 0 calc(100% - 394px);
 				order: 1;
 				position: relative;
+				pointer-events: none;
 			}
 
 			@media screen and (max-width: $sm) {

@@ -279,45 +279,45 @@ export default {
 		@media screen and (max-width: $md) {
 			display: block;
 			opacity: 0;
-			transition: all .4s;
+			transition: all 0s;
 
 			.about-block {
 				//max-width: 140px;
 				//margin-top: 103px;
-				transition: max-width .4s;
+				//transition: max-width 4s;
 
 				&__img {
 					opacity: 0;
-					transition: all .4s;
+					transition: all 1s;
 				}
 
 				&__title,
 				&__desc,
 				&__bottom {
 					opacity: 0;
-					transition: all .4s;
+					transition: all 1s;
 				}
 			}
 
 			&.swiper-slide-active {
 				opacity: 1;
-				transition: all .7s;
+				transition: all 1s;
 
 				.about-block {
 					//max-width: 100%;
 					//margin-top: 0;
-					transition: max-width .7s, margin-top 0s;
+					//transition: max-width 7s, margin-top 0s;
 
 					&__img {
 						opacity: 1;
-						transition: all .7s;
+						transition: all 1s;
 					}
 
 					&__title,
 					&__desc,
 					&__bottom {
 						opacity: 1;
-						transition: all .7s;
+						transition: all 1s;
 					}
 				}
 			}
@@ -325,7 +325,7 @@ export default {
 			&.swiper-slide-next,
 			&.swiper-slide-prev {
 				opacity: 1;
-				transition: all .7s;
+				transition: all 1s;
 
 				.about-block {
 					//max-width: 140px;
@@ -334,19 +334,19 @@ export default {
 					@media screen and (max-width: $xs) {
 						//max-width: 120px;
 						//margin-top: 78px;
-						transition: max-width .7s, margin-top 0s;
+						//transition: max-width 7s, margin-top 0s;
 					}
 
 					&__img {
 						opacity: 0.6;
-						transition: all .3s;
+						transition: all 1s;
 					}
 
 					&__title,
 					&__desc,
 					&__bottom {
 						opacity: 0;
-						transition: all .3s;
+						transition: all 1s;
 					}
 				}
 			}

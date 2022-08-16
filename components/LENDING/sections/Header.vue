@@ -6,7 +6,7 @@
 				<a href="#" class="header__burger">Menu</a>
 			</div> -->
 			<div class="header__logo">
-				<Webp src="/images/logo.png" alt="MadBackpacks"></Webp>
+				<Webp src="/images/logo.png" :retina="true" alt="MadBackpacks"></Webp>
 				<!-- <img src="/images/logo.png" alt="MadBackpacks"> -->
 			</div>
 			<div class="header__menu">
@@ -49,7 +49,9 @@ export default {
 			this.$refs.mobmenu.toggleMenu();
 		},
 		mobileMenuHide() {
+
 			this.mobileMenuShow = false;
+
 			//this.$refs.mobmenu.toggleMenu();
 		},
 		activeAnimation() {

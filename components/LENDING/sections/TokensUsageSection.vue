@@ -401,7 +401,7 @@ export default {
 		@media screen and (max-width: $sm) {
 			display: block;
 			opacity: 0;
-			transition: opacity .1s;
+			transition: opacity 1s;
 
 			.token-block {
 				//max-width: 140px;
@@ -409,20 +409,20 @@ export default {
 
 				&__img {
 					opacity: 0;
-					transition: all .1s;
+					transition: all 1s;
 				}
 
 				&__title,
 				&__desc,
 				&__params {
 					opacity: 0;
-					transition: all .1s;
+					transition: all 1s;
 				}
 			}
 
 			&.swiper-slide-active {
 				opacity: 1;
-				transition: all .7s;
+				transition: all 1s;
 
 				.token-block {
 					//max-width: 100%;
@@ -430,14 +430,14 @@ export default {
 
 					&__img {
 						opacity: 1;
-						transition: all .7s;
+						transition: all 1s;
 					}
 
 					&__title,
 					&__desc,
 					&__params {
 						opacity: 1;
-						transition: all .7s;
+						transition: all 1s;
 					}
 				}
 			}
@@ -445,7 +445,7 @@ export default {
 			&.swiper-slide-next,
 			&.swiper-slide-prev {
 				opacity: 1;
-				transition: all .7s;
+				transition: all 1s;
 
 				.token-block {
 					//max-width: 180px;
@@ -453,14 +453,14 @@ export default {
 
 					&__img {
 						opacity: 0.6;
-						transition: all .3s;
+						transition: all 1s;
 					}
 
 					&__title,
 					&__desc,
 					&__params {
 						opacity: 0;
-						transition: all .3s;
+						transition: all 1s;
 					}
 				}
 			}

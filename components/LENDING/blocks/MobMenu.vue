@@ -57,10 +57,14 @@ export default {
 			}
 		},
 		hideMenu() {
-			this.active = false;
+
 			let body = document.querySelector('html');
 			body.classList.remove('is-overflow');
-			this.$emit('hideMenu');
+			const self = this;
+			setTimeout(function () {
+				self.active = false;
+				self.$emit('hideMenu');
+			}, 500);
 		},
 	},
 	components: { SocList, Webp }

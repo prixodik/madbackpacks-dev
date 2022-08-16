@@ -22,7 +22,7 @@
 				<div class="backpacks-section__col">
 					<VideoBlock class="backpacks-section__video" ref="VideoBlock"></VideoBlock>
 					<div class="backpacks-section__img-xs">
-						<Webp src="/images/backpacks-section-img-xs.png"></Webp>
+						<Webp src="/images/backpacks-section-img-xs.png" :retina="true"></Webp>
 						<!-- <img src="/images/backpacks-section-img-xs.png" alt=""> -->
 					</div>
 				</div>
