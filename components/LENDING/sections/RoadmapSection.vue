@@ -214,20 +214,33 @@ export default {
 
 <style lang="scss" scroped>
 .roadmap-section {
-	padding: 75px 0 84px;
+	//padding: 75px 0 84px;
 	position: relative;
 	overflow: hidden;
 	background: url('/images/tokensusage-section-bg.webp') 50% 50% no-repeat #090923;
 
-	@media screen and (max-width: $xs) {
+	/* @media screen and (max-width: $xs) {
 		padding: 105px 0 96px;
-	}
+	} */
 
 	&__container {
+		padding-top: 75px;
+		padding-bottom: 84px;
 		position: relative;
 		z-index: 1;
+		background: url("/images/roadmap-section-bg-blur.webp") -100px 0%/69% auto no-repeat;
 
-		&:after {
+		@media screen and (max-width: $sm) {
+			background: url("/images/roadmap-section-bg-blur.webp") -50px 0%/89% auto no-repeat;
+		}
+
+		@media screen and (max-width: $xs) {
+			padding-top: 105px;
+			padding-bottom: 96px;
+			background-size: 200% auto;
+		}
+
+		/* &:after {
 			content: "";
 			position: absolute;
 			width: 417px;
@@ -238,11 +251,11 @@ export default {
 
 			background: linear-gradient(119.99deg, #FE37F1 21.9%, #12F3D8 125.17%);
 			opacity: 0.45;
-			filter: blur(104px);
+			//filter: blur(104px);
 			opacity: .3;
 			transform: rotate(177.74deg);
 			border-radius: 50%;
-		}
+		} */
 	}
 
 	&__head {

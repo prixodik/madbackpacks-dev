@@ -328,7 +328,7 @@ export default {
 			text-align: center;
 			/* letter-spacing: 0.05em;
 			color: rgba($white, 0.1);
-			filter: blur(4px);
+			//filter: blur(4px);
 			font: 700 48px/60px $titleFF;
 			position: absolute;
 			top: 0;

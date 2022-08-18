@@ -146,24 +146,40 @@ export default {
 
 <style lang="scss" scroped>
 .about-section {
-	padding: 87px 0;
+	//padding: 87px 0;
 	background: url('/images/about-section-line-top.svg') 0 0 no-repeat, url('/images/about-section-bg.webp') 50% 50% no-repeat #090923;
 	overflow: hidden;
 
 	@media screen and (max-width: $sm) {
-		padding: 120px 0 100px;
+		//padding: 120px 0 100px;
 	}
 
 	@media screen and (max-width: $xs) {
-		padding: 90px 0 118px;
+		//padding: 90px 0 118px;
+
+		background: url("/images/about-section-bg-blur-1.webp") 100% 50%/200% auto no-repeat, url("/images/about-section-bg-blur-2.webp") 0% -100px/200% auto no-repeat, url('/images/about-section-line-top.svg') 0 0 no-repeat, url('/images/about-section-bg.webp') 50% 50% no-repeat #090923;
 	}
 
 	&__container {
 		position: relative;
 		z-index: 1;
+		background: url("/images/about-section-bg-blur-1.webp") 0 75px/60% auto no-repeat, url("/images/about-section-bg-blur-2.webp") 100% -100px/60% auto no-repeat;
+		padding-top: 87px;
+		padding-bottom: 87px;
 
 
-		&:before {
+		@media screen and (max-width: $sm) {
+			padding-top: 120px;
+			padding-bottom: 100px;
+		}
+
+		@media screen and (max-width: $xs) {
+			background: none;
+			padding-top: 90px;
+			padding-bottom: 118px;
+		}
+
+		/* &:before {
 			content: "";
 			display: block;
 			width: 392px;
@@ -173,7 +189,7 @@ export default {
 			top: 283px;
 			left: 256px;
 			background: linear-gradient(119.99deg, #FE37F1 21.9%, #12F3D8 125.17%);
-			filter: blur(104px);
+			//filter: blur(104px);
 			opacity: 0.5;
 			z-index: -1;
 
@@ -204,7 +220,7 @@ export default {
 			top: 77px;
 			right: 220px;
 			background: linear-gradient(119.99deg, rgba(18, 243, 216, 0.79) 21.9%, rgba(73, 255, 248, 0.19) 125.17%);
-			filter: blur(104px);
+			//filter: blur(104px);
 			opacity: 0.5;
 			z-index: -1;
 
@@ -223,7 +239,7 @@ export default {
 				height: 240px;
 				right: -15%;
 			}
-		}
+		} */
 	}
 
 	&__title {

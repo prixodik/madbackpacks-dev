@@ -2,7 +2,7 @@
 	<div class="dotteds">
 		<div class="dotteds__item" v-for="item in items"
 			:style="`top: ${item.top}; left: ${item.left}; width: ${item.width}; height: ${item.width}; background: ${color}; opacity: ${item.blur}`">
-			<!-- filter: blur(${item.blur}px); -->
+			<!-- //filter: blur(${item.blur}px); -->
 		</div>
 	</div>
 </template>
@@ -108,7 +108,7 @@ export default {
 		/* width: 20px;
 		height: 20px; */
 		/* background: #94FFEC;
-		filter: blur(2px); */
+		//filter: blur(2px); */
 		border-radius: 2px;
 		position: absolute;
 		transition: all 60s linear;

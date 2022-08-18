@@ -14,7 +14,7 @@
 						<img src="/images/dino-section-info-title-bg-reverse.svg" alt=""
 							class="backpacks-section__img-right">
 						<Webp src="/images/backpacks-section-img.png" :retina="true"></Webp>
-						<Webp class="backpacks-section__img-shadow" src="/images/backpacks-section-img.png"></Webp>
+						<Webp class="backpacks-section__img-shadow" src="/images/backpacks-section-img-blur.png"></Webp>
 						<!-- <img src="/images/backpacks-section-img.png" alt=""> -->
 						<!-- <img class="backpacks-section__img-shadow" src="/images/backpacks-section-img.png" alt=""> -->
 					</div>
@@ -217,7 +217,7 @@ export default {
 			text-align: center;
 			/* letter-spacing: 0.05em;
 			color: rgba($white, 0.1);
-			filter: blur(4px);
+			//filter: blur(4px);
 			font: 700 48px/60px $titleFF;
 			position: absolute;
 			top: 0;
@@ -321,13 +321,24 @@ export default {
 
 		&-shadow {
 			position: absolute;
-			top: 50%;
-			left: 50%;
-			transform: translate(-50%, -50%);
-			max-width: none;
-			opacity: 0.65;
-			filter: blur(100px);
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
 			z-index: -1;
+
+			img {
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				max-width: none;
+				opacity: 0.65;
+				width: 250%;
+				height: 250%;
+				//filter: blur(100px);
+
+			}
 		}
 	}
 

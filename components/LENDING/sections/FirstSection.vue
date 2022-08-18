@@ -33,14 +33,14 @@
 
 				<kinesis-element :strength="65" class="first-section__img-1">
 					<Webp src="/images/first-section-img-1.png"></Webp>
-					<Webp class="first-section__img-1-shadow" src="/images/first-section-img-1.png"></Webp>
+					<Webp class="first-section__img-1-shadow" src="/images/about-section-bg-blur-1.png"></Webp>
 					<!-- <img src="/images/first-section-img-1.png" alt="">
 					<img class="first-section__img-1-shadow" src="/images/first-section-img-1.png" alt=""> -->
 				</kinesis-element>
 
 				<kinesis-element :strength="45" class="first-section__img-2">
 					<Webp src="/images/first-section-img-2.png"></Webp>
-					<Webp class="first-section__img-2-shadow" src="/images/first-section-img-2.png"></Webp>
+					<Webp class="first-section__img-2-shadow" src="/images/about-section-bg-blur-2.png"></Webp>
 					<!-- <img src="/images/first-section-img-2.png" alt="">
 					<img class="first-section__img-2-shadow" src="/images/first-section-img-2.png" alt=""></img> -->
 				</kinesis-element>
@@ -355,11 +355,27 @@ export default {
 			}
 
 			&-shadow {
-				filter: blur(200px);
+				//filter: blur(200px);
 				position: absolute;
 				top: -50px;
 				left: 100px;
+				width: 100%;
+				height: 100%;
+				//top: 50%;
+				//left: 50%;
+				//transform: translate(calc(-50% + 50px), calc(-50% - 50px));
 				z-index: -1;
+				opacity: 0.85;
+
+				img {
+					width: 300%;
+					max-width: 300%;
+					height: 300%;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(calc(-50% + 50px), calc(-50% - 50px));
+				}
 			}
 		}
 
@@ -367,7 +383,7 @@ export default {
 			position: absolute;
 			top: 38%;
 			left: 45%;
-			z-index: 5;
+			z-index: 7;
 			margin: -220px 0 0 -220px;
 			width: 59.5rem;
 
@@ -380,6 +396,7 @@ export default {
 				left: 76%;
 				top: 42.5%;
 				transform: translate3d(45px, 45px, 0px) !important;
+				z-index: 5;
 			}
 
 			@media screen and (max-width: $xs) {
@@ -392,11 +409,27 @@ export default {
 			}
 
 			&-shadow {
-				filter: blur(200px);
+				//filter: blur(200px);
 				position: absolute;
 				top: -50px;
 				left: 100px;
 				z-index: -1;
+				width: 100%;
+				height: 100%;
+				//top: 50%;
+				//left: 50%;
+				//transform: translate(calc(-50% + 0px), calc(-50% - 0px));
+				opacity: 0.65;
+
+				img {
+					width: 200%;
+					max-width: 200%;
+					height: 200%;
+					position: absolute;
+					top: 50%;
+					left: 50%;
+					transform: translate(-50%, -50%);
+				}
 			}
 		}
 
@@ -416,6 +449,7 @@ export default {
 
 			@media screen and (max-width: $xs) {
 				width: 9rem;
+				height: 9rem;
 				top: -10%;
 				left: -5%;
 			}
@@ -425,17 +459,25 @@ export default {
 				top: 50%;
 				left: 50%;
 				z-index: -1;
-				transform: translate(-50%, -50%);
-				/* width: 90px;
-				height: 90px; */
+				//transform: scale(1) translate(-50%, -50%);
+				width: 20rem;
+				height: 20rem;
+				margin: -10rem 0 0 -10rem;
 				object-fit: contain;
 				animation: 3s circleScale2 linear infinite;
-				transform-origin: 0% 0%;
+				transform-origin: 50% 50%;
 				transform-box: fill-box;
 
+				@media screen and (max-width: $sm) {
+					width: 11rem;
+					height: 11rem;
+					margin: -5.5rem 0 0 -5.5rem;
+				}
+
 				@media screen and (max-width: $xs) {
-					width: 9rem;
-					height: 9rem;
+					width: 90px;
+					height: 90px;
+					margin: -45px 0 0 -45px;
 				}
 			}
 		}
@@ -465,16 +507,27 @@ export default {
 				top: 50%;
 				left: 50%;
 				z-index: -1;
-				transform: translate(-50%, -50%);
+				width: 30rem;
+				height: 30rem;
+				margin: -15rem 0 0 -15rem;
+				//transform: scale(1) translate(-50%, -50%);
 				/* width: 100%;
 				height: 100%; */
 				animation: 3s circleScale2 linear infinite;
-				transform-origin: 0% 0%;
+				transform-origin: 50% 50%;
+				transform-box: fill-box;
 				object-fit: contain;
 
+				@media screen and (max-width: $sm) {
+					width: 16rem;
+					height: 16rem;
+					margin: -8rem 0 0 -8rem;
+				}
+
 				@media screen and (max-width: $xs) {
-					width: 13rem;
-					height: 13rem;
+					width: 130px;
+					height: 130px;
+					margin: -65px 0 0 -65px;
 				}
 			}
 		}
@@ -518,45 +571,45 @@ export default {
 
 @keyframes circleScale {
 	0% {
-		transform: scale(1) rotate(0deg) translate(-50%, -50%);
+		transform: scale(1) translate(-50%, -50%);
 	}
 
 	25% {
-		transform: scale(1.05) rotate(0deg) translate(-50%, -50%);
+		transform: scale(1.05) translate(-50%, -50%);
 	}
 
 	50% {
-		transform: scale(1) rotate(0deg) translate(-50%, -50%);
+		transform: scale(1) translate(-50%, -50%);
 	}
 
 	75% {
-		transform: scale(0.9) rotate(0deg) translate(-50%, -50%);
+		transform: scale(0.9) translate(-50%, -50%);
 	}
 
 	100% {
-		transform: scale(1) rotate(0deg) translate(-50%, -50%);
+		transform: scale(1) translate(-50%, -50%);
 	}
 }
 
 @keyframes circleScale2 {
 	0% {
-		transform: scale(1) rotate(0deg) translate(-50%, -50%);
+		transform: scale(1);
 	}
 
 	25% {
-		transform: scale(1.05) rotate(0deg) translate(-50%, -50%);
+		transform: scale(1.05);
 	}
 
 	50% {
-		transform: scale(1) rotate(0deg) translate(-50%, -50%);
+		transform: scale(1);
 	}
 
 	75% {
-		transform: scale(0.9) rotate(0deg) translate(-50%, -50%);
+		transform: scale(0.9);
 	}
 
 	100% {
-		transform: scale(1) rotate(0deg) translate(-50%, -50%);
+		transform: scale(1);
 	}
 }
 </style>

@@ -130,7 +130,7 @@ export default {
 			text-align: center;
 			letter-spacing: 0.05em;
 			color: rgba(255, 255, 255, 0.3);
-			filter: blur(1px);
+			//filter: blur(1px);
 			font: 700 16px/20px $titleFF;
 			position: absolute;
 			top: 0;

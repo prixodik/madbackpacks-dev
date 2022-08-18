@@ -169,7 +169,7 @@ export default {
 	}
 
 	&__down {
-		filter: blur(1px);
+		//filter: blur(1px);
 	}
 }
 

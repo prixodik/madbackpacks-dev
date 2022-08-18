@@ -73,14 +73,24 @@ export default {
 <style lang="scss" scroped>
 .teams-section {
 	padding: 15px 0 83px;
-	background: #090923;
+	background: url('/images/team-section-bg-blur.webp') 50% 100px/ 70vw auto no-repeat #090923;
 	overflow: hidden;
+
+	@media screen and (max-width: $sm) {
+		background-size: 90vw auto;
+		background-position: 50% -50px;
+	}
+
+	@media screen and (max-width: $xs) {
+		background-size: 150% auto;
+		background-position: 50% 0;
+	}
 
 	&__container {
 		position: relative;
 		z-index: 1;
 
-		&:before {
+		/* &:before {
 			content: "";
 			position: absolute;
 			width: 392px;
@@ -90,7 +100,7 @@ export default {
 			z-index: -1;
 
 			background: linear-gradient(119.99deg, rgba(18, 243, 216, 0.79) 21.9%, rgba(73, 255, 248, 0.19) 125.17%);
-			filter: blur(104px);
+			//filter: blur(104px);
 			opacity: 0.6;
 			transform: rotate(177.74deg);
 		}
@@ -105,10 +115,10 @@ export default {
 			z-index: -1;
 
 			background: linear-gradient(119.99deg, #FE37F1 21.9%, #12F3D8 125.17%);
-			filter: blur(104px);
+			//filter: blur(104px);
 			opacity: 0.6;
 			transform: rotate(177.74deg);
-		}
+		} */
 	}
 
 	&__title {

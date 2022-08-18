@@ -104,16 +104,15 @@ export default {
 
 <style lang="scss" scroped>
 .dino-section {
-	padding: 115px 0 84px;
+	//padding: 115px 0 84px;
 	position: relative;
 
 	@media screen and (max-width: $sm) {
-		padding-top: 120px;
-		padding-bottom: 0;
+		background: url("/images/dino-section-bg-blur-1.webp") -80px 0/650px auto no-repeat, url("/images/dino-section-bg-blur-2.webp") 100px 100px/800px auto no-repeat;
 	}
 
 	@media screen and (max-width: $xs) {
-		padding-top: 92px;
+		background: url("/images/dino-section-bg-blur-1.webp") -280px 0/650px auto no-repeat, url("/images/dino-section-bg-blur-2.webp") 100px 100px/800px auto no-repeat;
 	}
 
 	&:before {
@@ -129,8 +128,21 @@ export default {
 
 	&__container {
 		position: relative;
+		padding-top: 115px;
+		padding-bottom: 84px;
+		background: url("/images/dino-section-bg-blur-1.webp") 0 0/55% auto no-repeat, url("/images/dino-section-bg-blur-2.webp") 100% 70px/80% auto no-repeat;
 
-		&:before {
+		@media screen and (max-width: $sm) {
+			padding-top: 120px;
+			padding-bottom: 0;
+			background: none;
+		}
+
+		@media screen and (max-width: $xs) {
+			padding-top: 92px;
+		}
+
+		/* &:before {
 			content: "";
 			width: 428px;
 			height: 381px;
@@ -140,7 +152,7 @@ export default {
 			left: 15%;
 			z-index: -1;
 			background: linear-gradient(119.99deg, rgba(18, 243, 216, 0.79) 21.9%, rgba(73, 255, 248, 0.19) 125.17%);
-			filter: blur(154px);
+			//filter: blur(154px);
 			transform: rotate(177.74deg);
 			border-radius: 50%;
 
@@ -149,7 +161,7 @@ export default {
 				height: 360px;
 				top: 140px;
 				left: 0;
-				filter: blur(90px);
+				//filter: blur(90px);
 				opacity: 0.7;
 			}
 
@@ -158,7 +170,7 @@ export default {
 				height: 288px;
 				top: 170px;
 				left: -140px;
-				filter: blur(80px);
+				//filter: blur(80px);
 				opacity: 0.7;
 			}
 		}
@@ -174,7 +186,7 @@ export default {
 			z-index: -1;
 			transform: translate(-0%, 0%);
 			background: linear-gradient(119.99deg, #FE37F1 21.9%, #12F3D8 125.17%);
-			filter: blur(154px);
+			//filter: blur(154px);
 			border-radius: 50%;
 
 			@media screen and (max-width: $sm) {
@@ -183,7 +195,7 @@ export default {
 				top: 280px;
 				left: auto;
 				right: 0;
-				filter: blur(90px);
+				//filter: blur(90px);
 				opacity: 0.7;
 			}
 
@@ -193,10 +205,10 @@ export default {
 				top: 280px;
 				left: auto;
 				right: -140px;
-				filter: blur(80px);
+				//filter: blur(80px);
 				opacity: 0.7;
 			}
-		}
+		} */
 	}
 
 	&__title {
@@ -316,9 +328,10 @@ export default {
 				position: absolute;
 				top: 50%;
 				left: 50%;
-				transform: translate(-50%, -50%);
-				animation: 3s dinoCircleScale linear infinite;
-				transform-origin: 0% 0%;
+				transform: scale(1) rotate(0deg); // translate(-50%, -50%);
+				animation: 3s dinoCircleScale3 linear infinite;
+				transform-origin: 50% 50%;
+				margin: -13.7rem 0 0 -13.7rem;
 				transform-box: fill-box;
 				width: 27.5rem;
 				height: 27.5rem;
@@ -327,6 +340,7 @@ export default {
 				@media screen and (max-width: $sm) {
 					width: 120px;
 					height: 120px;
+					margin: -60px 0 0 -60px;
 				}
 			}
 		}

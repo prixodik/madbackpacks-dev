@@ -247,7 +247,7 @@ export default {
 			margin: 0 -22px;
 		}
 
-		&:after {
+		/* &:after {
 			content: "";
 			position: absolute;
 			width: 46.3rem;
@@ -258,10 +258,10 @@ export default {
 			border-radius: 50%;
 
 			background: linear-gradient(119.99deg, #FE37F1 21.9%, #12F3D8 125.17%);
-			filter: blur(104px);
+			//filter: blur(104px);
 			opacity: 0.6;
 			transform: rotate(177.74deg);
-		}
+		} */
 
 		&-1 {
 			display: block;
@@ -302,16 +302,27 @@ export default {
 				position: absolute;
 				top: 50%;
 				left: 50%;
-				transform: translate(-50%, -50%);
-				animation: 3s dinoCircleScale linear infinite;
-				transform-origin: 0% 0%;
+				width: 176px;
+				height: 176px;
+				margin: -90px 0 0 -88px;
+				//transform: translate(-50%, -50%);
+				animation: 3s dinoCircleScale3 linear infinite;
+				transform-origin: 50% 50%;
 				max-width: none;
 				object-fit: contain;
+
+				@media screen and (max-width: $sm) {
+					width: 105px;
+					height: 105px;
+					margin: -55px 0 0 -52px;
+					//margin-top: -3px;
+				}
 
 				@media screen and (max-width: $xs) {
 					width: 90px;
 					height: 90px;
-					margin-top: -3px;
+					margin: -48px 0 0 -45px;
+					//margin-top: -3px;
 				}
 			}
 		}
@@ -337,15 +348,25 @@ export default {
 				position: absolute;
 				top: 50%;
 				left: 50%;
-				transform: translate(-50%, -50%);
-				animation: 3s dinoCircleScale linear infinite;
-				transform-origin: 0% 0%;
+				width: 300px;
+				height: 300px;
+				margin: -150px 0 0 -150px;
+				//transform: translate(-50%, -50%);
+				animation: 3s dinoCircleScale3 linear infinite;
+				transform-origin: 50% 50%;
 				max-width: none;
 				object-fit: contain;
+
+				@media screen and (max-width: $sm) {
+					width: 144px;
+					height: 144px;
+					margin: -72px 0 0 -72px;
+				}
 
 				@media screen and (max-width: $xs) {
 					width: 92px;
 					height: 92px;
+					margin: -46px 0 0 -46px;
 				}
 			}
 		}
