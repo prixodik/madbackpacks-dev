@@ -116,7 +116,7 @@ export default {
 				top: 50%;
 				left: 50%;
 				transform: translate(-50%, -50%);
-				background: url('/images/roadmap-block-circle.svg') 0 0/contain no-repeat;
+				background: url('/madbackpacks-dev/images/roadmap-block-circle.svg') 0 0/contain no-repeat;
 				z-index: -1;
 
 				@media screen and (max-width: $sm) {
@@ -135,7 +135,7 @@ export default {
 				left: 50%;
 				transform: translate(-50%, -50%);
 				transform-origin: 50% 50%;
-				background: url('/images/roadmap-block-circle-decor.svg') 0 0/contain no-repeat;
+				background: url('/madbackpacks-dev/images/roadmap-block-circle-decor.svg') 0 0/contain no-repeat;
 				z-index: -1;
 
 				@media screen and (max-width: $sm) {

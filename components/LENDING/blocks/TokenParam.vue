@@ -3,7 +3,7 @@
 		<div class="token-param__icon">
 			<svg :class="`token-param__icon-main token-param__icon-main--${icon}`" :fill="currentColor.iconColor"
 				:stroke="currentColor.iconColor">
-				<use :xlink:href="`/images/sprite-svg.svg#${icon}`"></use>
+				<use :xlink:href="`/madbackpacks-dev/images/sprite-svg.svg#${icon}`"></use>
 			</svg>
 
 			<svg class="token-param__icon-shadow" width="181" height="181" viewBox="0 0 181 181" fill="none"
@@ -45,7 +45,7 @@
 				<div :class="`token-param__list-item token-param__list-item--${ind}`" v-for="(item, ind) in list">
 					<div class="token-param__list-block">
 						<span>{{ item.title }}</span>
-						<img v-if="item.star" src="/images/star.svg" alt="">
+						<img v-if="item.star" src="/madbackpacks-dev/images/star.svg" alt="">
 					</div>
 				</div>
 			</div>

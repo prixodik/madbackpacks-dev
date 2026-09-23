@@ -29,15 +29,15 @@
 				</kinesis-element>
 
 				<kinesis-element :strength="45" class="join-section__img-2">
-					<Webp src="/images/join-section-img-2.png"></Webp>
-					<!-- <img src="/images/join-section-img-2.png" alt=""> -->
-					<img class="join-section__img-2-circle" src="/images/join-section-img-2-circle.svg" alt=""></img>
+					<Webp src="/madbackpacks-dev/images/join-section-img-2.png"></Webp>
+					<!-- <img src="/madbackpacks-dev/images/join-section-img-2.png" alt=""> -->
+					<img class="join-section__img-2-circle" src="/madbackpacks-dev/images/join-section-img-2-circle.svg" alt=""></img>
 				</kinesis-element>
 
 				<kinesis-element :strength="30" class="join-section__img-3">
-					<Webp src="/images/join-section-img-3.png"></Webp>
-					<!-- <img src="/images/join-section-img-3.png" alt=""> -->
-					<img class="join-section__img-3-circle" src="/images/join-section-img-3-circle.svg" alt="">
+					<Webp src="/madbackpacks-dev/images/join-section-img-3.png"></Webp>
+					<!-- <img src="/madbackpacks-dev/images/join-section-img-3.png" alt=""> -->
+					<img class="join-section__img-3-circle" src="/madbackpacks-dev/images/join-section-img-3-circle.svg" alt="">
 				</kinesis-element>
 
 			</kinesis-container>
@@ -150,7 +150,7 @@ export default {
 		display: block;
 		width: 100%;
 		height: 4px;
-		background: url('/images/join-section-line-top.svg') 0 0 no-repeat;
+		background: url('/madbackpacks-dev/images/join-section-line-top.svg') 0 0 no-repeat;
 		position: absolute;
 		top: -2px;
 		left: 0;
@@ -183,7 +183,7 @@ export default {
 		padding-top: 38px;
 		font: 700 48px/60px $titleFF;
 		color: $white;
-		background: url('/images/join-section-title-bg.svg') 0 0 no-repeat;
+		background: url('/madbackpacks-dev/images/join-section-title-bg.svg') 0 0 no-repeat;
 		position: relative;
 		max-width: 733px;
 		letter-spacing: 0.05em;
@@ -268,7 +268,7 @@ export default {
 			display: block;
 			width: 313px;
 			height: 24px;
-			background: url('/images/join-section-buttons-bg.svg') 0 0/contain no-repeat;
+			background: url('/madbackpacks-dev/images/join-section-buttons-bg.svg') 0 0/contain no-repeat;
 			position: absolute;
 			top: 31px;
 			left: 300px;

@@ -5,13 +5,13 @@
 			<!-- <img :src="img" :alt="name"> -->
 			<!-- <a :href="socLink" class="team-block__soc btn btn--soc btn--pink">
 				<svg>
-					<use xlink:href="/images/sprite-svg.svg#linkedin"></use>
+					<use xlink:href="/madbackpacks-dev/images/sprite-svg.svg#linkedin"></use>
 				</svg>
 			</a> -->
 
 			<Btn v-if="socLink" :tag="'a'" :href="socLink" class="team-block__soc btn--soc btn--pink">
 				<svg>
-					<use xlink:href="/images/sprite-svg.svg#linkedin"></use>
+					<use xlink:href="/madbackpacks-dev/images/sprite-svg.svg#linkedin"></use>
 				</svg>
 			</Btn>
 		</div>

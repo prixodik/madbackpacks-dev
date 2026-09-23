@@ -23,8 +23,8 @@
 		</div>
 		<SocList class="mob-menu__soc soc-list--big"></SocList>
 		<div class="mob-menu__logo">
-			<Webp src="/images/logo.png" alt="MadBackpacks"></Webp>
-			<!-- <img src="/images/logo.png" alt="MadBackpacks"> -->
+			<Webp src="/madbackpacks-dev/images/logo.png" alt="MadBackpacks"></Webp>
+			<!-- <img src="/madbackpacks-dev/images/logo.png" alt="MadBackpacks"> -->
 		</div>
 		<div class="mob-menu__copyright">Your personal data is processed in accordance with our <a
 				href="https://madbackpacks.io/pdf/Privacy.pdf" target="_blank">Privacy
@@ -73,7 +73,7 @@ export default {
 
 <style lang="scss" scoped>
 .mob-menu {
-	background: url('/images/mob-menu-line.svg') 0 88px repeat-x, url('/images/mob-menu-bg.webp') 0 0/cover no-repeat #090923;
+	background: url('/madbackpacks-dev/images/mob-menu-line.svg') 0 88px repeat-x, url('/madbackpacks-dev/images/mob-menu-bg.webp') 0 0/cover no-repeat #090923;
 	padding: 88px 60px 20px;
 	position: fixed;
 	top: 0;
@@ -93,7 +93,7 @@ export default {
 	}
 
 	@media screen and (max-width: $xs) {
-		background: url('/images/mob-menu-line.svg') 0 62px repeat-x, url('/images/mob-menu-bg.webp') 0 0/cover no-repeat #090923;
+		background: url('/madbackpacks-dev/images/mob-menu-line.svg') 0 62px repeat-x, url('/madbackpacks-dev/images/mob-menu-bg.webp') 0 0/cover no-repeat #090923;
 		padding: 60px 40px 20px;
 	}
 

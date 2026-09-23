@@ -114,7 +114,7 @@ export default {
 			display: block;
 			width: 100%;
 			height: 4px;
-			background: url('/images/token-block-title-bg.webp') 50% 0 no-repeat;
+			background: url('/madbackpacks-dev/images/token-block-title-bg.webp') 50% 0 no-repeat;
 			position: absolute;
 			top: 0;
 			left: 0;

@@ -17,15 +17,15 @@
 						</div>
 						<img v-if="index !== 7"
 							:class="`tokenomics-section__procent-line tokenomics-section__procent-line--${index + 1}`"
-							:src="`/images/tokenomics-procent-line-${index + 1}.svg`" alt="">
+							:src="`/madbackpacks-dev/images/tokenomics-procent-line-${index + 1}.svg`" alt="">
 					</div>
 				</div>
 				<div class="tokenomics-section__body">
 					<kinesis-container :active="animationSection" class="tokenomics-section__img">
-						<Webp class="tokenomics-section__img-1" src="/images/tokenomics-section-img-1.png"></Webp>
-						<!-- <img class="tokenomics-section__img-1" src="/images/tokenomics-section-img-1.png" alt=""> -->
-						<img class="tokenomics-section__img-2" src="/images/tokenomics-section-img-2.svg" alt="">
-						<!-- <img class="tokenomics-section__img-lines" src="/images/tokenomics-section-img-lines.svg" alt=""> -->
+						<Webp class="tokenomics-section__img-1" src="/madbackpacks-dev/images/tokenomics-section-img-1.png"></Webp>
+						<!-- <img class="tokenomics-section__img-1" src="/madbackpacks-dev/images/tokenomics-section-img-1.png" alt=""> -->
+						<img class="tokenomics-section__img-2" src="/madbackpacks-dev/images/tokenomics-section-img-2.svg" alt="">
+						<!-- <img class="tokenomics-section__img-lines" src="/madbackpacks-dev/images/tokenomics-section-img-lines.svg" alt=""> -->
 						<!-- width="574"
 							height="574" -->
 						<svg class="tokenomics-section__img-lines" :class="{ 'is-animated': animatedLines }"
@@ -59,32 +59,32 @@
 							</defs>
 						</svg>
 						<kinesis-element :strength="25" type="depth" class="tokenomics-section__img-logo">
-							<Webp src="/images/tokenomics-section-img-logo.png" :retina="true"></Webp>
-							<!-- <img src="/images/tokenomics-section-img-logo.png" alt=""> -->
+							<Webp src="/madbackpacks-dev/images/tokenomics-section-img-logo.png" :retina="true"></Webp>
+							<!-- <img src="/madbackpacks-dev/images/tokenomics-section-img-logo.png" alt=""> -->
 						</kinesis-element>
 
 						<kinesis-element :strength="15" class="tokenomics-section__img-3">
-							<Webp src="/images/tokenomics-section-img-3.png"></Webp>
-							<!-- <img src="/images/tokenomics-section-img-3.png" alt=""> -->
+							<Webp src="/madbackpacks-dev/images/tokenomics-section-img-3.png"></Webp>
+							<!-- <img src="/madbackpacks-dev/images/tokenomics-section-img-3.png" alt=""> -->
 							<img class="tokenomics-section__img-3-circle"
-								src="/images/tokenomics-section-img-3-circle.svg" alt="">
+								src="/madbackpacks-dev/images/tokenomics-section-img-3-circle.svg" alt="">
 						</kinesis-element>
 
 						<kinesis-element :strength="10" class="tokenomics-section__img-4">
-							<Webp src="/images/tokenomics-section-img-4.png"></Webp>
-							<!-- <img src="/images/tokenomics-section-img-4.png" alt=""> -->
+							<Webp src="/madbackpacks-dev/images/tokenomics-section-img-4.png"></Webp>
+							<!-- <img src="/madbackpacks-dev/images/tokenomics-section-img-4.png" alt=""> -->
 							<img class="tokenomics-section__img-4-circle"
-								src="/images/tokenomics-section-img-4-circle.svg" alt="">
+								src="/madbackpacks-dev/images/tokenomics-section-img-4-circle.svg" alt="">
 						</kinesis-element>
 					</kinesis-container>
 				</div>
 				<div class="tokenomics-section__params">
-					<img class="tokenomics-section__params-lt" src="/images/tokenomics-params-line-top.svg" alt="">
+					<img class="tokenomics-section__params-lt" src="/madbackpacks-dev/images/tokenomics-params-line-top.svg" alt="">
 					<div class="tokenomics-section__param" v-for="param in params">
 						<div class="tokenomics-section__param-label">{{ param.label }}</div>
 						<div class="tokenomics-section__param-value">{{ param.value }}</div>
 					</div>
-					<img class="tokenomics-section__params-lb" src="/images/tokenomics-params-line-bottom.svg" alt="">
+					<img class="tokenomics-section__params-lb" src="/madbackpacks-dev/images/tokenomics-params-line-bottom.svg" alt="">
 				</div>
 			</div>
 
@@ -185,7 +185,7 @@ export default {
 .tokenomics-section {
 	padding: 75px 0 84px;
 	position: relative;
-	background: url('/images/tokensusage-section-bg.webp') 50% 50% no-repeat #090923;
+	background: url('/madbackpacks-dev/images/tokensusage-section-bg.webp') 50% 50% no-repeat #090923;
 
 	@media screen and (max-width: $sm) {
 		padding: 56px 0;
@@ -200,7 +200,7 @@ export default {
 		display: block;
 		width: 100%;
 		height: 4px;
-		background: url('/images/tokensusage-section-line-bottom.svg') 0% 0 no-repeat;
+		background: url('/madbackpacks-dev/images/tokensusage-section-line-bottom.svg') 0% 0 no-repeat;
 		position: absolute;
 		bottom: 8px;
 		left: 0;

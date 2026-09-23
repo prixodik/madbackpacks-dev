@@ -147,7 +147,7 @@ export default {
 <style lang="scss" scroped>
 .about-section {
 	//padding: 87px 0;
-	background: url('/images/about-section-line-top.svg') 0 0 no-repeat, url('/images/about-section-bg.webp') 50% 50% no-repeat #090923;
+	background: url('/madbackpacks-dev/images/about-section-line-top.svg') 0 0 no-repeat, url('/madbackpacks-dev/images/about-section-bg.webp') 50% 50% no-repeat #090923;
 	overflow: hidden;
 
 	@media screen and (max-width: $sm) {
@@ -157,13 +157,13 @@ export default {
 	@media screen and (max-width: $xs) {
 		//padding: 90px 0 118px;
 
-		background: url("/images/about-section-bg-blur-1.webp") 100% 50%/200% auto no-repeat, url("/images/about-section-bg-blur-2.webp") 0% -100px/200% auto no-repeat, url('/images/about-section-line-top.svg') 0 0 no-repeat, url('/images/about-section-bg.webp') 50% 50% no-repeat #090923;
+		background: url("/madbackpacks-dev/images/about-section-bg-blur-1.webp") 100% 50%/200% auto no-repeat, url("/madbackpacks-dev/images/about-section-bg-blur-2.webp") 0% -100px/200% auto no-repeat, url('/madbackpacks-dev/images/about-section-line-top.svg') 0 0 no-repeat, url('/madbackpacks-dev/images/about-section-bg.webp') 50% 50% no-repeat #090923;
 	}
 
 	&__container {
 		position: relative;
 		z-index: 1;
-		background: url("/images/about-section-bg-blur-1.webp") 0 75px/60% auto no-repeat, url("/images/about-section-bg-blur-2.webp") 100% -100px/60% auto no-repeat;
+		background: url("/madbackpacks-dev/images/about-section-bg-blur-1.webp") 0 75px/60% auto no-repeat, url("/madbackpacks-dev/images/about-section-bg-blur-2.webp") 100% -100px/60% auto no-repeat;
 		padding-top: 87px;
 		padding-bottom: 87px;
 

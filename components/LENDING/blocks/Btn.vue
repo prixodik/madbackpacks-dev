@@ -90,7 +90,7 @@ export default {
 	border: 0;
 	color: $white;
 	font: 700 16px/20px $titleFF;
-	background: none; //url("/images/btn-bg-pink.svg") 50% 50% / contain no-repeat;
+	background: none; //url("/madbackpacks-dev/images/btn-bg-pink.svg") 50% 50% / contain no-repeat;
 	border-radius: 0;
 	padding: 5px 16px;
 	cursor: pointer;
@@ -266,7 +266,7 @@ export default {
 		min-width: 62px;
 		padding-left: 0;
 		padding-right: 0;
-		//background: url("/images/btn-bg-arrow.svg") 50% 50% / contain no-repeat;
+		//background: url("/madbackpacks-dev/images/btn-bg-arrow.svg") 50% 50% / contain no-repeat;
 
 		@media screen and (max-width: $sm) {
 			height: 48px;
@@ -305,7 +305,7 @@ export default {
 
 		&:hover,
 		&:focus {
-			//background: url("/images/btn-bg-arrow-hover.svg") 50% 50% / contain no-repeat;
+			//background: url("/madbackpacks-dev/images/btn-bg-arrow-hover.svg") 50% 50% / contain no-repeat;
 
 			.btn__bg--arrow {
 				opacity: 0;
@@ -358,11 +358,11 @@ export default {
 			stroke-dashoffset: 0;
 		}
 
-		//background: url("/images/btn-bg-soc.svg") 50% 50% / contain no-repeat;
+		//background: url("/madbackpacks-dev/images/btn-bg-soc.svg") 50% 50% / contain no-repeat;
 
 		&:hover,
 		&:focus {
-			//background: url("/images/btn-bg-soc-pink.svg") 50% 50% / contain no-repeat;
+			//background: url("/madbackpacks-dev/images/btn-bg-soc-pink.svg") 50% 50% / contain no-repeat;
 
 			.btn__bg--soc {
 				opacity: 0;
@@ -391,7 +391,7 @@ export default {
 		}
 
 		&.btn--pink {
-			//background: url("/images/btn-bg-soc-pink.svg") 50% 50% / contain no-repeat;
+			//background: url("/madbackpacks-dev/images/btn-bg-soc-pink.svg") 50% 50% / contain no-repeat;
 
 			svg:not(.btn__bg) {
 				width: 30px;
@@ -424,7 +424,7 @@ export default {
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		background: url('/images/burger-bg.svg') 0 0/contain no-repeat;
+		background: url('/madbackpacks-dev/images/burger-bg.svg') 0 0/contain no-repeat;
 		padding: 0;
 
 		span {

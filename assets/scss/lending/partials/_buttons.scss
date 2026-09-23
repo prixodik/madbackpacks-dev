@@ -3,7 +3,7 @@ a.btn,
 	border: 0;
 	color: $white;
 	font: 700 16px/20px $titleFF;
-	background: url("/images/btn-bg-pink.svg") 50% 50% / contain no-repeat;
+	background: url("/madbackpacks-dev/images/btn-bg-pink.svg") 50% 50% / contain no-repeat;
 	border-radius: 0;
 	padding: 5px 16px;
 	cursor: pointer;
@@ -26,11 +26,11 @@ a.btn,
 
 	&:hover {
 		color: $white;
-		background: url("/images/btn-bg-pink-hover.svg") 50% 50% / contain no-repeat;
+		background: url("/madbackpacks-dev/images/btn-bg-pink-hover.svg") 50% 50% / contain no-repeat;
 	}
 	&:active {
 		color: $white;
-		background: url("/images/btn-bg-pink-click.svg") 50% 50% / contain no-repeat;
+		background: url("/madbackpacks-dev/images/btn-bg-pink-click.svg") 50% 50% / contain no-repeat;
 	}
 
 	&:focus {
@@ -40,13 +40,13 @@ a.btn,
 	&:disabled,
 	&[disabled],
 	&:disabled:focus {
-		background: url("/images/btn-bg-pink-disabled.svg") 50% 50% / contain no-repeat;
+		background: url("/madbackpacks-dev/images/btn-bg-pink-disabled.svg") 50% 50% / contain no-repeat;
 		pointer-events: none;
 	}
 
 	&--arrow {
 		min-width: 62px;
-		background: url("/images/btn-bg-arrow.svg") 50% 50% / contain no-repeat;
+		background: url("/madbackpacks-dev/images/btn-bg-arrow.svg") 50% 50% / contain no-repeat;
 
 		&:after {
 			display: none;
@@ -62,7 +62,7 @@ a.btn,
 
 		&:hover,
 		&:focus {
-			background: url("/images/btn-bg-arrow-hover.svg") 50% 50% / contain no-repeat;
+			background: url("/madbackpacks-dev/images/btn-bg-arrow-hover.svg") 50% 50% / contain no-repeat;
 
 			svg {
 				fill: #cefece;
@@ -79,11 +79,11 @@ a.btn,
 
 	&--soc {
 		min-width: 62px;
-		background: url("/images/btn-bg-soc.svg") 50% 50% / contain no-repeat;
+		background: url("/madbackpacks-dev/images/btn-bg-soc.svg") 50% 50% / contain no-repeat;
 
 		&:hover,
 		&:focus {
-			background: url("/images/btn-bg-soc-pink.svg") 50% 50% / contain no-repeat;
+			background: url("/madbackpacks-dev/images/btn-bg-soc-pink.svg") 50% 50% / contain no-repeat;
 		}
 
 		svg {
@@ -95,7 +95,7 @@ a.btn,
 		}
 
 		&.btn--pink {
-			background: url("/images/btn-bg-soc-pink.svg") 50% 50% / contain no-repeat;
+			background: url("/madbackpacks-dev/images/btn-bg-soc-pink.svg") 50% 50% / contain no-repeat;
 
 			svg {
 				width: 30px;

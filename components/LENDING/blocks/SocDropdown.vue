@@ -3,11 +3,11 @@
 		<div class="soc-dropdown__head">
 			<a class="soc-dropdown__current" :href="currentLink">
 				<svg>
-					<use :xlink:href="`/images/sprite-svg.svg#${currentIcon}`"></use>
+					<use :xlink:href="`/madbackpacks-dev/images/sprite-svg.svg#${currentIcon}`"></use>
 				</svg>
 			</a>
 			<svg class="soc-dropdown__arrow" @click.prevent="showDrop = !showDrop">
-				<use xlink:href="/images/sprite-svg.svg#arrow-left"></use>
+				<use xlink:href="/madbackpacks-dev/images/sprite-svg.svg#arrow-left"></use>
 			</svg>
 		</div>
 
@@ -15,7 +15,7 @@
 			<div class="soc-dropdown__item" :class="`soc-dropdown__item--${item.icon}`" v-for="item in list">
 				<a :href="item.link">
 					<svg>
-						<use :xlink:href="`/images/sprite-svg.svg#${item.icon}`"></use>
+						<use :xlink:href="`/madbackpacks-dev/images/sprite-svg.svg#${item.icon}`"></use>
 					</svg>
 				</a>
 			</div>

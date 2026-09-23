@@ -26,7 +26,7 @@
 
 			<div class="tokensusage-section__buttons">
 				<div class="tokensusage-section__trigger">
-					<img src="/images/star.svg" alt="">
+					<img src="/madbackpacks-dev/images/star.svg" alt="">
 					<span>Burn Triggers</span>
 				</div>
 				<!-- <a href="#" @click.prevent="openPopup('popup-join')" class="btn">GET WWMB</a> -->
@@ -34,7 +34,7 @@
 
 				<Btn class="btn--icon" tag="a" href="https://t.me/MadBackpacks" target="_blank">
 					<svg class="btn__icon">
-						<use xlink:href="/images/sprite-svg.svg#telegram"></use>
+						<use xlink:href="/madbackpacks-dev/images/sprite-svg.svg#telegram"></use>
 					</svg>
 					<span>Join community</span>
 				</Btn>
@@ -305,7 +305,7 @@ export default {
 <style lang="scss" scroped>
 .tokensusage-section {
 	padding: 87px 0;
-	background: url('/images/tokensusage-section-bg.webp') 50% 50% no-repeat #090923;
+	background: url('/madbackpacks-dev/images/tokensusage-section-bg.webp') 50% 50% no-repeat #090923;
 
 	@media screen and (max-width: $sm) {
 		padding: 60px 0;
@@ -510,7 +510,7 @@ export default {
 		position: absolute;
 		top: -28px;
 		left: 0;
-		background: url('/images/trigger-bg.svg') 50% 50%/contain no-repeat;
+		background: url('/madbackpacks-dev/images/trigger-bg.svg') 50% 50%/contain no-repeat;
 		color: $white;
 		display: flex;
 		justify-content: center;
@@ -546,7 +546,7 @@ export default {
 			height: 24px;
 			width: 400px;
 			pointer-events: none;
-			background: url("/images/trigger-bg-bottom.svg") 100% 0/auto 100% no-repeat;
+			background: url("/madbackpacks-dev/images/trigger-bg-bottom.svg") 100% 0/auto 100% no-repeat;
 		}
 
 		&:before {
@@ -558,7 +558,7 @@ export default {
 			height: 24px;
 			width: 350px;
 			pointer-events: none;
-			background: url("/images/trigger-bg-top.svg") 0% 0/auto 100% no-repeat;
+			background: url("/madbackpacks-dev/images/trigger-bg-top.svg") 0% 0/auto 100% no-repeat;
 
 			@media screen and (max-width: $xs) {
 				top: 0;

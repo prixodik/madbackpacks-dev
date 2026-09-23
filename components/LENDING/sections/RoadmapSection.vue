@@ -5,28 +5,28 @@
 			<div class="roadmap-section__head">
 				<div class="roadmap-section__title title-h1" :title="title">{{ title }}</div>
 				<div class="roadmap-section__head-line">
-					<img src="/images/roadmap-section-head-bg.svg" alt="">
+					<img src="/madbackpacks-dev/images/roadmap-section-head-bg.svg" alt="">
 				</div>
 				<div class="roadmap-section__arrows">
 					<Btn :tag="'a'" class="roadmap-section__arrow btn--arrow" @click.prevent.native="sliderPrev()">
 						<svg>
-							<use xlink:href="/images/sprite-svg.svg#arrow-left"></use>
+							<use xlink:href="/madbackpacks-dev/images/sprite-svg.svg#arrow-left"></use>
 						</svg>
 					</Btn>
 					<Btn :tag="'a'" class="roadmap-section__arrow btn--arrow btn--next"
 						@click.prevent.native="sliderNext()">
 						<svg>
-							<use xlink:href="/images/sprite-svg.svg#arrow-left"></use>
+							<use xlink:href="/madbackpacks-dev/images/sprite-svg.svg#arrow-left"></use>
 						</svg>
 					</Btn>
 					<!-- <div class="roadmap-section__arrow btn btn--arrow" @click.prevent="sliderPrev()">
 						<svg>
-							<use xlink:href="/images/sprite-svg.svg#arrow-left"></use>
+							<use xlink:href="/madbackpacks-dev/images/sprite-svg.svg#arrow-left"></use>
 						</svg>
 					</div> -->
 					<!-- <div class="roadmap-section__arrow btn btn--arrow btn--next" @click.prevent="sliderNext()">
 						<svg>
-							<use xlink:href="/images/sprite-svg.svg#arrow-left"></use>
+							<use xlink:href="/madbackpacks-dev/images/sprite-svg.svg#arrow-left"></use>
 						</svg>
 					</div> -->
 				</div>
@@ -217,7 +217,7 @@ export default {
 	//padding: 75px 0 84px;
 	position: relative;
 	overflow: hidden;
-	background: url('/images/tokensusage-section-bg.webp') 50% 50% no-repeat #090923;
+	background: url('/madbackpacks-dev/images/tokensusage-section-bg.webp') 50% 50% no-repeat #090923;
 
 	/* @media screen and (max-width: $xs) {
 		padding: 105px 0 96px;
@@ -228,10 +228,10 @@ export default {
 		padding-bottom: 84px;
 		position: relative;
 		z-index: 1;
-		background: url("/images/roadmap-section-bg-blur.webp") -100px 0%/69% auto no-repeat;
+		background: url("/madbackpacks-dev/images/roadmap-section-bg-blur.webp") -100px 0%/69% auto no-repeat;
 
 		@media screen and (max-width: $sm) {
-			background: url("/images/roadmap-section-bg-blur.webp") -50px 0%/89% auto no-repeat;
+			background: url("/madbackpacks-dev/images/roadmap-section-bg-blur.webp") -50px 0%/89% auto no-repeat;
 		}
 
 		@media screen and (max-width: $xs) {
@@ -320,7 +320,7 @@ export default {
 			right: 0;
 			margin: 0 calc(-50vw + 40%);
 			height: 5px;
-			background: url('/images/roadmap-section-slider-bg.svg') 0 0 repeat-x;
+			background: url('/madbackpacks-dev/images/roadmap-section-slider-bg.svg') 0 0 repeat-x;
 			position: absolute;
 			top: 444px;
 			left: 0;

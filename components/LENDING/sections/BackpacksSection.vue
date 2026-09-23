@@ -10,20 +10,20 @@
 			<div class="backpacks-section__row">
 				<div class="backpacks-section__col">
 					<div class="backpacks-section__img">
-						<img src="/images/dino-section-info-title-bg.svg" alt="" class="backpacks-section__img-left">
-						<img src="/images/dino-section-info-title-bg-reverse.svg" alt=""
+						<img src="/madbackpacks-dev/images/dino-section-info-title-bg.svg" alt="" class="backpacks-section__img-left">
+						<img src="/madbackpacks-dev/images/dino-section-info-title-bg-reverse.svg" alt=""
 							class="backpacks-section__img-right">
-						<Webp src="/images/backpacks-section-img.png" :retina="true"></Webp>
-						<Webp class="backpacks-section__img-shadow" src="/images/backpacks-section-img-blur.png"></Webp>
-						<!-- <img src="/images/backpacks-section-img.png" alt=""> -->
-						<!-- <img class="backpacks-section__img-shadow" src="/images/backpacks-section-img.png" alt=""> -->
+						<Webp src="/madbackpacks-dev/images/backpacks-section-img.png" :retina="true"></Webp>
+						<Webp class="backpacks-section__img-shadow" src="/madbackpacks-dev/images/backpacks-section-img-blur.png"></Webp>
+						<!-- <img src="/madbackpacks-dev/images/backpacks-section-img.png" alt=""> -->
+						<!-- <img class="backpacks-section__img-shadow" src="/madbackpacks-dev/images/backpacks-section-img.png" alt=""> -->
 					</div>
 				</div>
 				<div class="backpacks-section__col">
 					<VideoBlock class="backpacks-section__video" ref="VideoBlock"></VideoBlock>
 					<div class="backpacks-section__img-xs">
-						<Webp src="/images/backpacks-section-img-xs.png" :retina="true"></Webp>
-						<!-- <img src="/images/backpacks-section-img-xs.png" alt=""> -->
+						<Webp src="/madbackpacks-dev/images/backpacks-section-img-xs.png" :retina="true"></Webp>
+						<!-- <img src="/madbackpacks-dev/images/backpacks-section-img-xs.png" alt=""> -->
 					</div>
 				</div>
 			</div>
@@ -155,7 +155,7 @@ export default {
 .backpacks-section {
 	padding: 75px 0 84px;
 	position: relative;
-	background: url('/images/backpacks-section-bg.webp') 50% 100% no-repeat;
+	background: url('/madbackpacks-dev/images/backpacks-section-bg.webp') 50% 100% no-repeat;
 
 	@media screen and (max-width: $sm) {
 		padding-top: 60px;
@@ -170,7 +170,7 @@ export default {
 		display: block;
 		width: 100%;
 		height: 4px;
-		background: url('/images/backpacks-section-line-top.svg') 100% 0 no-repeat;
+		background: url('/madbackpacks-dev/images/backpacks-section-line-top.svg') 100% 0 no-repeat;
 		position: absolute;
 		top: -2px;
 		left: 0;
@@ -181,7 +181,7 @@ export default {
 		display: block;
 		width: 100%;
 		height: 4px;
-		background: url('/images/backpacks-section-line-bottom.svg') 0% 0 no-repeat;
+		background: url('/madbackpacks-dev/images/backpacks-section-line-bottom.svg') 0% 0 no-repeat;
 		position: absolute;
 		bottom: 14px;
 		left: 0;
@@ -485,7 +485,7 @@ export default {
 	}
 
 	&__param {
-		background: url('/images/backpacks-section-param.svg') 0 0/100% 100% no-repeat;
+		background: url('/madbackpacks-dev/images/backpacks-section-param.svg') 0 0/100% 100% no-repeat;
 		height: 62px;
 		display: flex;
 		justify-content: center;
@@ -501,7 +501,7 @@ export default {
 		}
 
 		&--label {
-			background: url('/images/backpacks-section-param-pink.svg') 0 0/100% 100% no-repeat;
+			background: url('/madbackpacks-dev/images/backpacks-section-param-pink.svg') 0 0/100% 100% no-repeat;
 			text-transform: uppercase;
 			font: bold 16px $titleFF;
 

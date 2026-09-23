@@ -1,8 +1,8 @@
 <template>
 	<div class="loading-page" :class="{ 'is-active': loading }">
 		<div class="loading">
-			<Webp class="loading__main" src="/images/logo.png" :retina="true"></Webp>
-			<!-- <img class="loading__circle" src="/images/loading-circle.svg" alt=""> -->
+			<Webp class="loading__main" src="/madbackpacks-dev/images/logo.png" :retina="true"></Webp>
+			<!-- <img class="loading__circle" src="/madbackpacks-dev/images/loading-circle.svg" alt=""> -->
 		</div>
 	</div>
 </template>

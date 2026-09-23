@@ -6,8 +6,8 @@
 				<a href="#" class="header__burger">Menu</a>
 			</div> -->
 			<div class="header__logo">
-				<Webp src="/images/logo.png" :retina="true" alt="MadBackpacks"></Webp>
-				<!-- <img src="/images/logo.png" alt="MadBackpacks"> -->
+				<Webp src="/madbackpacks-dev/images/logo.png" :retina="true" alt="MadBackpacks"></Webp>
+				<!-- <img src="/madbackpacks-dev/images/logo.png" alt="MadBackpacks"> -->
 			</div>
 			<div class="header__menu">
 				<a href="#" v-scroll-to="'#about-section'" class="header__menu-item">about</a>

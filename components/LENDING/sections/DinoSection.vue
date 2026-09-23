@@ -14,7 +14,7 @@
 							@click.prevent="infoToggle(index)">
 							<span>{{ info.title }}</span>
 							<svg class="dino-section__info-arrow" v-bind:class="{ 'is-active': index === infoIndex }">
-								<use xlink:href="/images/sprite-svg.svg#arrow-left"></use>
+								<use xlink:href="/madbackpacks-dev/images/sprite-svg.svg#arrow-left"></use>
 							</svg>
 						</div>
 						<div class="dino-section__info-text" v-bind:class="{ 'is-active': index === infoIndex }"
@@ -24,27 +24,27 @@
 
 				<div class="dino-section__img-wrap">
 					<kinesis-element :strength="20" class="dino-section__img-1">
-						<Webp src="/images/dino-section-img-1.png" :retina="true"></Webp>
-						<!-- <img src="/images/dino-section-img-1.png" alt=""> -->
+						<Webp src="/madbackpacks-dev/images/dino-section-img-1.png" :retina="true"></Webp>
+						<!-- <img src="/madbackpacks-dev/images/dino-section-img-1.png" alt=""> -->
 					</kinesis-element>
 
 					<kinesis-element :strength="35" class="dino-section__img-2">
-						<Webp src="/images/dino-section-img-2.png"></Webp>
-						<!-- <img src="/images/dino-section-img-2.png" alt=""> -->
-						<img class="dino-section__img-2-circle" src="/images/dino-section-img-2-circle.svg"
+						<Webp src="/madbackpacks-dev/images/dino-section-img-2.png"></Webp>
+						<!-- <img src="/madbackpacks-dev/images/dino-section-img-2.png" alt=""> -->
+						<img class="dino-section__img-2-circle" src="/madbackpacks-dev/images/dino-section-img-2-circle.svg"
 							alt=""></img>
 					</kinesis-element>
 
 					<kinesis-element :strength="55" class="dino-section__img-3">
-						<Webp src="/images/dino-section-img-3.png"></Webp>
-						<!-- <img src="/images/dino-section-img-3.png" alt=""> -->
-						<img class="dino-section__img-3-circle" src="/images/dino-section-img-3-circle.svg" alt="">
+						<Webp src="/madbackpacks-dev/images/dino-section-img-3.png"></Webp>
+						<!-- <img src="/madbackpacks-dev/images/dino-section-img-3.png" alt=""> -->
+						<img class="dino-section__img-3-circle" src="/madbackpacks-dev/images/dino-section-img-3-circle.svg" alt="">
 					</kinesis-element>
 
 					<kinesis-element :strength="40" class="dino-section__img-4">
-						<Webp src="/images/dino-section-img-4.png"></Webp>
-						<!-- <img src="/images/dino-section-img-4.png" alt=""> -->
-						<img class="dino-section__img-4-circle" src="/images/dino-section-img-4-circle.svg" alt="">
+						<Webp src="/madbackpacks-dev/images/dino-section-img-4.png"></Webp>
+						<!-- <img src="/madbackpacks-dev/images/dino-section-img-4.png" alt=""> -->
+						<img class="dino-section__img-4-circle" src="/madbackpacks-dev/images/dino-section-img-4-circle.svg" alt="">
 					</kinesis-element>
 				</div>
 			</kinesis-container>
@@ -108,11 +108,11 @@ export default {
 	position: relative;
 
 	@media screen and (max-width: $sm) {
-		background: url("/images/dino-section-bg-blur-1.webp") -80px 0/650px auto no-repeat, url("/images/dino-section-bg-blur-2.webp") 100px 100px/800px auto no-repeat;
+		background: url("/madbackpacks-dev/images/dino-section-bg-blur-1.webp") -80px 0/650px auto no-repeat, url("/madbackpacks-dev/images/dino-section-bg-blur-2.webp") 100px 100px/800px auto no-repeat;
 	}
 
 	@media screen and (max-width: $xs) {
-		background: url("/images/dino-section-bg-blur-1.webp") -280px 0/650px auto no-repeat, url("/images/dino-section-bg-blur-2.webp") 100px 100px/800px auto no-repeat;
+		background: url("/madbackpacks-dev/images/dino-section-bg-blur-1.webp") -280px 0/650px auto no-repeat, url("/madbackpacks-dev/images/dino-section-bg-blur-2.webp") 100px 100px/800px auto no-repeat;
 	}
 
 	&:before {
@@ -120,7 +120,7 @@ export default {
 		display: block;
 		width: 100%;
 		height: 4px;
-		background: url('/images/dino-section-line-top.svg') 0 0 repeat-x;
+		background: url('/madbackpacks-dev/images/dino-section-line-top.svg') 0 0 repeat-x;
 		position: absolute;
 		top: -2px;
 		left: 0;
@@ -130,7 +130,7 @@ export default {
 		position: relative;
 		padding-top: 115px;
 		padding-bottom: 84px;
-		background: url("/images/dino-section-bg-blur-1.webp") 0 0/55% auto no-repeat, url("/images/dino-section-bg-blur-2.webp") 100% 70px/80% auto no-repeat;
+		background: url("/madbackpacks-dev/images/dino-section-bg-blur-1.webp") 0 0/55% auto no-repeat, url("/madbackpacks-dev/images/dino-section-bg-blur-2.webp") 100% 70px/80% auto no-repeat;
 
 		@media screen and (max-width: $sm) {
 			padding-top: 120px;
@@ -506,7 +506,7 @@ export default {
 				position: absolute;
 				top: 100%;
 				right: -100px;
-				background: url('/images/dino-section-info-title-bg.svg') 100% 0/auto 100% no-repeat;
+				background: url('/madbackpacks-dev/images/dino-section-info-title-bg.svg') 100% 0/auto 100% no-repeat;
 			}
 
 			@media screen and (max-width: $md) {
@@ -624,12 +624,12 @@ export default {
 		&--4 & {
 			&-title {
 				&:after {
-					background: url('/images/dino-section-info-title-bg-reverse.svg') 0% 0/auto 100% no-repeat;
+					background: url('/madbackpacks-dev/images/dino-section-info-title-bg-reverse.svg') 0% 0/auto 100% no-repeat;
 					left: -135px;
 					right: 0;
 
 					@media screen and (max-width: $md) {
-						background: url('/images/dino-section-info-title-bg.svg') 0% 0/100% 100% no-repeat;
+						background: url('/madbackpacks-dev/images/dino-section-info-title-bg.svg') 0% 0/100% 100% no-repeat;
 						left: 0;
 					}
 				}

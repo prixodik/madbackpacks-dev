@@ -90,7 +90,7 @@ export default {
 <style lang="scss" scroped>
 .partners-section {
 	padding: 84px 0 168px;
-	background: url('/images/partners-section-top-line.svg') 0 0 repeat-x, url('/images/about-section-bg.webp') 50% 50% no-repeat #090923;
+	background: url('/madbackpacks-dev/images/partners-section-top-line.svg') 0 0 repeat-x, url('/madbackpacks-dev/images/about-section-bg.webp') 50% 50% no-repeat #090923;
 	overflow: hidden;
 
 	@media screen and (max-width: $sm) {
@@ -144,7 +144,7 @@ export default {
 				content: "";
 				width: 848px;
 				height: 4px;
-				background: url('/images/partners-section-subtitle-line.svg') 0 0 no-repeat;
+				background: url('/madbackpacks-dev/images/partners-section-subtitle-line.svg') 0 0 no-repeat;
 				position: absolute;
 				top: calc(50% - 2px);
 				left: calc(100% + 24px);

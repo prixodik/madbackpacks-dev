@@ -6,8 +6,8 @@
 				<a href="#" class="footer__burger">Menu</a>
 			</div> -->
 				<div class="footer__logo">
-					<Webp src="/images/logo.png" :retina="true" alt="MadBackpacks"></Webp>
-					<!-- <img src="/images/logo.png" alt="MadBackpacks"> -->
+					<Webp src="/madbackpacks-dev/images/logo.png" :retina="true" alt="MadBackpacks"></Webp>
+					<!-- <img src="/madbackpacks-dev/images/logo.png" alt="MadBackpacks"> -->
 				</div>
 				<div class="footer__menu">
 					<a href="#" v-scroll-to="'#about-section'" class="footer__menu-item">about</a>
@@ -43,7 +43,7 @@ export default {
 <style lang="scss" scroped>
 .footer {
 	padding: 42px 0 56px;
-	background: url('/images/footer-bg.svg') 0 0 repeat-x;
+	background: url('/madbackpacks-dev/images/footer-bg.svg') 0 0 repeat-x;
 
 	@media screen and (max-width: $sm) {
 		padding: 28px 0 45px;

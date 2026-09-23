@@ -73,7 +73,7 @@ export default {
 <style lang="scss" scroped>
 .teams-section {
 	padding: 15px 0 83px;
-	background: url('/images/team-section-bg-blur.webp') 50% 100px/ 70vw auto no-repeat #090923;
+	background: url('/madbackpacks-dev/images/team-section-bg-blur.webp') 50% 100px/ 70vw auto no-repeat #090923;
 	overflow: hidden;
 
 	@media screen and (max-width: $sm) {
